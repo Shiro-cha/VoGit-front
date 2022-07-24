@@ -1,4 +1,5 @@
 import React ,{useState,useEffect}from "react"
+import FlashOn from "@mui/icons-material/FlashOn"
 import Container from "@mui/material/Container"
 import Card from "@mui/material/Card"
 import CardHeader from "@mui/material/CardHeader"
@@ -69,7 +70,7 @@ export default function Login(){
 		error={errorpassword}/>
 		</CardContent>
 		<CardActions sx={{padding:"20px"}}>
-		<Button variant="contained" sx={{width:"100%",fontWeight:"bold"}} onClick={checkHostInfo} disabled={!readyToSend}>Connect</Button>
+		<Button variant="contained" sx={{width:"100%",fontWeight:"bold"}} onClick={checkHostInfo} disabled={!readyToSend}><FlashOn /> Connect</Button>
 		</CardActions>
 		</Card>
 		

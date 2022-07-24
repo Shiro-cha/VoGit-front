@@ -1,12 +1,11 @@
 import React ,{useState,useEffect}from "react"
-import {Computer,Person,Key} from "@mui/icons-material"
 import Container from "@mui/material/Container"
 import Card from "@mui/material/Card"
 import CardHeader from "@mui/material/CardHeader"
 import CardContent from "@mui/material/CardContent"
 import CardActions from "@mui/material/CardActions"
 import InputLabel from "@mui/material/InputLabel"
-import InputAdornment from "@mui/material/InputAdornment"
+import Input from "@mui/material/Input"
 import Button from "@mui/material/Button"
 import Backdrop from "@mui/material/Backdrop"
 import CircularProgress from "@mui/material/CircularProgress"
@@ -60,21 +59,14 @@ export default function Login(){
 	return(
 		<Backdrop  open={true} sx={{backgroundColor:"#dddddd"}}>
 		
-			<Card sx={{width:"320px",margin:"0 auto"}}>
+			<Card sx={{width:"520px",margin:"0 auto"}}>
 		<CardHeader sx={{backgroundColor:"#f3f3f3",color:"#6d6d6d"}}  title="Je me connecte" />
 		<CardContent sx={{padding:"20px"}}>
-		<InputAdornment type="text" id="hostname" placeholder="Hostname" sx={{width:"100%",marginBottom:"30px"}} name="hostname" onChange={(e)=>{setHostname(e.target.value)}} value={hostname} error={errorhostname} position="start">
-		<Computer/>
-		</InputAdornment>
-		<InputAdornment type="text" id="hostname" placeholder="Username" sx={{width:"100%",marginBottom:"30px"}} name="username" onChange={(e)=>{setUsername(e.target.value)}} value={username}
-		error={errorusername} position="start">
-		<Person/>
-		</InputAdornment>
-		<InputAdornment type="password" id="hostname" placeholder="Password" sx={{width:"100%",marginBottom:"10px"}} name="password" onChange={(e)=>{setPassword(e.target.value)}} value={password}
-		error={errorpassword} position="start">
-		<Key/>
-		
-		</InputAdornment>
+		<Input type="text" id="hostname" placeholder="Hostname" sx={{width:"100%",marginBottom:"30px"}} name="hostname" onChange={(e)=>{setHostname(e.target.value)}} value={hostname} error={errorhostname}/>
+		<Input type="text" id="hostname" placeholder="Username" sx={{width:"100%",marginBottom:"30px"}} name="username" onChange={(e)=>{setUsername(e.target.value)}} value={username}
+		error={errorusername}/>
+		<Input type="password" id="hostname" placeholder="Password" sx={{width:"100%",marginBottom:"10px"}} name="password" onChange={(e)=>{setPassword(e.target.value)}} value={password}
+		error={errorpassword}/>
 		</CardContent>
 		<CardActions sx={{padding:"20px"}}>
 		<Button variant="contained" sx={{width:"100%",fontWeight:"bold"}} onClick={checkHostInfo} disabled={!readyToSend}>Connect</Button>

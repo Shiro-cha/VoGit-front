@@ -30,7 +30,7 @@ export default function Login(){
 	},[hostname,username,password])
 	
 	return(
-		<Backdrop  open={true} >
+		<Backdrop  open={true} sx={{backgroundColor:"#dddddd"}}>
 		
 			<Card sx={{width:"520px",margin:"0 auto"}}>
 		<CardHeader sx={{backgroundColor:"#f3f3f3",color:"#6d6d6d"}}  title="Je me connecte" />

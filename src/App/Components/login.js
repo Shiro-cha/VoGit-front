@@ -70,7 +70,7 @@ export default function Login(){
 		<Input type="text" id="hostname" placeholder="Username" sx={{width:"100%",marginBottom:"30px"}} name="username" onChange={(e)=>{setUsername(e.target.value)}} value={username}
 		error={errorusername}/>
 		<Input type="password" id="hostname" placeholder="Password" sx={{width:"100%",marginBottom:"10px"}} name="password" onChange={(e)=>{setPassword(e.target.value)}} value={password}
-		error={errorpassword} children={<Eye/>}/>
+		error={errorpassword} children={<Key/>}/>
 		</CardContent>
 		<CardActions sx={{padding:"20px"}}>
 		<Button variant="contained" sx={{width:"100%",fontWeight:"bold"}} onClick={checkHostInfo} disabled={!readyToSend}><FlashOn /> Connect</Button>

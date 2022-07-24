@@ -67,9 +67,13 @@ export default function Login(){
 		<CardHeader sx={{backgroundColor:"#f3f3f3",color:"#6d6d6d"}}  title="Je me connecte" />
 		<CardContent sx={{padding:"20px"}}>
 		
-		<InputAdornment type="text" id="hostname" placeholder="Hostname" sx={{width:"100%",marginBottom:"30px"}} name="hostname" onChange={(e)=>{setHostname(e.target.value)}} value={hostname} error={errorhostname} position="start">
-		host
-		</InputAdornment>
+		<Input type="text" id="hostname" placeholder="Hostname" sx={{width:"100%",marginBottom:"30px"}} name="hostname" onChange={(e)=>{setHostname(e.target.value)}} value={hostname} error={errorhostname} position="start" InputProps={{
+			<InputAdornment position="end">
+			user
+			</InputAdornment>
+		}}/>
+		
+		
 		<InputAdornment type="text" id="hostname" placeholder="Username" sx={{width:"100%",marginBottom:"30px"}} name="username" onChange={(e)=>{setUsername(e.target.value)}} value={username}
 		error={errorusername} position="end">
 		user

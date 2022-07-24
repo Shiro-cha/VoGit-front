@@ -16,7 +16,9 @@ export default function Login(){
 	const [hostname,setHostname] = useState("")
 	const [username,setUsername] = useState("")
 	const [password,setPassword] = useState("")
-	
+	const [errorhostname,seterrorHostname] = useState(false)
+	const [errorusername,seterrorUsername] = useState(false)
+	const [errorpassword,seterrorPassword] = useState(false)
 	function checkHostInfo(e){
 		setIsSendingHostInfo(!isSendingHostInfo) 
 	}
@@ -29,15 +31,42 @@ export default function Login(){
 		}
 	},[hostname,username,password])
 	
+	
+	useEffect(()=>{
+		if(!hostname){
+			seterrorHostname(true)
+		}else{
+			seterrorHostname(false)
+		}
+	},[hostname])
+	
+	useEffect(()=>{
+		if(!username){
+			seterrorUsername(true)
+		}else{
+			seterrorUsername(false)
+		}
+	},[username])
+	
+	useEffect(()=>{
+		if(!password){
+			seterrorPassword(true)
+		}else{
+			seterrorPassword(false)
+		}
+	},[password])
+	
 	return(
 		<Backdrop  open={true} sx={{backgroundColor:"#dddddd"}}>
 		
 			<Card sx={{width:"520px",margin:"0 auto"}}>
 		<CardHeader sx={{backgroundColor:"#f3f3f3",color:"#6d6d6d"}}  title="Je me connecte" />
 		<CardContent sx={{padding:"20px"}}>
-		<Input type="text" id="hostname" placeholder="Hostname" sx={{width:"100%",marginBottom:"30px"}} name="hostname" onChange={(e)=>{setHostname(e.target.value)}} value={hostname} error={true}/>
-		<Input type="text" id="hostname" placeholder="Username" sx={{width:"100%",marginBottom:"30px"}} name="username" onChange={(e)=>{setUsername(e.target.value)}} value={username}/>
-		<Input type="password" id="hostname" placeholder="Password" sx={{width:"100%",marginBottom:"10px"}} name="password" onChange={(e)=>{setPassword(e.target.value)}} value={password}/>
+		<Input type="text" id="hostname" placeholder="Hostname" sx={{width:"100%",marginBottom:"30px"}} name="hostname" onChange={(e)=>{setHostname(e.target.value)}} value={hostname} error={errorhostname}/>
+		<Input type="text" id="hostname" placeholder="Username" sx={{width:"100%",marginBottom:"30px"}} name="username" onChange={(e)=>{setUsername(e.target.value)}} value={username}
+		error={errorusername}/>
+		<Input type="password" id="hostname" placeholder="Password" sx={{width:"100%",marginBottom:"10px"}} name="password" onChange={(e)=>{setPassword(e.target.value)}} value={password}
+		error={errorpassword}/>
 		</CardContent>
 		<CardActions sx={{padding:"20px"}}>
 		<Button variant="contained" sx={{width:"100%",fontWeight:"bold"}} onClick={checkHostInfo} disabled={!readyToSend}>Connect</Button>

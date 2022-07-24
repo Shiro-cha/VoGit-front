@@ -35,7 +35,7 @@ export default function Login(){
 			<Card sx={{width:"520px",margin:"0 auto"}}>
 		<CardHeader sx={{backgroundColor:"#f3f3f3",color:"#6d6d6d"}}  title="Je me connecte" />
 		<CardContent sx={{padding:"20px"}}>
-		<Input type="text" id="hostname" placeholder="Hostname" sx={{width:"100%",marginBottom:"30px"}} name="hostname" onChange={(e)=>{setHostname(e.target.value)}} value={hostname}/>
+		<Input type="text" id="hostname" placeholder="Hostname" sx={{width:"100%",marginBottom:"30px"}} name="hostname" onChange={(e)=>{setHostname(e.target.value)}} value={hostname} error={true}/>
 		<Input type="text" id="hostname" placeholder="Username" sx={{width:"100%",marginBottom:"30px"}} name="username" onChange={(e)=>{setUsername(e.target.value)}} value={username}/>
 		<Input type="password" id="hostname" placeholder="Password" sx={{width:"100%",marginBottom:"10px"}} name="password" onChange={(e)=>{setPassword(e.target.value)}} value={password}/>
 		</CardContent>

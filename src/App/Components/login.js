@@ -30,7 +30,7 @@ export default function Login(){
 	},[hostname,username,password])
 	
 	return(
-		<Container  variant="contained">
+		<Backdrop  open={true} >
 		
 			<Card sx={{width:"520px",margin:"0 auto"}}>
 		<CardHeader sx={{backgroundColor:"#f3f3f3",color:"#6d6d6d"}}  title="Je me connecte" />
@@ -51,7 +51,7 @@ export default function Login(){
 		<Backdrop open={isSendingHostInfo} sx={{opacity:"0.5"}} onClick={checkHostInfo}>
 			<CircularProgress />
 			</Backdrop>
-		</Container>
+		</Backdrop>
 	)
 	
 }

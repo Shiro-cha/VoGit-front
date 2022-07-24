@@ -48,7 +48,7 @@ export default function Login(){
 			//To show when loading
 			
 		}
-		<Backdrop open={isSendingHostInfo} sx={{opacity:"0.5"}} onClick={checkHostInfo}>
+		<Backdrop open={isSendingHostInfo} sx={{opacity:"0.2"}} onClick={checkHostInfo}>
 			<CircularProgress />
 			</Backdrop>
 		</Backdrop>

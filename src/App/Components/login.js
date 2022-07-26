@@ -49,32 +49,39 @@ export default function Login(){
 	},[hostname,username,password])
 	
 	
-	if(!firstLoad){
-		setFirstLoad(false)
 		useEffect(()=>{
+			if(!firstLoad){
+				setFirstLoad(false)
 			if(!hostname){
 				seterrorHostname(true)
 			}else{
 				seterrorHostname(false)
 			}
+			}
 		},[hostname])
 		
 		useEffect(()=>{
+			if(!firstLoad){
+				setFirstLoad(false)
 			if(!username){
 				seterrorUsername(true)
 			}else{
 				seterrorUsername(false)
 			}
+			}
 		},[username])
 		
 		useEffect(()=>{
+			if(!firstLoad){
+				setFirstLoad(false)
 			if(!password){
 				seterrorPassword(true)
 			}else{
 				seterrorPassword(false)
 			}
+			}
 		},[password])
-	}
+	
 	
 	return(
 		<Backdrop  open={true} sx={{backgroundColor:"#ededed"}}>

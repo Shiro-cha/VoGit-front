@@ -22,7 +22,7 @@ export default function Explorer() {
 		<Grid container>
 		<Grid item xs=4>
 		 
-		 vertical navbar here
+		 Vertical navbar here
 		
 		</Grid>
 		<Grid item xs=8>

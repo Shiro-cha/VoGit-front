@@ -9,7 +9,7 @@ import Login from "./Components/login"
 
 export default function App(){
 	
-	const [pageComponent,setPageComponent] = useState(<Login setPageComponent={setPageComponent}/>)
+	const [pageComponent,setPageComponent] = useState(<Login setPageComponent={this.setPageComponent}/>)
 	const [pageIsReady,setPageIsReady] = useState(false)
 
 	useEffect(()=>{

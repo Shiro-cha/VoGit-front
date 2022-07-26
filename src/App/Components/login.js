@@ -8,11 +8,15 @@ import Card from "@mui/material/Card"
 import CardHeader from "@mui/material/CardHeader"
 import CardContent from "@mui/material/CardContent"
 import CardActions from "@mui/material/CardActions"
-import InputLabel from "@mui/material/InputLabel"
-import InputAdornment from "@mui/material/InputAdornment"
+import Input from "@mui/material/Input"
 import Button from "@mui/material/Button"
 import Backdrop from "@mui/material/Backdrop"
 import CircularProgress from "@mui/material/CircularProgress"
+import Dialog from "@mui/material/Dialog"
+import DialogTitle from "@mui/material/DialogTitle"
+import DialogContent from "@mui/material/DialogContent"
+import DialogContentText from "@mui/material/DialogContentText"
+import DialogActions from "@mui/material/DialogActions"
 
 export default function Login(){
 	const [isSendingHostInfo,setIsSendingHostInfo] = useState(false)
@@ -23,12 +27,14 @@ export default function Login(){
 	const [errorhostname,seterrorHostname] = useState(false)
 	const [errorusername,seterrorUsername] = useState(false)
 	const [errorpassword,seterrorPassword] = useState(false)
-	function checkHostInfo(e){
-		setIsSendingHostInfo(!isSendingHostInfo) 
+	const [openDialog,setOpenDialog] =  useState(false)
+	
+	function showPassWordDialog(e){
+		setOpenDialog(true) 
 	}
 	
 	useEffect(()=>{
-		if(hostname && username && password){
+		if(hostname && username ){
 			setReadyToSend(true)
 		}else{
 			setReadyToSend(false)
@@ -67,24 +73,15 @@ export default function Login(){
 		<CardHeader sx={{backgroundColor:"#f3f3f3",color:"#6d6d6d"}}  title="Je me connecte" />
 		<CardContent sx={{padding:"20px"}}>
 		
-		<Input type="text" id="hostname" placeholder="Hostname" sx={{width:"100%",marginBottom:"30px"}} name="hostname" onChange={(e)=>{setHostname(e.target.value)}} value={hostname} error={errorhostname} position="start" InputProps={{
-			<InputAdornment position="end">
-			user
-			</InputAdornment>
-		}}/>
+		<Input type="text" id="hostname" placeholder="Hostname" sx={{width:"100%",marginBottom:"30px"}} name="hostname" onChange={(e)=>{setHostname(e.target.value)}} value={hostname} error={errorhostname} />
 		
 		
-		<InputAdornment type="text" id="hostname" placeholder="Username" sx={{width:"100%",marginBottom:"30px"}} name="username" onChange={(e)=>{setUsername(e.target.value)}} value={username}
-		error={errorusername} position="end">
-		user
-		</InputAdornment>
-		<InputAdornment type="password" id="hostname" placeholder="Password" sx={{width:"100%",marginBottom:"10px"}} name="password" onChange={(e)=>{setPassword(e.target.value)}} value={password}
-		error={errorpassword} position="start">
-		password
-		</InputAdornment>
+		<Input type="text" id="hostname" placeholder="Username" sx={{width:"100%",marginBottom:"30px"}} name="username" onChange={(e)=>{setUsername(e.target.value)}} value={username}
+		error={errorusername} />
+		
 		</CardContent>
 		<CardActions sx={{padding:"20px"}}>
-		<Button variant="contained" sx={{width:"100%",fontWeight:"bold"}} onClick={checkHostInfo} disabled={!readyToSend}><FlashOn /> Connect</Button>
+		<Button variant="contained" sx={{width:"100%",fontWeight:"bold"}} onClick={showPassWordDialog} disabled={!readyToSend}><FlashOn /> Connect</Button>
 		</CardActions>
 		</Card>
 		
@@ -96,6 +93,35 @@ export default function Login(){
 			<CircularProgress />
 			</Backdrop>
 		</Backdrop>
+		
+		{
+			//password  dialog
+		}
+		
+		
+		<Dialog
+		open={openDialog}
+		
+		keepMounted
+		
+		aria-describedby="alert-dialog-slide-description"
+		>
+		<DialogTitle>{`You must type your password first`}</DialogTitle>
+		<DialogContent>
+		<DialogContentText id="alert-dialog-slide-description">
+		
+		<Input type="password" id="password" placeholder="Type your password" sx={{width:"100%",marginBottom:"30px"}} name="username" onChange={(e)=>{setPassword(e.target.value)}} value={password}
+		error={errorpassword} />
+		
+		</DialogContentText>
+		</DialogContent>
+		<DialogActions>
+		<Button onClick={()=>{setOpenDialog(false)}}>Annulé</Button>
+		<Button disabled={errorpassword}>Valider</Button>
+		</DialogActions>
+		</Dialog>
+		
+		
 	)
 	
 }

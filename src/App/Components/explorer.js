@@ -32,7 +32,7 @@ export default function Explorer() {
 		 direction={{ xs: 'row', sm: 'column' }}
 		 spacing={{ xs: 0.5, sm: 2, md: 4 }}
 		 justifyContent="center"
-		 alignItems="center"
+		 alignItems="flex-start"
 		 sx={{height:"100%",background:"red"}}
 		 >
 		 <div className="list-item">Item 1</div>

@@ -30,7 +30,7 @@ export default function Explorer() {
 		 
 		 <Stack
 		 direction={{ xs: 'row', sm: 'column' }}
-		 spacing={{ xs: 1, sm: 2, md: 4 }}
+		 spacing={{ xs: 0.5, sm: 2, md: 4 }}
 		 >
 		 <div className="list-item">Item 1</div>
 		 <div className="list-item">Item 2</div>

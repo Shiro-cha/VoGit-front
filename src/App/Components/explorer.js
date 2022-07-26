@@ -32,7 +32,7 @@ export default function Explorer() {
 		<AppBar position="fixed" sx={{opacity:"0.8",background:"#ffffff",borderBottom:"5px solid #1565c0e5",color:"#1565c0"}}>
 		<Toolbar variant="dense">
 		
-		<Typography variant="h6" color="inherit" component="div">
+		<Typography variant="h6" color="inherit" component="div" sx={{fontWeight:"bold",fontStyle:"italic",fontSize:"22px"}}>
 		VoGit
 		</Typography>
 		</Toolbar>

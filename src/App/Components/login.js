@@ -92,7 +92,7 @@ export default function Login(){
 		<Backdrop open={isSendingHostInfo} sx={{opacity:"0.2"}} onClick={checkHostInfo}>
 			<CircularProgress />
 			</Backdrop>
-		</Backdrop>
+		
 		
 		{
 			//password  dialog
@@ -121,6 +121,7 @@ export default function Login(){
 		</DialogActions>
 		</Dialog>
 		
+		</Backdrop>
 		
 	)
 	

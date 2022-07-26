@@ -75,7 +75,7 @@ export default function Login(){
 		<Backdrop  open={true} sx={{backgroundColor:"#dddddd"}}>
 		
 			<Card sx={{width:"520px",margin:"0 auto"}}>
-		<CardHeader sx={{backgroundColor:"#f3f3f3",color:"#6d6d6d"}}  title="Connect to a host" />
+		<CardHeader sx={{backgroundColor:"#f3f3f3",color:"#6d6d6d",textAlign:"center"}}  title="Connect to a host" />
 		<CardContent sx={{padding:"20px"}}>
 		
 		<Input type="text" id="hostname" placeholder="Hostname" sx={{width:"100%",marginBottom:"30px"}} name="hostname" onChange={(e)=>{setHostname(e.target.value)}} value={hostname} error={errorhostname} />

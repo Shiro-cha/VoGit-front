@@ -1,6 +1,8 @@
 import  React from 'react';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
+import Stack from '@mui/material/Stack';
+import Item from '@mui/material/Item';
 import SpeedDial from '@mui/material/SpeedDial';
 import SpeedDialIcon from '@mui/material/SpeedDialIcon';
 import SpeedDialAction from '@mui/material/SpeedDialAction';
@@ -27,7 +29,14 @@ export default function Explorer() {
 		<Grid container sx={{height:"100%"}}>
 		<Grid item xs={2} sx={{height:"100%"}} className="shadow">
 		 
-		 Vertical navbar here
+		 <Stack
+		 direction={{ xs: 'column', sm: 'row' }}
+		 spacing={{ xs: 1, sm: 2, md: 4 }}
+		 >
+		 <Item>Item 1</Item>
+		 <Item>Item 2</Item>
+		 <Item>Item 3</Item>
+		 </Stack>
 		
 		</Grid>
 		<Grid item xs={10} sx={{height:"100%"}}>

@@ -17,7 +17,8 @@ const actions = [
 
 export default function Explorer() {
 	return (
-		<Box sx={{ height: "100%", transform: 'translateZ(0px)', flexGrow: 1 }}>
+		<div style={{position:"fixed",top:0,bottom:0,left:0,right:0}}>
+		<Box sx={{ height:"100%", transform: 'translateZ(0px)', flexGrow: 1 }}>
 		<SpeedDial
 		ariaLabel="SpeedDial basic example"
 		sx={{ position: 'absolute', bottom: 16, right: 16 }}
@@ -32,5 +33,6 @@ export default function Explorer() {
 		))}
 		</SpeedDial>
 		</Box>
+		</div>
 	);
 }

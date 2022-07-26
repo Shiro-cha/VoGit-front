@@ -35,7 +35,7 @@ export default function Login(){
 	
 	function checkHostInfo(){
 		setOpenDialog(false)
-		setIsSendingHostInfo(true)
+		setIsSendingHostInfo(!isSendingHostInfo)
 	}
 	
 	useEffect(()=>{
@@ -122,7 +122,7 @@ export default function Login(){
 		</DialogContent>
 		<DialogActions>
 		<Button onClick={()=>{setOpenDialog(false)}}>Annulé</Button>
-		<Button disabled={errorpassword}>Valider</Button>
+		<Button disabled={errorpassword} onClick={checkHostInfo}>Valider</Button>
 		</DialogActions>
 		</Dialog>
 		

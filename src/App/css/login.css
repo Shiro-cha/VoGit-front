@@ -2,4 +2,8 @@
 	color:red !important;
 	/*width:520px;
 	margin:0 auto;*/
+	transition:all 0.8s ease;
+} 
+#login:hover{
+	box-shadow:6px 3px 2px #000000 !important;
 } 

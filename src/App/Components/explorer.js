@@ -12,6 +12,7 @@ import FileCopyIcon from '@mui/icons-material/FileCopyOutlined';
 import SaveIcon from '@mui/icons-material/Save';
 import PrintIcon from '@mui/icons-material/Print';
 import ShareIcon from '@mui/icons-material/Share';
+import Git from '@mui/icons-material/Git';
 
 
 //style 
@@ -33,7 +34,7 @@ export default function Explorer() {
 		<Toolbar variant="dense">
 		
 		<Typography variant="h6" color="inherit" component="div" sx={{fontWeight:"bold",fontStyle:"italic",fontSize:"22px"}}>
-		VoGit
+		VoGit <Git/>
 		</Typography>
 		</Toolbar>
 		</AppBar>

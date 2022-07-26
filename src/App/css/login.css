@@ -29,6 +29,8 @@
 	border:1px solid transparent;
 	border-radius:15px;
 	text-align:center;
+	font-weight:bold;
+	color:#1565c0;
 }
 .list-item:hover{
 	border-color:#1565c0;

@@ -48,7 +48,7 @@ export default function Explorer() {
 		 >
 		 <div className="list-item active">Files</div>
 		 <div className="list-item">Histories</div>
-		 <div className="list-item">Log in</div>
+		 <div className="list-item">Logout</div>
 		 </Stack>
 		
 		</Grid>

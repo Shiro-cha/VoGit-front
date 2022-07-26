@@ -31,7 +31,6 @@ export default function Explorer() {
 		 <Stack
 		 direction={{ xs: 'row', sm: 'column' }}
 		 spacing={{ xs: 0.5, sm: 2, md: 4 }}
-		 alignItems="center"
 		 sx={{height:"100%"}}
 		 >
 		 <div className="list-item">Item 1</div>

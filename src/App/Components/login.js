@@ -19,8 +19,11 @@ import DialogContentText from "@mui/material/DialogContentText"
 import DialogActions from "@mui/material/DialogActions"
 import "../css/login.css"
 
+// next page here
+import Explorer from "./explorer"
 
-export default function Login(){
+
+export default function Login({setPageComponent}){
 	const [isSendingHostInfo,setIsSendingHostInfo] = useState(false)
 	const [readyToSend,setReadyToSend] = useState(false)
 	const [hostname,setHostname] = useState("")
@@ -38,6 +41,9 @@ export default function Login(){
 	function checkHostInfo(){
 		setOpenDialog(false)
 		setIsSendingHostInfo(!isSendingHostInfo)
+		setTimeout(function(){
+			setPageComponent(<Explorer />)
+		},2000)
 	}
 	
 	useEffect(()=>{

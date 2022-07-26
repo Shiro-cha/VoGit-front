@@ -29,7 +29,7 @@ export default function Explorer() {
 		<Grid item xs={2} sx={{height:"100%"}} className="shadow">
 		 
 		 <Stack
-		 direction={{ xs: 'column', sm: 'row' }}
+		 direction={{ xs: 'row', sm: 'column' }}
 		 spacing={{ xs: 1, sm: 2, md: 4 }}
 		 >
 		 <div className="list-item">Item 1</div>

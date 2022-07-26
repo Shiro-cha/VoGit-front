@@ -37,6 +37,7 @@
 	border-color:#1565c0;
 }
 .list-item.active{
-	background:#1565c044;
+	background:#1565c074;
 	color:#ffffff;
+	border-color:#1565c0;
 }

@@ -9,6 +9,11 @@ import SaveIcon from '@mui/icons-material/Save';
 import PrintIcon from '@mui/icons-material/Print';
 import ShareIcon from '@mui/icons-material/Share';
 
+
+//style
+
+import "../css/login.css"
+
 const actions = [
 { icon: <FileCopyIcon />, name: 'Copy' },
 { icon: <SaveIcon />, name: 'Save' },
@@ -20,7 +25,7 @@ export default function Explorer() {
 	return (
 		<div style={{position:"fixed",top:0,bottom:0,left:0,right:0}}>
 		<Grid container sx={{height:"100%"}}>
-		<Grid item xs={2} sx={{height:"100%"}} elevation>
+		<Grid item xs={2} sx={{height:"100%"}} className="shadow">
 		 
 		 Vertical navbar here
 		

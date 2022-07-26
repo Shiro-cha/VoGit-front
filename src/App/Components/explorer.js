@@ -31,6 +31,7 @@ export default function Explorer() {
 		 <Stack
 		 direction={{ xs: 'row', sm: 'column' }}
 		 spacing={{ xs: 0.5, sm: 2, md: 4 }}
+		 justifyContent="center"
 		 alignItems="center"
 		 sx={{height:"100%",background:"red"}}
 		 >

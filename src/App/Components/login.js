@@ -30,7 +30,7 @@ export default function Login(){
 	const [errorusername,seterrorUsername] = useState(false)
 	const [errorpassword,seterrorPassword] = useState(false)
 	const [openDialog,setOpenDialog] =  useState(false)
-	
+	const [firstLoad,setFirstLoad] = useState(true)
 	function showPassWordDialog(e){
 		setOpenDialog(true) 
 	}
@@ -49,29 +49,32 @@ export default function Login(){
 	},[hostname,username,password])
 	
 	
-	useEffect(()=>{
-		if(!hostname){
-			seterrorHostname(true)
-		}else{
-			seterrorHostname(false)
-		}
-	},[hostname])
-	
-	useEffect(()=>{
-		if(!username){
-			seterrorUsername(true)
-		}else{
-			seterrorUsername(false)
-		}
-	},[username])
-	 
-	useEffect(()=>{
-		if(!password){
-			seterrorPassword(true)
-		}else{
-			seterrorPassword(false)
-		}
-	},[password])
+	if(!firstLoad){
+		setFirstLoad(false)
+		useEffect(()=>{
+			if(!hostname){
+				seterrorHostname(true)
+			}else{
+				seterrorHostname(false)
+			}
+		},[hostname])
+		
+		useEffect(()=>{
+			if(!username){
+				seterrorUsername(true)
+			}else{
+				seterrorUsername(false)
+			}
+		},[username])
+		
+		useEffect(()=>{
+			if(!password){
+				seterrorPassword(true)
+			}else{
+				seterrorPassword(false)
+			}
+		},[password])
+	}
 	
 	return(
 		<Backdrop  open={true} sx={{backgroundColor:"#ededed"}}>

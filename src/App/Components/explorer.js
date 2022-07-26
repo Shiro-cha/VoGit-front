@@ -33,7 +33,7 @@ export default function Explorer() {
 		 spacing={{ xs: 0.5, sm: 2, md: 4 }}
 		 justifyContent="center"
 		 alignItems="flex-start"
-		 sx={{height:"100%"}}
+		 sx={{height:"100%",padding:"5px"}}
 		 >
 		 <div className="list-item">Item 1</div>
 		 <div className="list-item">Item 2</div>

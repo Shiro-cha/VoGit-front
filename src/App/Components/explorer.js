@@ -35,9 +35,9 @@ export default function Explorer() {
 		 alignItems="flex-start"
 		 sx={{height:"100%",padding:"5px"}}
 		 >
-		 <div className="list-item">Item 1</div>
-		 <div className="list-item">Item 2</div>
-		 <div className="list-item">Item 3</div>
+		 <div className="list-item">Files</div>
+		 <div className="list-item">History</div>
+		 <div className="list-item">Log in</div>
 		 </Stack>
 		
 		</Grid>

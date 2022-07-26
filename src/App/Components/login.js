@@ -128,7 +128,7 @@ export default function Login(){
 		</DialogContentText>
 		</DialogContent>
 		<DialogActions>
-		<Button onClick={()=>{setOpenDialog(false)}} color="secondary">Annulé</Button>
+		<Button onClick={()=>{setOpenDialog(false)}} >Annulé</Button>
 		<Button disabled={errorpassword} onClick={checkHostInfo}variant="outlined">Valider</Button>
 		</DialogActions>
 		</Dialog>

@@ -31,6 +31,7 @@
 	text-align:center;
 	font-weight:bold;
 	color:#1565c0;
+	transition:all 0.5 ease-out;
 }
 
 .list-item:hover{
@@ -38,6 +39,6 @@
 }
 .list-item.active{
 	background:#1565c074;
-	color:#ffffff;
+	color:#dddddd;
 	border-color:#1565c0;
 }

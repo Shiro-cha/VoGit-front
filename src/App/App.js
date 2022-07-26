@@ -9,25 +9,23 @@ import Login from "./Components/login"
 
 export default function App(){
 	
-	const [pageComponent,setPageComponent] = useState(<Login setPageComponent={this.setPageComponent}/>)
+	const [pageComponent,setPageComponent] = useState(<Backdrop open={true} sx={{background:"#ffffff"}}>
+	<CircularProgress />
+	</Backdrop>)
 	const [pageIsReady,setPageIsReady] = useState(false)
 
 	useEffect(()=>{
-		setTimeout(function(){
-			setPageIsReady(true)
-		},1000)
+		setPageComponent(<Login setPageComponent={setPageComponent}/>)
 		
-	},[pageComponent])
+	},[pageIsReady])
 
 	return(
 		
 		<div>
 		{
 		
-			pageIsReady ? pageComponent :
-			<Backdrop open={true} sx={{background:"#ffffff"}}>
-			<CircularProgress />
-			</Backdrop>
+			 pageComponent
+			
 			
 		}
 		</div>

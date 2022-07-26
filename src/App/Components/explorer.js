@@ -4,7 +4,7 @@ import Folder from "@mui/icons-material/Folder"
 export default function Explorer(){
 	return(
 		<div>
-		<Key/>
+		<Folder/>
 		Page area here 
 		
 		</div>

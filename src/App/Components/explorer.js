@@ -1,4 +1,7 @@
 import  React from 'react';
+import AppBar from '@mui/material/AppBar';
+import ToolBar from '@mui/material/ToolBar';
+import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
@@ -42,6 +45,15 @@ export default function Explorer() {
 		
 		</Grid>
 		<Grid item xs={10} sx={{height:"100%"}}>
+		<AppBar position="static">
+		<Toolbar variant="dense">
+		
+		<Typography variant="h6" color="inherit" component="div">
+		Photos
+		</Typography>
+		</Toolbar>
+		</AppBar>
+		
 		
 		<Box sx={{ height:"100%", transform: 'translateZ(0px)', flexGrow: 1 }}>
 		<SpeedDial

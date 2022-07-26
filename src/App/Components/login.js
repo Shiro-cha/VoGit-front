@@ -17,6 +17,8 @@ import DialogTitle from "@mui/material/DialogTitle"
 import DialogContent from "@mui/material/DialogContent"
 import DialogContentText from "@mui/material/DialogContentText"
 import DialogActions from "@mui/material/DialogActions"
+import "../css/login.css"
+
 
 export default function Login(){
 	const [isSendingHostInfo,setIsSendingHostInfo] = useState(false)
@@ -74,7 +76,7 @@ export default function Login(){
 	return(
 		<Backdrop  open={true} sx={{backgroundColor:"#dddddd"}}>
 		
-			<Card sx={{width:"520px",margin:"0 auto"}}>
+			<Card sx={{width:"520px",margin:"0 auto"}} id="login">
 		<CardHeader sx={{backgroundColor:"#f3f3f3",color:"#6d6d6d",textAlign:"center"}}  title="Connect to a host" />
 		<CardContent sx={{padding:"20px"}}>
 		

@@ -33,6 +33,11 @@ export default function Login(){
 		setOpenDialog(true) 
 	}
 	
+	function checkHostInfo(){
+		setOpenDialog(false)
+		setIsSendingHostInfo(true)
+	}
+	
 	useEffect(()=>{
 		if(hostname && username ){
 			setReadyToSend(true)

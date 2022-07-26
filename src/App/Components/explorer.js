@@ -1,4 +1,5 @@
-import * as React from 'react';
+import  React from 'react';
+import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import SpeedDial from '@mui/material/SpeedDial';
 import SpeedDialIcon from '@mui/material/SpeedDialIcon';
@@ -18,6 +19,14 @@ const actions = [
 export default function Explorer() {
 	return (
 		<div style={{position:"fixed",top:0,bottom:0,left:0,right:0}}>
+		<Grid container>
+		<Grid item xs=4>
+		 
+		 vertical navbar here
+		
+		</Grid>
+		<Grid item xs=8>
+		
 		<Box sx={{ height:"100%", transform: 'translateZ(0px)', flexGrow: 1 }}>
 		<SpeedDial
 		ariaLabel="SpeedDial basic example"
@@ -33,6 +42,11 @@ export default function Explorer() {
 		))}
 		</SpeedDial>
 		</Box>
+		
+		</Grid>
+		</Grid>
+		
+		
 		</div>
 	);
 }

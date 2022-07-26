@@ -74,7 +74,7 @@ export default function Login(){
 	},[password])
 	
 	return(
-		<Backdrop  open={true} sx={{backgroundColor:"#fdfdfd"}}>
+		<Backdrop  open={true} sx={{backgroundColor:"#ededed"}}>
 		
 			<Card  id="login">
 		<CardHeader sx={{backgroundColor:"#f3f3f3",color:"#6d6d6d",textAlign:"center"}}  title="Connect to a host" />

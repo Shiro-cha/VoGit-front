@@ -39,7 +39,7 @@ export default function Explorer() {
 		 sx={{height:"100%",padding:"5px"}}
 		 >
 		 <div className="list-item active">Files</div>
-		 <div className="list-item">History</div>
+		 <div className="list-item">Histories</div>
 		 <div className="list-item">Log in</div>
 		 </Stack>
 		

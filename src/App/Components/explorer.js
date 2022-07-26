@@ -2,7 +2,6 @@ import  React from 'react';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
-import Item from '@mui/material/Item';
 import SpeedDial from '@mui/material/SpeedDial';
 import SpeedDialIcon from '@mui/material/SpeedDialIcon';
 import SpeedDialAction from '@mui/material/SpeedDialAction';
@@ -33,9 +32,9 @@ export default function Explorer() {
 		 direction={{ xs: 'column', sm: 'row' }}
 		 spacing={{ xs: 1, sm: 2, md: 4 }}
 		 >
-		 <Item>Item 1</Item>
-		 <Item>Item 2</Item>
-		 <Item>Item 3</Item>
+		 <div className="list-item">Item 1</div>
+		 <div className="list-item">Item 2</div>
+		 <div className="list-item">Item 3</div>
 		 </Stack>
 		
 		</Grid>

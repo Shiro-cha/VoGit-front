@@ -33,7 +33,7 @@ export default function Explorer() {
 		<Toolbar variant="dense">
 		
 		<Typography variant="h6" color="inherit" component="div">
-		Photos fsdqfdqsfdqsfdsfds
+		VoGit
 		</Typography>
 		</Toolbar>
 		</AppBar>

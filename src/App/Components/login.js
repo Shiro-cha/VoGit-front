@@ -108,7 +108,7 @@ export default function Login({setPageComponent}){
 			
 		}
 		<Backdrop open={isSendingHostInfo} sx={{opacity:"0.2"}} onClick={checkHostInfo}>
-			<CircularProgress color="#009CFE"/>
+			<CircularProgress />
 			</Backdrop>
 		
 		

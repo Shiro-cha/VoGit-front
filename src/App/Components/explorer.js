@@ -87,7 +87,7 @@ export default function Explorer() {
 		
 		<SpeedDial
 		ariaLabel="SpeedDial basic example"
-		sx={{ position: 'absolute', bottom: 26, right: 16 }}
+		sx={{ position: 'absolute', bottom: 76, right: 16 }}
 		icon={<SpeedDialIcon />}
 		>
 		{actions.map((action) => (

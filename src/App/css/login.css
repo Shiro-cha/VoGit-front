@@ -39,10 +39,13 @@
 	border-color:#1565c0;
 }
 .list-item.active{
-	background:#006EA3;
+	background:#D51062;
 	color:#ffffff;
 }
 .icon{
 	font-size:30px !important;
 	color:#D51062 !important;
+}
+.list-item.active .icon{
+	color:#ffffff !important;	
 }

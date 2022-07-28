@@ -8,10 +8,11 @@ import Stack from '@mui/material/Stack';
 import SpeedDial from '@mui/material/SpeedDial';
 import SpeedDialIcon from '@mui/material/SpeedDialIcon';
 import SpeedDialAction from '@mui/material/SpeedDialAction';
-import FileCopyIcon from '@mui/icons-material/FileCopyOutlined';
-import SaveIcon from '@mui/icons-material/Save';
-import PrintIcon from '@mui/icons-material/Print';
-import ShareIcon from '@mui/icons-material/Share';
+import Home from '@mui/icons-material/Home';
+import History from '@mui/icons-material/History';
+import Logout from '@mui/icons-material/Logout';
+import Upload from '@mui/icons-material/Upload';
+import Deck from '@mui/icons-material/Deck';
 
 
 //style 
@@ -19,10 +20,9 @@ import ShareIcon from '@mui/icons-material/Share';
 import "../css/login.css"
 
 const actions = [
-{ icon: <FileCopyIcon />, name: 'Copy' },
-{ icon: <SaveIcon />, name: 'Save' },
-{ icon: <PrintIcon />, name: 'Print' },
-{ icon: <ShareIcon />, name: 'Share' },
+{ icon: <Upload />, name: 'New upload' },
+{ icon: <Deck />, name: 'New container' },
+{ icon: <History />, name: 'New history' },
 ];
 
 export default function Explorer() {
@@ -46,9 +46,9 @@ export default function Explorer() {
 		 alignItems="flex-start"
 		 sx={{height:"100%",padding:"5px"}}
 		 >
-		 <div className="list-item active">Files</div>
-		 <div className="list-item">Histories</div>
-		 <div className="list-item">Logout</div>
+		 <div className="list-item active"><Home /> My Home</div>
+		 <div className="list-item"><History /> Histories</div>
+		 <div className="list-item"><Logout /> Logout</div>
 		 </Stack>
 		
 		</Grid>

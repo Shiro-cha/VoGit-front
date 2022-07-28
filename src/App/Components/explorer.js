@@ -35,9 +35,9 @@ export default function Explorer() {
 		console.log(prevElt)
 		let newelt = elt
 		let prev = prevElt
-		prev.current.classList.remove("active")
-		newelt.current.classList.add("active")
-		setPrevelt(newelt)
+		prev.classList.remove("active")
+		newelt.classList.add("active")
+		setPrevelt(elt)
 	}
 	
 	return (

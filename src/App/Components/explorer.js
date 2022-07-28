@@ -37,7 +37,7 @@ export default function Explorer() {
 		</Typography>
 		</Toolbar>
 		</AppBar>
-		<Grid item xs={2} sx={{height:"100%"}} className="shadow">
+		<Grid item xs={1} sx={{height:"100%"}} className="shadow">
 		 
 		 <Stack
 		 direction={{ xs: 'row', sm: 'column' }}
@@ -52,7 +52,7 @@ export default function Explorer() {
 		 </Stack>
 		
 		</Grid>
-		<Grid item xs={10} sx={{height:"100%"}}>
+		<Grid item xs={11} sx={{height:"100%"}}>
 		
 		
 		

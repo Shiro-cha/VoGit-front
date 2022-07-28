@@ -14,6 +14,10 @@ import Logout from '@mui/icons-material/Logout';
 import Upload from '@mui/icons-material/Upload';
 import Deck from '@mui/icons-material/Deck';
 
+//components pages
+
+import FileContainer from "./components/FileContainer"
+import HistoryContainer from "./components/HistoryContainer"
 
 //style 
 
@@ -32,7 +36,6 @@ export default function Explorer() {
 	
 	
 	function changeActive(elt, prevElt,setPrevelt){
-		console.log(prevElt.current)
 		let newelt = elt.current
 		let prev = prevElt.current 
 		prev.classList.remove("active")

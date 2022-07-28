@@ -36,7 +36,8 @@
 }
 
 .list-item:hover{
-	border-color:#1565c0;
+	border-color:#D5106205;
+	
 }
 .list-item.active{
 	background:#D51062;

@@ -5,8 +5,8 @@ import Paper from "@mui/material/Paper"
 export default function FileContainer(){
 	
 	return(
-		<Paper sx={{width:"90%",height:"100%",margin:"0 auto"}} elevation={3}>
-		file container here
+		<Paper sx={{width:"97%",height:"100%",margin:"0 auto"}} elevation={3}>
+		
 		</Paper>
 	)
 	

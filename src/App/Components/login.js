@@ -99,7 +99,7 @@ export default function Login({setPageComponent}){
 		
 		</CardContent>
 		<CardActions sx={{padding:"20px"}}>
-		<Button variant="contained" sx={{width:"100%",fontWeight:"bold"}} onClick={showPassWordDialog} disabled={!readyToSend}><FlashOn /> Connect</Button>
+		<Button variant="contained" color="#D51062" sx={{width:"100%",fontWeight:"bold"}} onClick={showPassWordDialog} disabled={!readyToSend}><FlashOn /> Connect</Button>
 		</CardActions>
 		</Card>
 		
@@ -134,8 +134,8 @@ export default function Login({setPageComponent}){
 		</DialogContentText>
 		</DialogContent>
 		<DialogActions>
-		<Button onClick={()=>{setOpenDialog(false)}} >Annulé</Button>
-		<Button disabled={errorpassword} onClick={checkHostInfo}>Valider</Button> 
+		<Button onClick={()=>{setOpenDialog(false)}} color="#D51062">Annulé</Button>
+		<Button disabled={errorpassword} onClick={checkHostInfo}color="#D51062">Valider</Button> 
 		</DialogActions>
 		</Dialog>
 		

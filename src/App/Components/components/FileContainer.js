@@ -15,7 +15,9 @@ export default function FileContainer(){
 		<Chip label="Memoire" sx={{cursor:"pointer"}}/>
 		</Container>
 		<Container>
+		<IconButton>
 		<Folder/>
+		</IconButton>
 		</Container>
 		</Paper>
 	)

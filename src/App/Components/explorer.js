@@ -1,4 +1,4 @@
-import  React from 'react';
+import  React , {useState,useRef} from 'react';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
@@ -26,6 +26,19 @@ const actions = [
 ];
 
 export default function Explorer() {
+	let home = useRef(null)
+	let history = useRef(null)
+	const [activeElement,setActiveElement] = useState(home)
+	
+	
+	function changeActive(elt, prevElt,setPrevelt){
+		let newelt = elt
+		let prev = prevElt
+		prev.classList.remove("active")
+		newelt.classList.add("active")
+		setPrevelt(newelt)
+	}
+	
 	return (
 		<div style={{position:"fixed",top:0,bottom:0,left:0,right:0}}>
 		<Grid container sx={{height:"100%"}}>
@@ -46,8 +59,8 @@ export default function Explorer() {
 		 alignItems="flex-start"
 		 sx={{height:"100%",padding:"5px"}}
 		 >
-		 <div className="list-item active"><Home className="icon"/> My Home</div>
-		 <div className="list-item"><History className="icon"/> Histories</div>
+		 <div className="list-item active" ref={home} onClick={(e)=>{changeActive(home,activeElement,setActiveElement)}}><Home className="icon"/> My Home</div>
+		 <div className="list-item" ref={history} onClick={(e)=>{changeActive(history,activeElement,setActiveElement)}}><History className="icon"/> Histories</div>
 		 <div className="list-item"><Logout className="icon"/> Logout</div>
 		 </Stack>
 		

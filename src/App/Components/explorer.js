@@ -33,8 +33,8 @@ export default function Explorer() {
 	
 	function changeActive(elt, prevElt,setPrevelt){
 		console.log(prevElt)
-		let newelt = elt
-		let prev = prevElt
+		let newelt = elt.current
+		let prev = prevElt.current
 		prev.classList.remove("active")
 		newelt.classList.add("active")
 		setPrevelt(elt)

@@ -29,7 +29,7 @@ export default function Explorer() {
 	return (
 		<div style={{position:"fixed",top:0,bottom:0,left:0,right:0}}>
 		<Grid container sx={{height:"100%"}}>
-		<AppBar position="fixed" sx={{opacity:"0.8",background:"#ffffff",border:"3px solid #3f3f3f",color:"#1565c0",borderRadius:"15px",width:"99%",margin:"0 auto",marginTop:"5px"}}>
+		<AppBar position="fixed" sx={{opacity:"0.8",border:"3px solid #3f3f3f",color:"#1565c0",borderRadius:"15px",width:"99%",margin:"0 auto",marginTop:"5px"}}>
 		<Toolbar variant="dense">
 		
 		<Typography variant="h6" color="inherit" component="div" sx={{fontWeight:"bold",fontStyle:"italic",fontSize:"22px"}}>

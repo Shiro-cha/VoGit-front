@@ -58,7 +58,7 @@ export default function Explorer() {
 		</Typography>
 		</Toolbar>
 		</AppBar>
-		<Grid item xs={2} sx={{height:"100%"}} className="shadow">
+		<Grid item xs={2} sx={{height:"100%",marginTop:"70px"}} className="shadow">
 		 
 		 <Stack
 		 direction={{ xs: 'row', sm: 'column' }}

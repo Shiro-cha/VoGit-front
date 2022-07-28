@@ -8,9 +8,9 @@ export default function FileContainer(){
 	return(
 		<Paper sx={{width:"97%",height:"100%",margin:"0 auto"}} elevation={1}>
 		<Container sx={{width:"100%"}}>
-		<Chip label="Home"/>
-		<Chip label="Desktop"/>
-		<Chip label="Memoire"/>
+		<Chip label="Home" sx={{cursor:"pointer"}}/>
+		<Chip label="Desktop" sx={{cursor:"pointer"}}/>
+		<Chip label="Memoire" sx={{cursor:"pointer"}}/>
 		</Container>
 		</Paper>
 	)

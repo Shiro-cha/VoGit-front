@@ -3,7 +3,7 @@ import Paper from "@mui/material/Paper"
 import Chip from "@mui/material/Chip"
 import Container from "@mui/material/Container"
 import IconButton from "@mui/material/IconButton"
-import Folder from '@mui/icons-materil/Folder'
+import Folder from '@mui/icons-material/Folder'
 
 export default function FileContainer(){
 	

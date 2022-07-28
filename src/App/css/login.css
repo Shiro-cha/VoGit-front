@@ -50,3 +50,7 @@
 .list-item.active .icon{
 	color:#ffffff !important;	
 }
+.file-name{
+	display:block !important;
+	font-size:12px !important;
+}

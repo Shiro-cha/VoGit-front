@@ -16,7 +16,8 @@ export default function FileContainer(){
 		</Container>
 		<Container sx={{marginTop:"20px"}}>
 		<IconButton>
-		<Folder sx={{fontSize:"40px"}}/>
+		<Folder sx={{fontSize:"70px"}}/>
+		My folder
 		</IconButton>
 		</Container>
 		</Paper>

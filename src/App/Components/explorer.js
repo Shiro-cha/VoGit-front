@@ -30,10 +30,14 @@ const actions = [
 ];
 
 export default function Explorer() {
+	
+	//ref to set active style
 	let home = useRef(null)
 	let history = useRef(null)
 	const [activeElement,setActiveElement] = useState(home)
 	
+	//state to set right component
+	const [rightComponent,setRightComponent] = useState(<FileContainer />)
 	
 	function changeActive(elt, prevElt,setPrevelt){
 		let newelt = elt.current
@@ -63,8 +67,8 @@ export default function Explorer() {
 		 alignItems="flex-start"
 		 sx={{height:"100%",padding:"5px"}}
 		 >
-		 <div className="list-item active" ref={home} onClick={(e)=>{changeActive(home,activeElement,setActiveElement)}}><Home className="icon"/> My Home</div>
-		 <div className="list-item" ref={history} onClick={(e)=>{changeActive(history,activeElement,setActiveElement)}}><History className="icon"/> Histories</div>
+		 <div className="list-item active" ref={home} onClick={(e)=>{changeActive(home,activeElement,setActiveElement),setRightComponent(<FileContainer />)}}><Home className="icon"/> My Home</div>
+		 <div className="list-item" ref={history} onClick={(e)=>{changeActive(history,activeElement,setActiveElement);setRightComponent(<HistoryContainer />)}}><History className="icon"/> Histories</div>
 		 <div className="list-item"><Logout className="icon"/> Logout</div>
 		 </Stack>
 		
@@ -74,6 +78,13 @@ export default function Explorer() {
 		
 		
 		<Box sx={{ height:"100%", transform: 'translateZ(0px)', flexGrow: 1 }}>
+		
+		{
+			//page component
+			rightComponent
+		}
+		
+		
 		<SpeedDial
 		ariaLabel="SpeedDial basic example"
 		sx={{ position: 'absolute', bottom: 16, right: 16 }}

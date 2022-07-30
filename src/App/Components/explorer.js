@@ -65,6 +65,7 @@ export default function Explorer() {
 		 spacing={{ xs: 0.5, sm: 2, md: 4 }}
 		 justifyContent="center"
 		 alignItems="flex-start"
+		 
 		 sx={{height:"100%",padding:"5px"}}
 		 >
 		 <div className="list-item active" ref={home} onClick={(e)=>{changeActive(home,activeElement,setActiveElement);setRightComponent(<FileContainer />)}}><Home className="icon"/> My Home</div>

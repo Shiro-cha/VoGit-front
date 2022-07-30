@@ -2,6 +2,7 @@ import React from "react"
 import Paper from "@mui/material/Paper"
 import Chip from "@mui/material/Chip"
 import Container from "@mui/material/Container"
+import Box from "@mui/material/Box"
 import IconButton from "@mui/material/IconButton"
 import Folder from '@mui/icons-material/Folder'
 
@@ -14,10 +15,21 @@ export default function FileContainer(){
 		<Chip label="Desktop" sx={{cursor:"pointer"}}/>
 		<Chip label="Memoire" sx={{cursor:"pointer"}}/>
 		</Container>
-		<Container sx={{marginTop:"20px",display:"flex",flexDirection:"row"}}>
+		<Box
+		
+		
+		sx={{marginTop:"20px",width:"100%",height:"100%",background:"red",display:"flex",flexDirection:"row",flexWarp:"warp"}}>
 		<IconButton sx={{display:"flex",flexDirection:"column"}}>
 		<Folder sx={{fontSize:"70px"}}/>
 		<i className="file-name">My folder</i>
+		</IconButton>
+		<IconButton sx={{display:"flex",flexDirection:"column"}}>
+		<Folder sx={{fontSize:"70px"}}/>
+		<i className="file-name">My folder</i>
+		</IconButton>
+		<IconButton sx={{display:"flex",flexDirection:"column"}}>
+		<Folder sx={{fontSize:"70px"}}/>
+		<i className="file-name">Your folder</i>
 		</IconButton>
 		<IconButton sx={{display:"flex",flexDirection:"column"}}>
 		<Folder sx={{fontSize:"70px"}}/>
@@ -79,7 +91,19 @@ export default function FileContainer(){
 		<Folder sx={{fontSize:"70px"}}/>
 		<i className="file-name">My folder</i>
 		</IconButton>
-		</Container>
+		<IconButton sx={{display:"flex",flexDirection:"column"}}>
+		<Folder sx={{fontSize:"70px"}}/>
+		<i className="file-name">My folder</i>
+		</IconButton>
+		<IconButton sx={{display:"flex",flexDirection:"column"}}>
+		<Folder sx={{fontSize:"70px"}}/>
+		<i className="file-name">My folder</i>
+		</IconButton>
+		<IconButton sx={{display:"flex",flexDirection:"column"}}>
+		<Folder sx={{fontSize:"70px"}}/>
+		<i className="file-name">My folder</i>
+		</IconButton>
+		</Box>
 		</Paper>
 	)
 	

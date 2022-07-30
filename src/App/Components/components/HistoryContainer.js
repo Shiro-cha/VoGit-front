@@ -3,6 +3,7 @@ import Paper from "@mui/material/Paper";
 import Chip from "@mui/material/Chip"
 import Container from "@mui/material/Container"
 import Box from "@mui/material/Box"
+import Grid from '@mui/material/Grid';
 import IconButton from "@mui/material/IconButton"
 import List from "@mui/material/List"
 import ListItemText from "@mui/material/ListItemText";
@@ -24,15 +25,20 @@ export default function HistoryContainer(){
 		sx={{display:"flex",flexDirection:"column",flexWrap:"wrap",alignItems:"flex-start",justifyContent:"flex-start"}}
 		className="w-100"
 		>
-		
+		<Grid container>
+		<Grid item xs={10}>
 		<ListItemButton onClick={()=>{setOpen(!open)}} className="w-100">
 		<ListItemText primary="Inbox" />
 		{open ? <ExpandLess /> : <ExpandMore />} 
 		</ListItemButton>
+		</Grid>
+		<Grid item xs={2}>
 		<IconButton><Delete /></IconButton>
+		</Grid>
 		<Collapse in={open} timeout="auto" unmountOnExit>
 		hello
 		</Collapse>
+		</Grid>
 		</Box>
 		</Paper>
 	)

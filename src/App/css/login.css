@@ -61,6 +61,9 @@
 .MuiButtonBase-root.MuiFab-root.MuiFab-circular.MuiFab-sizeLarge.MuiFab-primary.MuiSpeedDial-fab.css-118zhtq-MuiButtonBase-root-MuiFab-root-MuiSpeedDial-fab{
 	background:#D51062 !important; 
 }
-.rnesponsive-menu{
-	display:none !important;
+
+@media (max-width:768px){
+	.responsive-menu{
+		display:none !important;
+	}	
 }

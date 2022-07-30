@@ -28,6 +28,7 @@ export default function HistoryContainer(){
 		<ListItemButton onClick={()=>{setOpen(!open)}} className="w-100">
 		<ListItemText primary="Inbox" />
 		{open ? <ExpandLess /> : <ExpandMore />} <IconButton><Delete /></IconButton>
+		</ListItemText>
 		</ListItemButton>
 		<Collapse in={open} timeout="auto" unmountOnExit>
 		hello

@@ -3,6 +3,7 @@ import Paper from "@mui/material/Paper";
 import Chip from "@mui/material/Chip"
 import Container from "@mui/material/Container"
 import Box from "@mui/material/Box"
+import IconButton from "@mui/material/IconButton"
 import List from "@mui/material/List"
 import ListItemText from "@mui/material/ListItemText";
 import ListItemButton from "@mui/material/ListItemButton"
@@ -26,8 +27,8 @@ export default function HistoryContainer(){
 		
 		<ListItemButton onClick={()=>{setOpen(!open)}} className="w-100">
 		<ListItemText primary="Inbox" />
-		{open ? <ExpandLess /> : <ExpandMore />} <Delete />
-		</ListItemButton>
+		{open ? <ExpandLess /> : <ExpandMore />} <IconButton><Delete /></IconButton>
+		
 		<Collapse in={open} timeout="auto" unmountOnExit>
 		hello
 		</Collapse>

@@ -22,6 +22,66 @@ export default function FileContainer(){
 		<Folder sx={{fontSize:"70px"}}/>
 		<i className="file-name">My folder</i>
 		</IconButton>
+		<IconButton sx={{display:"flex",flexDirection:"column"}}>
+		<Folder sx={{fontSize:"70px"}}/>
+		<i className="file-name">My folder</i>
+		</IconButton>
+		<IconButton sx={{display:"flex",flexDirection:"column"}}>
+		<Folder sx={{fontSize:"70px"}}/>
+		<i className="file-name">My folder</i>
+		</IconButton>
+		<IconButton sx={{display:"flex",flexDirection:"column"}}>
+		<Folder sx={{fontSize:"70px"}}/>
+		<i className="file-name">My folder</i>
+		</IconButton>
+		<IconButton sx={{display:"flex",flexDirection:"column"}}>
+		<Folder sx={{fontSize:"70px"}}/>
+		<i className="file-name">My folder</i>
+		</IconButton>
+		<IconButton sx={{display:"flex",flexDirection:"column"}}>
+		<Folder sx={{fontSize:"70px"}}/>
+		<i className="file-name">My folder</i>
+		</IconButton>
+		<IconButton sx={{display:"flex",flexDirection:"column"}}>
+		<Folder sx={{fontSize:"70px"}}/>
+		<i className="file-name">My folder</i>
+		</IconButton>
+		<IconButton sx={{display:"flex",flexDirection:"column"}}>
+		<Folder sx={{fontSize:"70px"}}/>
+		<i className="file-name">My folder</i>
+		</IconButton>
+		<IconButton sx={{display:"flex",flexDirection:"column"}}>
+		<Folder sx={{fontSize:"70px"}}/>
+		<i className="file-name">My folder</i>
+		</IconButton>
+		<IconButton sx={{display:"flex",flexDirection:"column"}}>
+		<Folder sx={{fontSize:"70px"}}/>
+		<i className="file-name">My folder</i>
+		</IconButton>
+		<IconButton sx={{display:"flex",flexDirection:"column"}}>
+		<Folder sx={{fontSize:"70px"}}/>
+		<i className="file-name">My folder</i>
+		</IconButton>
+		<IconButton sx={{display:"flex",flexDirection:"column"}}>
+		<Folder sx={{fontSize:"70px"}}/>
+		<i className="file-name">My folder</i>
+		</IconButton>
+		<IconButton sx={{display:"flex",flexDirection:"column"}}>
+		<Folder sx={{fontSize:"70px"}}/>
+		<i className="file-name">My folder</i>
+		</IconButton>
+		<IconButton sx={{display:"flex",flexDirection:"column"}}>
+		<Folder sx={{fontSize:"70px"}}/>
+		<i className="file-name">My folder</i>
+		</IconButton>
+		<IconButton sx={{display:"flex",flexDirection:"column"}}>
+		<Folder sx={{fontSize:"70px"}}/>
+		<i className="file-name">My folder</i>
+		</IconButton>
+		<IconButton sx={{display:"flex",flexDirection:"column"}}>
+		<Folder sx={{fontSize:"70px"}}/>
+		<i className="file-name">My folder</i>
+		</IconButton>
 		
 		</Box>
 		</Paper>

@@ -54,9 +54,7 @@
 	display:block !important;
 	font-size:10px !important;
 }
-.warp-container{
-	max-width:500px !important;
-	display:flex !important;
-	flex-direction:column!important;
-	flex-warp:warp !important
+.w-100-h-100{
+	width:100% !important;
+	height:100% !important;
 }

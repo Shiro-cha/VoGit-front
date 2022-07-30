@@ -15,8 +15,12 @@ export default function FileContainer(){
 		<Chip label="Desktop" sx={{cursor:"pointer"}}/>
 		<Chip label="Memoire" sx={{cursor:"pointer"}}/>
 		</Container>
-		<Container
-		className="warp-container">
+		<Bow
+		flexDirection="row"
+		alignItems="flex-start"
+		flexWrap="wrap"
+		className="w-100-h-100"
+		>
 		<IconButton sx={{display:"flex",flexDirection:"column"}}>
 		<Folder sx={{fontSize:"70px"}}/>
 		<i className="file-name">My folder</i>
@@ -82,7 +86,7 @@ export default function FileContainer(){
 		<i className="file-name">My folder</i>
 		</IconButton>
 		
-		</Container>
+		</Box>
 		</Paper>
 	)
 	

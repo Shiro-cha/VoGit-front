@@ -80,7 +80,7 @@ export default function Explorer() {
 		
 		<Box sx={{ height:"100%", transform: 'translateZ(0px)', flexGrow: 1 ,justifyContent:"center"}}>
 		
-		{
+		{ 
 			//page component
 			rightComponent
 		}

@@ -25,7 +25,7 @@ export default function HistoryContainer(){
 		
 		<ListItemButton onClick={()=>{setOpen(!open)}}>
 		<ListItemText primary="Inbox" />
-		{open ? <ExpandLess /> : <ExpandMore />}
+		{/*open ? <ExpandLess /> : <ExpandMore />*/}
 		</ListItemButton>
 		{/*<Collapse in={open} timeout="auto" unmountOnExit>
 		<List component="div" disablePadding>

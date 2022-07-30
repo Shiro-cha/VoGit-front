@@ -10,7 +10,7 @@ export default function FileContainer(){
 	 
 	return(
 		<Paper sx={{width:"97%",height:"100%",margin:"0 auto"}} elevation={1}>
-		<Container sx={{transfrom:"translate(-50%,0%)"}}>
+		<Container sx={{transfrom:"translate(-50%,-50%)"}}>
 		<Chip label="Home" sx={{cursor:"pointer"}}/>
 		<Chip label="Desktop" sx={{cursor:"pointer"}}/>
 		<Chip label="Memoire" sx={{cursor:"pointer"}}/>

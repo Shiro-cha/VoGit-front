@@ -15,7 +15,7 @@ export default function FileContainer(){
 		<Chip label="Desktop" sx={{cursor:"pointer"}}/>
 		<Chip label="Memoire" sx={{cursor:"pointer"}}/>
 		</Container>
-		<Bow
+		<Box
 		flexDirection="row"
 		alignItems="flex-start"
 		flexWrap="wrap"

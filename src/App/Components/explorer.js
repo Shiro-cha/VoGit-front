@@ -12,7 +12,8 @@ import Home from '@mui/icons-material/Home';
 import History from '@mui/icons-material/History';
 import Logout from '@mui/icons-material/Logout';
 import Upload from '@mui/icons-material/Upload';
-import Deck from '@mui/icons-material/Deck';
+import Cyclone from '@mui/icons-material/Cyclone';
+import Download from '@mui/icons-material/Download';
 
 //components pages
 
@@ -24,8 +25,9 @@ import HistoryContainer from "./components/HistoryContainer"
 import "../css/login.css"
 
 const actions = [
+{ icon: <Download />, name: 'New Download' },
 { icon: <Upload />, name: 'New upload' },
-{ icon: <Deck />, name: 'New container' },
+{ icon: <Cyclone />, name: 'New container' },
 { icon: <History />, name: 'New history' },
 ];
 

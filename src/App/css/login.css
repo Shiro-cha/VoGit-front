@@ -55,6 +55,7 @@
 	font-size:10px !important;
 }
 .warp-container{
+	max-width:100% !important;
 	display:flex !important;
 	flex-flow:row warp!important;
 }

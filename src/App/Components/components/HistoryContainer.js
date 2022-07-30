@@ -1,11 +1,17 @@
-import React from "react"
+import React , {useState} from "react"
 import Paper from "@mui/material/Paper";
 import Chip from "@mui/material/Chip"
 import Container from "@mui/material/Container"
 import Box from "@mui/material/Box"
-import ListItemButton from "@mui/material/ListItemButton";
+import List from "@mui/material/List"
+import ListItemText from "@mui/material/ListItemText";
+import ListItemButton from "@mui/material/ListItemButton"
+import Collapse from "@mui/material/Collapse"
+import ExpandLess from '@mui/icons-material/ExpandLess'
+import ExpandMore from '@mui/icons-material/ExpandMore'
 
 export default function HistoryContainer(){
+	const [open,setOpen]=useState(false)
 	
 	return(
 		<Paper sx={{width:"97%",height:"100%",margin:"0 auto"}} elevation={1}>
@@ -16,6 +22,18 @@ export default function HistoryContainer(){
 		sx={{display:"flex",flexDirection:"column",flexWrap:"wrap",alignItems:"flex-start",justifyContent:"flex-start"}}
 		className="w-100"
 		>
+		
+		<ListItemButton onClick={setOpen(!open)}>
+		<ListItemText primary="Inbox" />
+		{open ? <ExpandLess /> : <ExpandMore />}
+		</ListItemButton>
+		<Collapse in={open} timeout="auto" unmountOnExit>
+		<List component="div" disablePadding>
+		<ListItemButton sx={{ pl: 4 }}>
+		<ListItemText primary="Starred" />
+		</ListItemButton>
+		</List>
+		</Collapse>
 		</Box>
 		</Paper>
 	)

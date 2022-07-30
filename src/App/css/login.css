@@ -54,3 +54,8 @@
 	display:block !important;
 	font-size:10px !important;
 }
+.warp-container{
+	display:flex !important;
+	flex-flow:row warp!important;
+
+}

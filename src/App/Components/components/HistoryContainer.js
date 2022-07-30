@@ -9,7 +9,7 @@ import ListItemButton from "@mui/material/ListItemButton"
 import Collapse from "@mui/material/Collapse"
 import ExpandLess from '@mui/icons-material/ExpandLess'
 import ExpandMore from '@mui/icons-material/ExpandMore'
-import Trash from '@mui/icons-material/Trash'
+import Delete from '@mui/icons-material/Delete'
 
 export default function HistoryContainer(){
 	const [open,setOpen]=useState(false)
@@ -26,7 +26,7 @@ export default function HistoryContainer(){
 		
 		<ListItemButton onClick={()=>{setOpen(!open)}} className="w-100">
 		<ListItemText primary="Inbox" />
-		{open ? <ExpandLess /> : <ExpandMore />}
+		{open ? <ExpandLess /> : <ExpandMore />} <Delete />
 		</ListItemButton>
 		<Collapse in={open} timeout="auto" unmountOnExit>
 		hello

@@ -17,7 +17,7 @@ export default function FileContainer(){
 		</Container>
 		<Box
 		sx={{display:"flex",flexDirection:"row",flexWrap:"wrap",alignItems:"flex-start",justifyContent:"flex-start"}}
-		className="w-100-h-100"
+		className="w-100"
 		>
 		<IconButton sx={{display:"flex",flexDirection:"column"}}>
 		<Folder sx={{fontSize:"70px"}}/>

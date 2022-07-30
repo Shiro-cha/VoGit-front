@@ -26,13 +26,13 @@ export default function HistoryContainer(){
 		className="w-100"
 		>
 		<Grid container>
-		<Grid item xs={10}>
+		<Grid item xs={11}>
 		<ListItemButton onClick={()=>{setOpen(!open)}} className="w-100">
 		<ListItemText primary="Inbox" />
 		{open ? <ExpandLess /> : <ExpandMore />} 
 		</ListItemButton>
 		</Grid>
-		<Grid item xs={2}>
+		<Grid item xs={1}>
 		<IconButton><Delete /></IconButton>
 		</Grid>
 		<Collapse in={open} timeout="auto" unmountOnExit>

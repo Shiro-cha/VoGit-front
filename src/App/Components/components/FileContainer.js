@@ -17,7 +17,7 @@ export default function FileContainer(){
 		</Container>
 		<Box
 
-		sx={{marginTop:"20px",width:"100%",height:"100%",flexDirection:"row",flexWarp:"warp",alignItems:"flex-start"}}>
+		sx={{marginTop:"20px",width:"100%",height:"100%",display:"flex",flexDirection:"row",flexWarp:"warp",alignItems:"flex-start"}}>
 		<IconButton sx={{display:"flex",flexDirection:"column"}}>
 		<Folder sx={{fontSize:"70px"}}/>
 		<i className="file-name">My folder</i>

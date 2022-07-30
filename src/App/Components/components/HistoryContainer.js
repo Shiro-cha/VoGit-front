@@ -23,7 +23,7 @@ export default function HistoryContainer(){
 		className="w-100"
 		>
 		
-		<ListItemButton onClick={()=>{setOpen(!open)}}>
+		<ListItemButton onClick={()=>{setOpen(!open)}} className="w-100">
 		<ListItemText primary="Inbox" />
 		{/*open ? <ExpandLess /> : <ExpandMore />*/}
 		</ListItemButton>

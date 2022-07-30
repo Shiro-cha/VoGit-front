@@ -61,7 +61,7 @@ export default function Explorer() {
 		<Grid item xs={2} sx={{height:"100%"}} className="shadow">
 		 
 		 <Stack
-		 direction={{ xs: 'row', sm: 'row' }}
+		 direction={{ xs: 'column', sm: 'column' }}
 		 spacing={{ xs: 0.5, sm: 2, md: 4 }}
 		 justifyContent="center"
 		 alignItems="flex-start"

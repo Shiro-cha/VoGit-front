@@ -1,5 +1,8 @@
 import React from "react"
 import Paper from "@mui/material/Paper";
+import Chip from "@mui/material/Chip"
+import Container from "@mui/material/Container"
+import Box from "@mui/material/Box"
 import ListItemButton from "@mui/material/ListItemButton";
 
 export default function HistoryContainer(){
@@ -9,6 +12,11 @@ export default function HistoryContainer(){
 		<Container sx={{transform:"translate(0%,-50%) !important"}}>
 		<Chip label="Manage your history and file version here" sx={{cursor:"pointer"}}/>
 		</Container>
+		<Box
+		sx={{display:"flex",flexDirection:"column",flexWrap:"wrap",alignItems:"flex-start",justifyContent:"flex-start"}}
+		className="w-100"
+		>
+		</Box>
 		</Paper>
 	)
 	

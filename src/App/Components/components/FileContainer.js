@@ -16,7 +16,7 @@ export default function FileContainer(){
 		<Chip label="Memoire" sx={{cursor:"pointer"}}/>
 		</Container>
 		<Container
-		sx={{display:"flex !important",flexFlow:"row warp",alignItems:"flex-start",marginTop:"20px",width:"500px",height:"100%",background:"green"}}>
+		className="warp-container">
 		<IconButton sx={{display:"flex",flexDirection:"column"}}>
 		<Folder sx={{fontSize:"70px"}}/>
 		<i className="file-name">My folder</i>

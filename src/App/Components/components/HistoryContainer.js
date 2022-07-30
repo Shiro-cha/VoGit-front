@@ -27,13 +27,13 @@ export default function HistoryContainer(){
 		<ListItemText primary="Inbox" />
 		{open ? <ExpandLess /> : <ExpandMore />}
 		</ListItemButton>
-		<Collapse in={open} timeout="auto" unmountOnExit>
+		{/*<Collapse in={open} timeout="auto" unmountOnExit>
 		<List component="div" disablePadding>
 		<ListItemButton sx={{ pl: 4 }}>
 		<ListItemText primary="Starred" />
 		</ListItemButton>
 		</List>
-		</Collapse>
+		</Collapse>*/}
 		</Box>
 		</Paper>
 	)

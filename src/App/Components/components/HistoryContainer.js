@@ -6,12 +6,14 @@ import Box from "@mui/material/Box"
 import Grid from '@mui/material/Grid';
 import IconButton from "@mui/material/IconButton"
 import List from "@mui/material/List"
+import ListItem from "@mui/material/ListItem"
 import ListItemText from "@mui/material/ListItemText";
 import ListItemButton from "@mui/material/ListItemButton"
 import Collapse from "@mui/material/Collapse"
 import ExpandLess from '@mui/icons-material/ExpandLess'
 import ExpandMore from '@mui/icons-material/ExpandMore'
 import Delete from '@mui/icons-material/Delete'
+import FolderIcon from '@mui/icons-material/FolderIcon'
 
 export default function HistoryContainer(){
 	const [open,setOpen]=useState(false)
@@ -36,7 +38,27 @@ export default function HistoryContainer(){
 		<IconButton><Delete /></IconButton>
 		</Grid>
 		<Collapse in={open} timeout="auto" unmountOnExit>
-		hello
+		<List dense={dense}>
+		{generate(
+			<ListItem
+			secondaryAction={
+				<IconButton edge="end" aria-label="delete">
+				<DeleteIcon />
+				</IconButton>
+			}
+			>
+			<ListItemAvatar>
+			<Avatar>
+			<FolderIcon />
+			</Avatar>
+			</ListItemAvatar>
+			<ListItemText
+			primary="Single-line item"
+			secondary={secondary ? 'Secondary text' : null}
+			/>
+			</ListItem>,
+		)}
+		</List>
 		</Collapse>
 		</Grid>
 		</Box>

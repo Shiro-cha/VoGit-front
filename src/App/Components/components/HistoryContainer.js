@@ -15,7 +15,7 @@ import Collapse from "@mui/material/Collapse"
 import ExpandLess from '@mui/icons-material/ExpandLess'
 import ExpandMore from '@mui/icons-material/ExpandMore'
 import Delete from '@mui/icons-material/Delete'
-import FolderIcon from '@mui/icons-material/FolderIcon'
+import Folder from '@mui/icons-material/Folder'
 
 export default function HistoryContainer(){
 	const [open,setOpen]=useState(false)
@@ -49,7 +49,7 @@ export default function HistoryContainer(){
 			>
 			<ListItemAvatar>
 			<Avatar>
-			<FolderIcon />
+			<Folder />
 			</Avatar>
 			</ListItemAvatar>
 			<ListItemText

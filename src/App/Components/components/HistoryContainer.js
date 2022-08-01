@@ -56,8 +56,39 @@ export default function HistoryContainer(){
 			primary="Single-line item"
 			
 			/>
-			</ListItem>,
-		)}
+			</ListItem>
+			<ListItem
+			secondaryAction={
+				<IconButton edge="end" aria-label="delete">
+				<Delete />
+				</IconButton>}
+				>
+				<ListItemAvatar>
+				<Avatar>
+				<Folder />
+				</Avatar>
+				</ListItemAvatar>
+				<ListItemText
+				primary="Single-line item"
+				
+				/>
+				</ListItem>
+				<ListItem
+				secondaryAction={
+					<IconButton edge="end" aria-label="delete">
+					<Delete />
+					</IconButton>}
+					>
+					<ListItemAvatar>
+					<Avatar>
+					<Folder />
+					</Avatar>
+					</ListItemAvatar>
+					<ListItemText
+					primary="Single-line item"
+					
+					/>
+					</ListItem>
 		</List>
 		</Collapse>
 		</Grid>

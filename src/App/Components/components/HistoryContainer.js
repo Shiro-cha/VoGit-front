@@ -16,7 +16,7 @@ import ExpandLess from '@mui/icons-material/ExpandLess'
 import ExpandMore from '@mui/icons-material/ExpandMore'
 import Delete from '@mui/icons-material/Delete'
 import Folder from '@mui/icons-material/Folder'
-import Add from '@mui/icons-material/Add'
+import Commit from '@mui/icons-material/Commit'
 
 export default function HistoryContainer(){
 	const [open,setOpen]=useState(false)
@@ -50,7 +50,7 @@ export default function HistoryContainer(){
 			>
 			<ListItemAvatar>
 			<Avatar>
-			<Folder />
+			<Commit />
 			</Avatar>
 			</ListItemAvatar>
 			<ListItemText
@@ -66,7 +66,7 @@ export default function HistoryContainer(){
 				>
 				<ListItemAvatar>
 				<Avatar>
-				<Add />
+				<Commit />
 				</Avatar>
 				</ListItemAvatar>
 				<ListItemText
@@ -82,7 +82,7 @@ export default function HistoryContainer(){
 					>
 					<ListItemAvatar>
 					<Avatar>
-					<Folder />
+					<Commit />
 					</Avatar>
 					</ListItemAvatar>
 					<ListItemText

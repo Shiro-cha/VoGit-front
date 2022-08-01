@@ -34,7 +34,10 @@ export default function HistoryContainer(){
 		>
 		<Grid container>
 		<Grid item xs={11}>
-		<ListItemButton onClick={()=>{setOpen(!open)}} className="w-100 border-1"> 
+		<ListItemButton onClick={()=>{setOpen(!open)}} className="w-100 border-1">
+		<Avatar>
+		<Cyclone />
+		</Avatar>
 		<ListItemText primary="Inbox" />
 		{open ? <ExpandLess /> : <ExpandMore />} 
 		</ListItemButton>
@@ -98,7 +101,9 @@ export default function HistoryContainer(){
 		
 		<Grid item xs={11}>
 		<ListItemButton onClick={()=>{setOpen(!open)}} className="w-100 border-1"> 
+		<Avatar>
 		<Cyclone />
+		</Avatar>
 		<ListItemText primary="Inbox" />
 		{open ? <ExpandLess /> : <ExpandMore />} 
 		</ListItemButton>

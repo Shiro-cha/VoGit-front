@@ -28,6 +28,7 @@ export default function HistoryContainer(){
 		<Container sx={{transform:"translate(0%,-50%) !important"}}>
 		<Chip label="Manage your history and file version here" sx={{cursor:"pointer"}}/>
 		</Container>
+		<br/><br/><br/>
 		<Box
 		sx={{display:"flex",flexDirection:"column",flexWrap:"wrap",alignItems:"flex-start",justifyContent:"flex-start"}}
 		className="w-100"

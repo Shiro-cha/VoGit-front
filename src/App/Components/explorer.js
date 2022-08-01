@@ -37,6 +37,7 @@ export default function Explorer() {
 	//ref to set active style
 	let home = useRef(null)
 	let history = useRef(null)
+	let hostDistant = useRef(null)
 	const [activeElement,setActiveElement] = useState(home)
 	
 	//state to set right component
@@ -72,7 +73,7 @@ export default function Explorer() {
 		 sx={{height:"100%",padding:"5px"}}
 		 >
 		 <div className="list-item active" ref={home} onClick={(e)=>{changeActive(home,activeElement,setActiveElement);setRightComponent(<FileContainer />)}}><Home className="icon"/><span className="responsive-menu"> My Home</span></div>
-		 <div className="list-item" ref={history} onClick={(e)=>{changeActive(history,activeElement,setActiveElement);setRightComponent(<HistoryContainer />)}}><Computer className="icon"/><span className="responsive-menu">54.212.6.187</span></div>
+		 <div className="list-item" ref={hostDistant} onClick={(e)=>{changeActive(hostDistant,activeElement,setActiveElement);setRightComponent(<FileContainer />)}}><Computer className="icon"/><span className="responsive-menu">54.212.6.187</span></div>
 		 <div className="list-item" ref={history} onClick={(e)=>{changeActive(history,activeElement,setActiveElement);setRightComponent(<HistoryContainer />)}}><History className="icon"/><span className="responsive-menu">Histories</span></div>
 		 <div className="list-item"><Logout className="icon"/><span className="responsive-menu"> Logout</span></div>
 		 </Stack>

@@ -14,7 +14,7 @@ import ListItemButton from "@mui/material/ListItemButton"
 import Collapse from "@mui/material/Collapse"
 import ExpandLess from '@mui/icons-material/ExpandLess'
 import ExpandMore from '@mui/icons-material/ExpandMore'
-import Delete from '@mui/icons-material/Delete'
+import MoreVert from '@mui/icons-material/MoreVert'
 import Folder from '@mui/icons-material/Folder'
 import Commit from '@mui/icons-material/Commit'
 
@@ -44,8 +44,8 @@ export default function HistoryContainer(){
 		<List>
 			<ListItem
 			secondaryAction={
-				<IconButton edge="end" aria-label="delete">
-				<Delete />
+				<IconButton edge="end" aria-label="action">
+				<MoreVert />
 				</IconButton>}
 			>
 			<ListItemAvatar>
@@ -60,8 +60,8 @@ export default function HistoryContainer(){
 			</ListItem>
 			<ListItem
 			secondaryAction={
-				<IconButton edge="end" aria-label="delete">
-				<Delete />
+				<IconButton edge="end" aria-label="action">
+				<MoreVert />
 				</IconButton>}
 				>
 				<ListItemAvatar>
@@ -76,8 +76,8 @@ export default function HistoryContainer(){
 				</ListItem>
 				<ListItem
 				secondaryAction={
-					<IconButton edge="end" aria-label="delete">
-					<Delete />
+					<IconButton edge="end" aria-label="action">
+					<MoreVert />
 					</IconButton>}
 					>
 					<ListItemAvatar>

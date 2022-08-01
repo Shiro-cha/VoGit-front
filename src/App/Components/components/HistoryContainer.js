@@ -5,6 +5,8 @@ import Container from "@mui/material/Container"
 import Box from "@mui/material/Box"
 import Grid from '@mui/material/Grid';
 import IconButton from "@mui/material/IconButton"
+import Avatar from '@mui/material/Avatar'
+import ListItemAvatar from '@mui/material/ListItemAvatar'
 import List from "@mui/material/List"
 import ListItem from "@mui/material/ListItem"
 import ListItemText from "@mui/material/ListItemText";
@@ -38,14 +40,12 @@ export default function HistoryContainer(){
 		<IconButton><Delete /></IconButton>
 		</Grid>
 		<Collapse in={open} timeout="auto" unmountOnExit>
-		<List dense={dense}>
-		{generate(
+		<List>
 			<ListItem
 			secondaryAction={
 				<IconButton edge="end" aria-label="delete">
-				<DeleteIcon />
+				<Delete />
 				</IconButton>
-			}
 			>
 			<ListItemAvatar>
 			<Avatar>
@@ -54,7 +54,7 @@ export default function HistoryContainer(){
 			</ListItemAvatar>
 			<ListItemText
 			primary="Single-line item"
-			secondary={secondary ? 'Secondary text' : null}
+			
 			/>
 			</ListItem>,
 		)}

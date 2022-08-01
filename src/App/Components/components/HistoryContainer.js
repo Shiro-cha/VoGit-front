@@ -93,6 +93,75 @@ export default function HistoryContainer(){
 					</ListItem>
 		</List>
 		</Collapse>
+		
+		
+		
+		
+		
+		<ListItemButton onClick={()=>{setOpen(!open)}} className="w-100 border-1"> 
+		<ListItemText primary="Inbox" />
+		{open ? <ExpandLess /> : <ExpandMore />} 
+		</ListItemButton>
+		</Grid>
+		<Grid item xs={1}>
+		<IconButton><Delete /></IconButton>
+		</Grid>
+		<Collapse className="w-100" in={open} timeout="auto" unmountOnExit>
+		<List className="w-100">
+		<ListItem
+		secondaryAction={
+			<IconButton edge="end" aria-label="action">
+			<MoreVert />
+			</IconButton>}
+			>
+			<ListItemAvatar>
+			<Avatar>
+			<Commit />
+			</Avatar>
+			</ListItemAvatar>
+			<ListItemText
+			primary="Single-line item"
+			
+			/>
+			</ListItem>
+			<ListItem
+			secondaryAction={
+				<IconButton edge="end" aria-label="action">
+				<MoreVert />
+				</IconButton>}
+				>
+				<ListItemAvatar>
+				<Avatar>
+				<Commit />
+				</Avatar>
+				</ListItemAvatar>
+				<ListItemText
+				primary="Single-line item"
+				
+				/>
+				</ListItem>
+				<ListItem
+				secondaryAction={
+					<IconButton edge="end" aria-label="action">
+					<MoreVert />
+					</IconButton>}
+					>
+					<ListItemAvatar>
+					<Avatar>
+					<Commit />
+					</Avatar>
+					</ListItemAvatar>
+					<ListItemText
+					primary="Single-line item"
+					
+					/>
+					</ListItem>
+					</List>
+					</Collapse>
+					
+		
+		
+		
 		</Grid>
 		</Box>
 		</Paper>

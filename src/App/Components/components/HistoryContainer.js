@@ -78,8 +78,6 @@ export default function HistoryContainer(){
 				secondaryAction={
 					<IconButton edge="end" aria-label="delete">
 					<Delete />
-					</IconButton><IconButton edge="end" aria-label="delete">
-					<Delete />
 					</IconButton>}
 					>
 					<ListItemAvatar>

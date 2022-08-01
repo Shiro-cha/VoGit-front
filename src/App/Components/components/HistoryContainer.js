@@ -65,7 +65,7 @@ export default function HistoryContainer(){
 				>
 				<ListItemAvatar>
 				<Avatar>
-				<Folder />
+				<History />
 				</Avatar>
 				</ListItemAvatar>
 				<ListItemText

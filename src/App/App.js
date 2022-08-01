@@ -16,7 +16,6 @@ export default function App(){
 
 	useEffect(()=>{
 		setPageComponent(<Login setPageComponent={setPageComponent}/>)
-		
 	},[pageIsReady])
 
 	return(

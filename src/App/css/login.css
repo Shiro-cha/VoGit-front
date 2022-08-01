@@ -61,7 +61,12 @@
 .MuiButtonBase-root.MuiFab-root.MuiFab-circular.MuiFab-sizeLarge.MuiFab-primary.MuiSpeedDial-fab.css-118zhtq-MuiButtonBase-root-MuiFab-root-MuiSpeedDial-fab{
 	background:#D51062 !important; 
 }
+/**ListItemButton**/
 
+.border-1{
+	border:1px solid #00000067 !important;
+	border-radius:5px !important;
+}
 @media (max-width:768px){
 	.responsive-menu{
 		display:none !important;

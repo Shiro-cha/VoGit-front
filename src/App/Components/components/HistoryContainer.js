@@ -92,17 +92,9 @@ export default function HistoryContainer(){
 					/>
 					</ListItem>
 		</List>
-		</Collapse>
+		</Collapse>	
 		
 		
-		
-		
-		
-		
-		
-		
-		
-		</Grid>
 		<Grid item xs={11}>
 		<ListItemButton onClick={()=>{setOpen(!open)}} className="w-100 border-1"> 
 		<ListItemText primary="Inbox" />
@@ -163,17 +155,11 @@ export default function HistoryContainer(){
 					/>
 					</ListItem>
 					</List>
-					</Collapse>
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					</Grid>
+					</Collapse>	
+		
+		
+		</Grid>
+		
 		</Box>
 		</Paper>
 	)

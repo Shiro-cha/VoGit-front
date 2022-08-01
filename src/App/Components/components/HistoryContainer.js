@@ -42,7 +42,7 @@ export default function HistoryContainer(){
 		<IconButton><Delete /></IconButton>
 		</Grid>
 		<Collapse in={open} timeout="auto" unmountOnExit>
-		<List>
+		<List className="w-100">
 			<ListItem
 			secondaryAction={
 				<IconButton edge="end" aria-label="action">

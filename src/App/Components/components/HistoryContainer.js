@@ -56,7 +56,7 @@ export default function HistoryContainer(){
 			<ListItemAvatar>
 			<Avatar>
 			<Commit />
-			</Avatar>&nbsp;&nbsp;&nbsp
+			</Avatar>
 			</ListItemAvatar>
 			<ListItemText
 			primary="Single-line item"
@@ -103,7 +103,7 @@ export default function HistoryContainer(){
 		<ListItemButton onClick={()=>{setOpen(!open)}} className="w-100 border-1"> 
 		<Avatar>
 		<Cyclone />
-		</Avatar>
+		</Avatar>&nbsp;&nbsp;&nbsp;
 		<ListItemText primary="Inbox" />
 		{open ? <ExpandLess /> : <ExpandMore />} 
 		</ListItemButton>

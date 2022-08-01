@@ -98,7 +98,7 @@ export default function Explorer() {
 			key={action.name}
 			icon={action.icon}
 			tooltipTitle={action.name}
-			/>
+			onClick={()=>{console.log(action.name)}}/>
 		))}
 		</SpeedDial>
 		</Box>

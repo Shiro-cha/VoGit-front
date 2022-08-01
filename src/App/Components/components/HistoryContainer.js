@@ -56,7 +56,7 @@ export default function HistoryContainer(){
 			<ListItemAvatar>
 			<Avatar>
 			<Commit />
-			</Avatar>
+			</Avatar>&nbsp;&nbsp;&nbsp
 			</ListItemAvatar>
 			<ListItemText
 			primary="Single-line item"

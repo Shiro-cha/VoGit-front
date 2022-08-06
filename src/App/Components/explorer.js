@@ -63,7 +63,7 @@ export default function Explorer() {
 		<Typography variant="h6" color="#ffffff" component="div" sx={{fontWeight:"bold",fontStyle:"italic",fontSize:"22px"}}>
 		VoGit 
 		</Typography>
-		</Toolbar>
+		
 		<IconButton
 		size="large"
 		aria-label="show 17 new notifications"
@@ -72,6 +72,7 @@ export default function Explorer() {
 		<Badge badgeContent={17} color="error">
 		<NotificationsIcon />
 		</Badge>
+		</Toolbar>
 		</IconButton>
 		</AppBar>
 		<Grid item xs={2} sx={{height:"100%"}} className="shadow">

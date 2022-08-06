@@ -40,7 +40,7 @@ export default function HistoryContainer(){
 		<Cyclone />
 		</Avatar>&nbsp;&nbsp;&nbsp;
 		<ListItemText primary="My message here" />
-		<Typography sx={{ fontSize:"12px" ,display:"inline"}}>/home/shiro/Memoire/</Typography >
+		<Typography sx={{ fontSize:"12px",color:"#3d3d3d" ,display:"inline"}}>/home/shiro/Memoire/</Typography >
 		{open ? <ExpandLess /> : <ExpandMore />} 
 		</ListItemButton>
 		</Grid>
@@ -107,7 +107,7 @@ export default function HistoryContainer(){
 		<Cyclone />
 		</Avatar>&nbsp;&nbsp;&nbsp;
 		<ListItemText primary="Your message here" />
-		<Typography sx={{ fontSize:"12px" ,display:"inline"}}>/home/shiro/Memoire/</Typography >
+		<Typography sx={{ fontSize:"12px" ,color:"#3d3d3d",display:"inline"}}>/home/shiro/Memoire/</Typography >
 		{open ? <ExpandLess /> : <ExpandMore />} 
 		</ListItemButton>
 		</Grid>

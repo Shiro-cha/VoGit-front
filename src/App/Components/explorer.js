@@ -70,7 +70,7 @@ export default function Explorer() {
 		color="inherit"
 		>
 		<Badge badgeContent={17} color="error">
-		<CloudDownload color="#ffffff" />
+		<CloudDownload sx={{background:"#ffffff"}} />
 		</Badge>
 		</IconButton>
 		</Toolbar>

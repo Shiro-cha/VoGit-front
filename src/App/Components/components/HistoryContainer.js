@@ -85,7 +85,7 @@ export default function HistoryContainer(){
 			secondaryAction={
 				<Box>
 				<IconButton edge="end" aria-label="action"
-				onClick={()=>{setOpenMenu(!openMenu)}}>
+				onClick={openMenu}>
 				<MoreVert />
 				</IconButton>
 				<Menu 

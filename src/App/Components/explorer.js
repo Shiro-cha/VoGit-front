@@ -72,12 +72,12 @@ export default function Explorer() {
 		 
 		 sx={{height:"100%",padding:"5px"}}
 		 >
-		 <div className="list-item active" ref={home} onClick={(e)=>{changeActive(home,activeElement,setActiveElement);setRightComponent(<FileContainer />)}}><Home className="icon"/><span className="responsive-menu"> &nbsp;My Home</span></div>
-		 <div className="list-item" ref={hostDistant} onClick={(e)=>{changeActive(hostDistant,activeElement,setActiveElement);setRightComponent(<FileContainer />)}}><Computer className="icon"/><span className="responsive-menu"> &nbsp;54.212.6.187</span></div>
-		 <div className="list-item" ref={history} onClick={(e)=>{changeActive(history,activeElement,setActiveElement);setRightComponent(<HistoryContainer />)}}><History className="icon"/><span className="responsive-menu"> &nbsp;Histories</span></div>
-		 <div className="list-item"><Logout className="icon"/><span className="responsive-menu"> &nbsp;Logout</span></div>
+		 <div className="list-item active" ref={home} onClick={(e)=>{changeActive(home,activeElement,setActiveElement);setRightComponent(<FileContainer />)}}><Home className="icon"/><span className="responsive-menu"> <Typography>&nbsp;My Home</Typography></span></div>
+		 <div className="list-item" ref={hostDistant} onClick={(e)=>{changeActive(hostDistant,activeElement,setActiveElement);setRightComponent(<FileContainer />)}}><Computer className="icon"/><span className="responsive-menu"><Typography> &nbsp;54.212.6.187</Typography></span></div>
+		 <div className="list-item" ref={history} onClick={(e)=>{changeActive(history,activeElement,setActiveElement);setRightComponent(<HistoryContainer />)}}><History className="icon"/><span className="responsive-menu"> <Typography> &nbsp;Histories</Typography></span></div>
+		 <div className="list-item"><Logout className="icon"/><span className="responsive-menu"><Typography> &nbsp;Logout</Typography></span></div>
 		 </Stack>
-		
+		 
 		</Grid>
 		<Grid item xs={10} sx={{height:"100%",marginTop:"70px"}}>
 		

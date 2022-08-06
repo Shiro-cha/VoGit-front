@@ -39,7 +39,7 @@ export default function HistoryContainer(){
 		<Avatar sx={{backgroundColor:"#D51062"}}>
 		<Cyclone />
 		</Avatar>&nbsp;&nbsp;&nbsp;
-		<ListItemText primary="Inbox" />
+		<ListItemText primary="My message here" />
 		{open ? <ExpandLess /> : <ExpandMore />} 
 		</ListItemButton>
 		</Grid>
@@ -105,7 +105,7 @@ export default function HistoryContainer(){
 		<Avatar sx={{backgroundColor:"#D51062"}}>
 		<Cyclone />
 		</Avatar>&nbsp;&nbsp;&nbsp;
-		<ListItemText primary="Inbox" />
+		<ListItemText primary="Your message here" />
 		{open ? <ExpandLess /> : <ExpandMore />} 
 		</ListItemButton>
 		</Grid>

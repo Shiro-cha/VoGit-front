@@ -74,7 +74,7 @@ export default function HistoryContainer(){
 			secondaryAction={
 				<>
 				<IconButton edge="end" aria-label="action"
-				aria-controls={opeMenu ? 'demo-positioned-menu' : undefined}
+				aria-controls={openMenu ? 'demo-positioned-menu' : undefined}
 				aria-haspopup="true"
 				aria-expanded={open ? 'true' : undefined}
 				onClick={()=>{setOpenMenu(!openMenu)}}>

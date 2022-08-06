@@ -95,10 +95,10 @@ export default function HistoryContainer(){
 				keepMounted
 				>
 				<MenuItem onClick={(event) => onMenuItemClick(event)}>
-				texte 1
+				Switch to this version
 				</MenuItem>
 				<MenuItem onClick={(event) => onMenuItemClick(event)}>
-				texte 2
+				Delete
 				</MenuItem>
 				</Menu>
 				

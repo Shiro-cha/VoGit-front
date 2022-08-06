@@ -72,6 +72,7 @@ export default function HistoryContainer(){
 			</ListItem>
 			<ListItem
 			secondaryAction={
+				<>
 				<IconButton edge="end" aria-label="action" onClick={()=>{setOpenMenu(!openMenu)}}>
 				<MoreVert />
 				</IconButton>
@@ -97,7 +98,7 @@ export default function HistoryContainer(){
 				<MenuItem >Logout</MenuItem>
 				</Menu>
 				
-				
+				</>
 				
 			}
 				>

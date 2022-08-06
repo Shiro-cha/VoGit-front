@@ -58,7 +58,7 @@ export default function Explorer() {
 		<div style={{position:"fixed",top:0,bottom:0,left:0,right:0}}>
 		<Grid container sx={{height:"100%"}}>
 		<AppBar position="fixed" sx={{opacity:"0.91",background:"#D51062",color:"#1565c0",borderRadius:"5px",width:"100%",margin:"0 auto",marginTop:"0px"}}>
-		<Toolbar variant="dense">
+		<Toolbar variant="dense" sx={{display:"flex",justifyContent:"space-between"}}>
 		
 		<Typography variant="h6" color="#ffffff" component="div" sx={{fontWeight:"bold",fontStyle:"italic",fontSize:"22px"}}>
 		VoGit 

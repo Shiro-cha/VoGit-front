@@ -73,36 +73,21 @@ export default function HistoryContainer(){
 			</ListItem>
 			<ListItem
 			secondaryAction={
-				<>
+				<Box>
 				<IconButton edge="end" aria-label="action"
-				aria-controls={openMenu ? 'demo-positioned-menu' : undefined}
-				aria-haspopup="true"
-				aria-expanded={openMenu ? 'true' : undefined}
 				onClick={()=>{setOpenMenu(!openMenu)}}>
 				<MoreVert />
 				</IconButton>
-				
-				
-				<Menu
-				id="demo-positioned-menu"
-				aria-labelledby="demo-positioned-button"
-				anchorEl={anchorEl}
-				open={openMenu}
-				anchorOrigin={{
-					vertical: 'top',
-		horizontal: 'left',
-				}}
-				transformOrigin={{
-					vertical: 'top',
-		horizontal: 'left',
-				}}
-				>
-				<MenuItem >Profile</MenuItem>
-				<MenuItem >My account</MenuItem>
-				<MenuItem >Logout</MenuItem>
+				<Menu open={openMenu}>
+				<MenuItem>
+				texte 1
+				</MenuItem>
+				<MenuItem>
+				texte 2
+				</MenuItem>
 				</Menu>
 				
-				</>
+				</Box>
 				
 			}
 				>

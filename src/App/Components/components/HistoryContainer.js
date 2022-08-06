@@ -76,7 +76,7 @@ export default function HistoryContainer(){
 				<IconButton edge="end" aria-label="action"
 				aria-controls={openMenu ? 'demo-positioned-menu' : undefined}
 				aria-haspopup="true"
-				aria-expanded={open ? 'true' : undefined}
+				aria-expanded={openMenu ? 'true' : undefined}
 				onClick={()=>{setOpenMenu(!openMenu)}}>
 				<MoreVert />
 				</IconButton>

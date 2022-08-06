@@ -16,7 +16,6 @@ import ExpandLess from '@mui/icons-material/ExpandLess'
 import ExpandMore from '@mui/icons-material/ExpandMore'
 import Delete from '@mui/icons-material/Delete'
 import MoreVert from '@mui/icons-material/MoreVert'
-import Folder from '@mui/icons-material/Folder'
 import Commit from '@mui/icons-material/Commit'
 import Cyclone from '@mui/icons-material/Cyclone'
 
@@ -41,6 +40,7 @@ export default function HistoryContainer(){
 		</Avatar>&nbsp;&nbsp;&nbsp;
 		<ListItemText primary="My message here" />
 		{open ? <ExpandLess /> : <ExpandMore />} 
+		<Typography sx={{ fontSize:"10px" ,display:"inline"}}>/home/shiro/Memoire/</Typography >
 		</ListItemButton>
 		</Grid>
 		<Grid item xs={1}>
@@ -107,6 +107,7 @@ export default function HistoryContainer(){
 		</Avatar>&nbsp;&nbsp;&nbsp;
 		<ListItemText primary="Your message here" />
 		{open ? <ExpandLess /> : <ExpandMore />} 
+		<Typography sx={{ fontSize:"10px" ,display:"inline"}}>/home/shiro/Memoire/</Typography >
 		</ListItemButton>
 		</Grid>
 		<Grid item xs={1}>

@@ -24,8 +24,20 @@ import Commit from '@mui/icons-material/Commit'
 import Cyclone from '@mui/icons-material/Cyclone'
 
 export default function HistoryContainer(){
+	const [anchor, setAnchor] = useState(null);
 	const [open,setOpen]=useState(false)
 	const [openMenu,setOpenMenu]=useState(false)
+	const openMenu = (event) => {
+		setAnchor(event.currentTarget);
+	};
+	
+	const closeMenu = () => {
+		setAnchor(null);
+	};
+	const onMenuItemClick = (event) => {
+		setAnchor(null);
+	};
+	
 	
 	return(
 		<Paper sx={{width:"97%",height:"100%",margin:"0 auto"}} elevation={1}>
@@ -77,11 +89,16 @@ export default function HistoryContainer(){
 				onClick={()=>{setOpenMenu(!openMenu)}}>
 				<MoreVert />
 				</IconButton>
-				<Menu open={openMenu}>
-				<MenuItem>
+				<Menu 
+				open={Boolean(anchor)}
+				anchorEl={anchor}
+				onClose={closeMenu}
+				keepMounted
+				>
+				<MenuItem onClick={(event) => onMenuItemClick(event, index)}>
 				texte 1
 				</MenuItem>
-				<MenuItem>
+				<MenuItem onClick={(event) => onMenuItemClick(event)}>
 				texte 2
 				</MenuItem>
 				</Menu>

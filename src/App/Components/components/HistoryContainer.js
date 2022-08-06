@@ -23,7 +23,7 @@ import Delete from '@mui/icons-material/Delete'
 import MoreVert from '@mui/icons-material/MoreVert'
 import Commit from '@mui/icons-material/Commit'
 import Cyclone from '@mui/icons-material/Cyclone'
-import ChangeCircle from '@mui/icons-material/ChangeCircle'
+import ChangeHistory from '@mui/icons-material/ChangeHistory'
 
 export default function HistoryContainer(){
 	const [anchor, setAnchor] = useState(null);
@@ -98,12 +98,9 @@ export default function HistoryContainer(){
 				>
 				<MenuItem onClick={(event) => onMenuItemClick(event)}>
 				<ListItemIcon>
-				<ChangeCircle fontSize="small" />
+				<ChangeHistory fontSize="small" />
 				</ListItemIcon>
-				<ListItemText>Copy</ListItemText>
-				<Typography variant="body2" color="text.secondary">
-				⌘C
-				</Typography>
+				<ListItemText>Switch to this version</ListItemText>
 				</MenuItem>
 				</Menu>
 				

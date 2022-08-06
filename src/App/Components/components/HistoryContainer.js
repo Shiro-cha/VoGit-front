@@ -73,7 +73,11 @@ export default function HistoryContainer(){
 			<ListItem
 			secondaryAction={
 				<>
-				<IconButton edge="end" aria-label="action" onClick={()=>{setOpenMenu(!openMenu)}}>
+				<IconButton edge="end" aria-label="action"
+				aria-controls={opeMenun ? 'demo-positioned-menu' : undefined}
+				aria-haspopup="true"
+				aria-expanded={open ? 'true' : undefined}
+				onClick={()=>{setOpenMenu(!openMenu)}}>
 				<MoreVert />
 				</IconButton>
 				

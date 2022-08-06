@@ -6,6 +6,9 @@ import Box from "@mui/material/Box"
 import Grid from '@mui/material/Grid';
 import IconButton from "@mui/material/IconButton"
 import Avatar from '@mui/material/Avatar'
+import Button from '@mui/material/Button'
+import Menu from '@mui/material/Menu'
+import MenuItem from '@mui/material/MenuItem'
 import Typography from '@mui/material/Typography';
 import ListItemAvatar from '@mui/material/ListItemAvatar'
 import List from "@mui/material/List"
@@ -22,6 +25,7 @@ import Cyclone from '@mui/icons-material/Cyclone'
 
 export default function HistoryContainer(){
 	const [open,setOpen]=useState(false)
+	const [openMenu,setOpenMenu]=useState(false)
 	
 	return(
 		<Paper sx={{width:"97%",height:"100%",margin:"0 auto"}} elevation={1}>
@@ -68,9 +72,34 @@ export default function HistoryContainer(){
 			</ListItem>
 			<ListItem
 			secondaryAction={
-				<IconButton edge="end" aria-label="action">
+				<IconButton edge="end" aria-label="action" onClick={()=>{setOpenMenu(!openMenu)}}>
 				<MoreVert />
-				</IconButton>}
+				</IconButton>
+				
+				
+				<Menu
+				id="demo-positioned-menu"
+				aria-labelledby="demo-positioned-button"
+				anchorEl={anchorEl}
+				open={open}
+				onClose={handleClose}
+				anchorOrigin={{
+					vertical: 'top',
+		horizontal: 'left',
+				}}
+				transformOrigin={{
+					vertical: 'top',
+		horizontal: 'left',
+				}}
+				>
+				<MenuItem >Profile</MenuItem>
+				<MenuItem >My account</MenuItem>
+				<MenuItem >Logout</MenuItem>
+				</Menu>
+				
+				
+				
+			}
 				>
 				<ListItemAvatar>
 				<Avatar>

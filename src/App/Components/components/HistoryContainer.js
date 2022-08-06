@@ -96,6 +96,7 @@ export default function HistoryContainer(){
 					primary="First version of vogit"
 					
 					/>
+					<Typography sx={{ fontSize:"12px" ,color:"#7d7d7d",display:"inline"}}>777baf3cdc592803940b1aaeb72e166598821d0c</Typography >
 					</ListItem>
 		</List>
 		</Collapse>	

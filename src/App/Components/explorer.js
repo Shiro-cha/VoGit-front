@@ -17,7 +17,7 @@ import Logout from '@mui/icons-material/Logout';
 import Upload from '@mui/icons-material/Upload';
 import Cyclone from '@mui/icons-material/Cyclone';
 import Download from '@mui/icons-material/Download';
-import NotificationsIcon from '@mui/icons-material/Notifications';
+import CloudDownload from '@mui/icons-material/CloudDownload';
 
 //components pages
 
@@ -70,7 +70,7 @@ export default function Explorer() {
 		color="inherit"
 		>
 		<Badge badgeContent={17} color="error">
-		<NotificationsIcon />
+		<CloudDownload color="#ffffff" />
 		</Badge>
 		</IconButton>
 		</Toolbar>

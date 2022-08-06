@@ -24,7 +24,6 @@ import Commit from '@mui/icons-material/Commit'
 import Cyclone from '@mui/icons-material/Cyclone'
 
 export default function HistoryContainer(){
-	const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
 	const [open,setOpen]=useState(false)
 	const [openMenu,setOpenMenu]=useState(false)
 	

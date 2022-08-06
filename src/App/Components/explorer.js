@@ -17,7 +17,7 @@ import Logout from '@mui/icons-material/Logout';
 import Upload from '@mui/icons-material/Upload';
 import Cyclone from '@mui/icons-material/Cyclone';
 import Download from '@mui/icons-material/Download';
-import NotificationsIcon from '@mui/icons-material/NotificationsIcon';
+import NotificationsIcon from '@mui/icons-material/Notifications';
 
 //components pages
 

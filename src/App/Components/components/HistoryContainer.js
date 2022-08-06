@@ -87,7 +87,7 @@ export default function HistoryContainer(){
 				id="demo-positioned-menu"
 				aria-labelledby="demo-positioned-button"
 				anchorEl={anchorEl}
-				open={open}
+				open={openMenu}
 				anchorOrigin={{
 					vertical: 'top',
 		horizontal: 'left',

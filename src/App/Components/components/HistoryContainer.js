@@ -64,6 +64,7 @@ export default function HistoryContainer(){
 			primary="Thrid commit of VoGit"
 			
 			/>
+			<Typography sx={{ fontSize:"12px" ,color:"#7d7d7d",display:"inline"}}>777baf3cdc592803940b1aaeb72e166598821d0c</Typography >
 			</ListItem>
 			<ListItem
 			secondaryAction={
@@ -80,6 +81,7 @@ export default function HistoryContainer(){
 				primary="second verion of VoGit"
 				
 				/>
+				<Typography sx={{ fontSize:"12px" ,color:"#7d7d7d",display:"inline"}}>777baf3cdc592803940b1aaeb72e166598821d0c</Typography >
 				</ListItem>
 				<ListItem
 				secondaryAction={

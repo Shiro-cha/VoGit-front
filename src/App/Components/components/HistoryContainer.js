@@ -105,9 +105,9 @@ export default function HistoryContainer(){
 				</MenuItem>
 				<MenuItem onClick={(event) => onMenuItemClick(event)}>
 				<ListItemIcon>
-				<ChangeHistory fontSize="small" />
+				<ViewInArSharp fontSize="small" />
 				</ListItemIcon>
-				<ListItemText>Index here</ListItemText>
+				<ListItemText>Index file head here</ListItemText>
 				</MenuItem>
 				</Menu>
 				

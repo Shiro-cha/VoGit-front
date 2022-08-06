@@ -72,10 +72,10 @@ export default function Explorer() {
 		 
 		 sx={{height:"100%",padding:"5px"}}
 		 >
-		 <div className="list-item active" ref={home} onClick={(e)=>{changeActive(home,activeElement,setActiveElement);setRightComponent(<FileContainer />)}}><Home className="icon"/><span className="responsive-menu"> My Home</span></div>
-		 <div className="list-item" ref={hostDistant} onClick={(e)=>{changeActive(hostDistant,activeElement,setActiveElement);setRightComponent(<FileContainer />)}}><Computer className="icon"/><span className="responsive-menu">54.212.6.187</span></div>
-		 <div className="list-item" ref={history} onClick={(e)=>{changeActive(history,activeElement,setActiveElement);setRightComponent(<HistoryContainer />)}}><History className="icon"/><span className="responsive-menu">Histories</span></div>
-		 <div className="list-item"><Logout className="icon"/><span className="responsive-menu"> Logout</span></div>
+		 <div className="list-item active" ref={home} onClick={(e)=>{changeActive(home,activeElement,setActiveElement);setRightComponent(<FileContainer />)}}><Home className="icon"/><span className="responsive-menu"> &nbsp;My Home</span></div>
+		 <div className="list-item" ref={hostDistant} onClick={(e)=>{changeActive(hostDistant,activeElement,setActiveElement);setRightComponent(<FileContainer />)}}><Computer className="icon"/><span className="responsive-menu"> &nbsp;54.212.6.187</span></div>
+		 <div className="list-item" ref={history} onClick={(e)=>{changeActive(history,activeElement,setActiveElement);setRightComponent(<HistoryContainer />)}}><History className="icon"/><span className="responsive-menu"> &nbsp;Histories</span></div>
+		 <div className="list-item"><Logout className="icon"/><span className="responsive-menu"> &nbsp;Logout</span></div>
 		 </Stack>
 		
 		</Grid>

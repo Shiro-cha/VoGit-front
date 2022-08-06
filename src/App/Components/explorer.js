@@ -72,8 +72,8 @@ export default function Explorer() {
 		<Badge badgeContent={17} color="error">
 		<NotificationsIcon />
 		</Badge>
-		</Toolbar>
 		</IconButton>
+		</Toolbar>
 		</AppBar>
 		<Grid item xs={2} sx={{height:"100%"}} className="shadow">
 		 

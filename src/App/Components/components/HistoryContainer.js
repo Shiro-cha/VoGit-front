@@ -6,6 +6,7 @@ import Box from "@mui/material/Box"
 import Grid from '@mui/material/Grid';
 import IconButton from "@mui/material/IconButton"
 import Avatar from '@mui/material/Avatar'
+import Typography from '@mui/material/Typography';
 import ListItemAvatar from '@mui/material/ListItemAvatar'
 import List from "@mui/material/List"
 import ListItem from "@mui/material/ListItem"

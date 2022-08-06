@@ -81,9 +81,7 @@ export default function HistoryContainer(){
 				<Menu
 				id="demo-positioned-menu"
 				aria-labelledby="demo-positioned-button"
-				anchorEl={anchorEl}
 				open={open}
-				onClose={handleClose}
 				anchorOrigin={{
 					vertical: 'top',
 		horizontal: 'left',

@@ -24,6 +24,7 @@ import MoreVert from '@mui/icons-material/MoreVert'
 import Commit from '@mui/icons-material/Commit'
 import Cyclone from '@mui/icons-material/Cyclone'
 import ChangeHistory from '@mui/icons-material/ChangeHistory'
+import ViewInArSharp from '@mui/icons-material/ViewInArSharp'
 
 export default function HistoryContainer(){
 	const [anchor, setAnchor] = useState(null);
@@ -101,6 +102,12 @@ export default function HistoryContainer(){
 				<ChangeHistory fontSize="small" />
 				</ListItemIcon>
 				<ListItemText>Switch to this version</ListItemText>
+				</MenuItem>
+				<MenuItem onClick={(event) => onMenuItemClick(event)}>
+				<ListItemIcon>
+				<ChangeHistory fontSize="small" />
+				</ListItemIcon>
+				<ListItemText>Index here</ListItemText>
 				</MenuItem>
 				</Menu>
 				

@@ -2,8 +2,10 @@ import  React , {useState,useRef} from 'react';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import Grid from '@mui/material/Grid';  
+import Grid from '@mui/material/Grid'; 
+import IconButton from "@mui/material/IconButton"
 import Box from '@mui/material/Box';
+import Badge from '@mui/material/Badge';
 import Stack from '@mui/material/Stack';
 import SpeedDial from '@mui/material/SpeedDial';
 import SpeedDialIcon from '@mui/material/SpeedDialIcon';
@@ -15,6 +17,7 @@ import Logout from '@mui/icons-material/Logout';
 import Upload from '@mui/icons-material/Upload';
 import Cyclone from '@mui/icons-material/Cyclone';
 import Download from '@mui/icons-material/Download';
+import NotificationsIcon from '@mui/icons-material/NotificationsIcon';
 
 //components pages
 
@@ -61,6 +64,15 @@ export default function Explorer() {
 		VoGit 
 		</Typography>
 		</Toolbar>
+		<IconButton
+		size="large"
+		aria-label="show 17 new notifications"
+		color="inherit"
+		>
+		<Badge badgeContent={17} color="error">
+		<NotificationsIcon />
+		</Badge>
+		</IconButton>
 		</AppBar>
 		<Grid item xs={2} sx={{height:"100%"}} className="shadow">
 		 

@@ -26,7 +26,6 @@ import Cyclone from '@mui/icons-material/Cyclone'
 export default function HistoryContainer(){
 	const [anchor, setAnchor] = useState(null);
 	const [open,setOpen]=useState(false)
-	const [openMenu,setOpenMenu]=useState(false)
 	const openMenu = (event) => {
 		setAnchor(event.currentTarget);
 	};

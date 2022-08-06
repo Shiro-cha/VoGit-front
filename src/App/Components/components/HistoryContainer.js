@@ -13,6 +13,7 @@ import Typography from '@mui/material/Typography';
 import ListItemAvatar from '@mui/material/ListItemAvatar'
 import List from "@mui/material/List"
 import ListItem from "@mui/material/ListItem"
+import ListItemIcon from "@mui/material/ListItemIcon"
 import ListItemText from "@mui/material/ListItemText";
 import ListItemButton from "@mui/material/ListItemButton"
 import Collapse from "@mui/material/Collapse"
@@ -22,6 +23,7 @@ import Delete from '@mui/icons-material/Delete'
 import MoreVert from '@mui/icons-material/MoreVert'
 import Commit from '@mui/icons-material/Commit'
 import Cyclone from '@mui/icons-material/Cyclone'
+import ChangeCircle from '@mui/icons-material/ChangeCircle'
 
 export default function HistoryContainer(){
 	const [anchor, setAnchor] = useState(null);
@@ -95,10 +97,13 @@ export default function HistoryContainer(){
 				keepMounted
 				>
 				<MenuItem onClick={(event) => onMenuItemClick(event)}>
-				Switch to this version
-				</MenuItem>
-				<MenuItem onClick={(event) => onMenuItemClick(event)}>
-				Delete
+				<ListItemIcon>
+				<ChangeCircle fontSize="small" />
+				</ListItemIcon>
+				<ListItemText>Copy</ListItemText>
+				<Typography variant="body2" color="text.secondary">
+				⌘C
+				</Typography>
 				</MenuItem>
 				</Menu>
 				

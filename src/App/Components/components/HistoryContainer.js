@@ -94,7 +94,7 @@ export default function HistoryContainer(){
 				onClose={closeMenu}
 				keepMounted
 				>
-				<MenuItem onClick={(event) => onMenuItemClick(event, index)}>
+				<MenuItem onClick={(event) => onMenuItemClick(event)}>
 				texte 1
 				</MenuItem>
 				<MenuItem onClick={(event) => onMenuItemClick(event)}>

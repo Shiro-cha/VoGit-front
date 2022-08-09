@@ -1,4 +1,4 @@
-import  React , {useState,useRef} from 'react';
+import  React , {useState,useRef,useEffect} from 'react';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
@@ -35,7 +35,7 @@ const actions = [
 { icon: <History />, name: 'New history' },
 ];
 
-export default function Explorer() {
+export default function Explorer({remote}) {
 	
 	//ref to set active style
 	let home = useRef(null)
@@ -53,6 +53,10 @@ export default function Explorer() {
 		newelt.classList.add("active")
 		setPrevelt(elt)
 	}
+	
+	useEffect(()=>{
+		console.log(remote)
+	},[remote])
 	
 	return (
 		<div style={{position:"fixed",top:0,bottom:0,left:0,right:0}}>

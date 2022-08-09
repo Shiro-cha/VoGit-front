@@ -145,7 +145,7 @@ export default function Login({setPageComponent}){
 		</DialogContentText>
 		</DialogContent>
 		<DialogActions>
-		<Button onClick={()=>{setOpenDialog(false)}} sx={{color:"#D51062"}}>Annulé</Button>
+		<Button onClick={()=>{setOpenDialog(false);setPasswordsetPassword("")}} sx={{color:"#D51062"}}>Annulé</Button>
 		<Button disabled={errorpassword} onClick={checkHostInfo}sx={{color:"#D51062"}}>Valider</Button> 
 		</DialogActions>
 		</Dialog>

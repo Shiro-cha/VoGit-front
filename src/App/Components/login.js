@@ -57,11 +57,6 @@ export default function Login({setPageComponent}){
 		api.post("/connect",{"hostname":hostname,"username":username,"password":password}).then(function(res){
 			console.log(res)
 			setIsSendingHostInfo(false)
-			if(res.data.isSuccess){
-				console.log("success")
-			}else{
-				setConnexionError(true)
-			}
 		}).catch(function(err){
 			console.log(err)
 			setIsSendingHostInfo(false)
@@ -125,7 +120,7 @@ export default function Login({setPageComponent}){
 		<Button variant="contained"  sx={{width:"100%",fontWeight:"bold",backgroundColor:"#D51062"}} onClick={showPassWordDialog} disabled={!readyToSend}><FlashOn /> Connect</Button>
 		</CardActions>
 		</Card>
-		<Snackbar open={true} 
+		<Snackbar open={connexionError} 
 		key={"buttom","center"}>
 		<Alert severity="error">
 		Erreur de connexion

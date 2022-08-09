@@ -41,7 +41,7 @@ export default function Explorer({remote}) {
 	
 	let hostname = remote.host.hostname
 	let username = remote.host.username
-	let home = remote.path.home
+	let homePath = remote.path.home
 	let sep = remote.path.sep
 	
 	

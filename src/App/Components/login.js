@@ -40,6 +40,10 @@ export default function Login({setPageComponent}){
 	const [errorpassword,seterrorPassword] = useState(false)
 	const [connexionError,setConnexionError] = useState(false)
 	const [openDialog,setOpenDialog] =  useState(false)
+	
+	//is first loadind
+	const [firstLoad,setFirstLoad] = useState(true)
+	
 	function showPassWordDialog(e){
 		setOpenDialog(true) 
 	}

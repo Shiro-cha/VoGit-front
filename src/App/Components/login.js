@@ -48,13 +48,13 @@ export default function Login({setPageComponent}){
 	
 	function checkHostInfo(){
 		setOpenDialog(false)
-		setIsSendingHostInfo(!isSendingHostInfo)
+		setIsSendingHostInfo(true)
 		api.post("/connect",{"hostname":hostname,"username":username,"password":password}).then(function(res){
 			console.log(res)
-			setIsSendingHostInfo(!isSendingHostInfo)
+			setIsSendingHostInfo(false)
 		}).catch(function(err){
 			console.log(err)
-			setIsSendingHostInfo(!isSendingHostInfo)
+			setIsSendingHostInfo(false)
 		})
 	}
 	

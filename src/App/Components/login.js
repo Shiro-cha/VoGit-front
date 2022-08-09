@@ -62,7 +62,7 @@ export default function Login({setPageComponent}){
 			if(res.data.isSuccess){
 				setPageComponent(<Explorer  remote={res.data.remote}/>)
 			}else{
-				setMessageFromServer(err.response.data.message)
+				setMessageFromServer("Error in your information")
 				setConnexionError(true)
 			}
 			setIsSendingHostInfo(false)

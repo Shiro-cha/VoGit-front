@@ -2,6 +2,10 @@ import React ,{useState,useEffect}from "react"
 //icon
 import FlashOn from "@mui/icons-material/FlashOn"
 
+//import util module
+
+import axios from "axios"
+
 //icon end
 import Container from "@mui/material/Container"
 import Card from "@mui/material/Card"
@@ -37,13 +41,21 @@ export default function Login({setPageComponent}){
 	function showPassWordDialog(e){
 		setOpenDialog(true) 
 	}
+	let api = axios.create({
+		baseURL:"http://35.88.95.149:3001",
+		headers: {"Access-Control-Allow-Origin": "*"}
+	})
 	
 	function checkHostInfo(){
 		setOpenDialog(false)
 		setIsSendingHostInfo(!isSendingHostInfo)
-		setTimeout(function(){
-			setPageComponent(<Explorer />)
-		},2000)
+		api.post("/connect",{"hostname":hostname,"username":username,"password":password}).then(function(res){
+			console.log(res)
+			setIsSendingHostInfo(!isSendingHostInfo)
+		}).catch(function(err){
+			console.log(err)
+			setIsSendingHostInfo(!isSendingHostInfo)
+		})
 	}
 	
 	useEffect(()=>{

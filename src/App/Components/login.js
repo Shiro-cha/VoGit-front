@@ -45,7 +45,7 @@ export default function Login({setPageComponent}){
 	const [firstLoad,setFirstLoad] = useState(true)
 	
 	//message from server 
-	const [messageFromServer,setMessageFromServer] = useSate("")
+	const [messageFromServer,setMessageFromServer] = useState("")
 	
 	function showPassWordDialog(e){
 		setOpenDialog(true) 

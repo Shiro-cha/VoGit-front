@@ -42,7 +42,7 @@ export default function Login({setPageComponent}){
 		setOpenDialog(true) 
 	}
 	let api = axios.create({
-		baseURL:"http://35.88.95.149:3001", 
+		baseURL:"http://35.88.95.149:3001/", 
 		headers: {"Access-Control-Allow-Origin": "*"}
 	})
 	

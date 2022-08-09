@@ -120,7 +120,7 @@ export default function Login({setPageComponent}){
 		<Button variant="contained"  sx={{width:"100%",fontWeight:"bold",backgroundColor:"#D51062"}} onClick={showPassWordDialog} disabled={!readyToSend}><FlashOn /> Connect</Button>
 		</CardActions>
 		</Card>
-		<Snackbar open={connexionError} anchorOrigin={{"bottom","center"}}
+		<Snackbar open={connexionError} 
 		key={"buttom","center"}>
 		<Alert severity="error">
 		Erreur de connexion

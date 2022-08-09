@@ -127,7 +127,7 @@ export default function Login({setPageComponent}){
 		</Card>
 		<Snackbar open={connexionError}
 		anchorOrigin={{
-			vertial:"bottom",
+			vertical:"bottom",
 			horizontal:"center"
 		}}
 		key={"buttom","center"}>

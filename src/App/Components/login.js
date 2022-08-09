@@ -7,13 +7,15 @@ import FlashOn from "@mui/icons-material/FlashOn"
 import axios from "axios"
 
 //icon end
-import Container from "@mui/material/Container"
+
 import Card from "@mui/material/Card"
 import CardHeader from "@mui/material/CardHeader"
 import CardContent from "@mui/material/CardContent"
 import CardActions from "@mui/material/CardActions"
 import Input from "@mui/material/Input"
 import Button from "@mui/material/Button"
+import Alert from "@mui/material/Alert"
+import Snackbar from "@mui/material/Snackbar"
 import Backdrop from "@mui/material/Backdrop"
 import CircularProgress from "@mui/material/CircularProgress"
 import Dialog from "@mui/material/Dialog"
@@ -36,8 +38,8 @@ export default function Login({setPageComponent}){
 	const [errorhostname,seterrorHostname] = useState(false)
 	const [errorusername,seterrorUsername] = useState(false)
 	const [errorpassword,seterrorPassword] = useState(false)
+	const [connexionError,setConnexionError] = useState(false)
 	const [openDialog,setOpenDialog] =  useState(false)
-	const [firstLoad,setFirstLoad] = useState(true)
 	function showPassWordDialog(e){
 		setOpenDialog(true) 
 	}
@@ -54,6 +56,7 @@ export default function Login({setPageComponent}){
 		}).catch(function(err){
 			console.log(err)
 			setIsSendingHostInfo(false)
+			setConnexionError(true)
 		})
 	}
 	
@@ -113,6 +116,13 @@ export default function Login({setPageComponent}){
 		<Button variant="contained"  sx={{width:"100%",fontWeight:"bold",backgroundColor:"#D51062"}} onClick={showPassWordDialog} disabled={!readyToSend}><FlashOn /> Connect</Button>
 		</CardActions>
 		</Card>
+		<Snackbar open={connexionError} anchorOrigin={{"bottom","center"}}
+		key={"buttom","center"}>
+		<Alert severity="error">
+		Erreur de connexion
+		</Alert>
+		</Snackbar>
+		
 		
 		{
 			//To show when loading

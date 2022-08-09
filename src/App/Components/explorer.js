@@ -37,6 +37,14 @@ const actions = [
 
 export default function Explorer({remote}) {
 	
+	//clientInformation
+	
+	let hostname = remote.host.hostname
+	let username = remote.host.username
+	let home = remote.path.home
+	let sep = remote.path.sep
+	
+	
 	//ref to set active style
 	let home = useRef(null)
 	let history = useRef(null)
@@ -87,7 +95,7 @@ export default function Explorer({remote}) {
 		 sx={{height:"100%",padding:"5px"}}
 		 >
 		 <div className="list-item active" ref={home} onClick={(e)=>{changeActive(home,activeElement,setActiveElement);setRightComponent(<FileContainer />)}}><Home className="icon"/><span className="responsive-menu"> <Typography sx={{ fontWeight: 500 ,display:"inline"}}>&nbsp;My Home</Typography></span></div>
-		 <div className="list-item" ref={hostDistant} onClick={(e)=>{changeActive(hostDistant,activeElement,setActiveElement);setRightComponent(<FileContainer />)}}><Computer className="icon"/><span className="responsive-menu"><Typography sx={{ fontWeight: 500 ,display:"inline"}}> &nbsp;{remote.host.hostname}</Typography></span></div>
+		 <div className="list-item" ref={hostDistant} onClick={(e)=>{changeActive(hostDistant,activeElement,setActiveElement);setRightComponent(<FileContainer />)}}><Computer className="icon"/><span className="responsive-menu"><Typography sx={{ fontWeight: 500 ,display:"inline"}}> &nbsp;{hostname}</Typography></span></div>
 		 <div className="list-item" ref={history} onClick={(e)=>{changeActive(history,activeElement,setActiveElement);setRightComponent(<HistoryContainer />)}}><History className="icon"/><span className="responsive-menu"> <Typography sx={{ fontWeight: 500 ,display:"inline"}}> &nbsp;Histories</Typography ></span></div>
 		 <div className="list-item"><Logout className="icon"/><span className="responsive-menu"><Typography sx={{ fontWeight: 500 ,display:"inline"}}> &nbsp;Logout</Typography></span></div>
 		 </Stack>

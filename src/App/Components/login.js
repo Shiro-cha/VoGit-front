@@ -44,6 +44,9 @@ export default function Login({setPageComponent}){
 	//is first loadind
 	const [firstLoad,setFirstLoad] = useState(true)
 	
+	//message from server 
+	const [messageFromServer,setMessageFromServer] = useSate("")
+	
 	function showPassWordDialog(e){
 		setOpenDialog(true) 
 	}
@@ -60,6 +63,7 @@ export default function Login({setPageComponent}){
 		}).catch(function(err){
 			console.log(err)
 			setIsSendingHostInfo(false)
+			setMessageFromServer(err.response.data.message)
 			setConnexionError(true)
 		})
 	}
@@ -123,7 +127,7 @@ export default function Login({setPageComponent}){
 		<Snackbar open={connexionError} 
 		key={"buttom","center"}>
 		<Alert severity="error">
-		Erreur de connexion
+		{messageFromServer}
 		</Alert>
 		</Snackbar>
 		

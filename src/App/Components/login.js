@@ -59,6 +59,12 @@ export default function Login({setPageComponent}){
 		setIsSendingHostInfo(true)
 		api.post("/connect",{"hostname":hostname,"username":username,"password":password}).then(function(res){
 			console.log(res)
+			if(res.data.isSuccess){
+				setPageComponent(<Explorer  remote={res.data.remote}/>)
+			}else{
+				setMessageFromServer(err.response.data.message)
+				setConnexionError(true)
+			}
 			setIsSendingHostInfo(false)
 		}).catch(function(err){
 			console.log(err)

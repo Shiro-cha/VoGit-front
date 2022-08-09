@@ -57,6 +57,11 @@ export default function Login({setPageComponent}){
 		api.post("/connect",{"hostname":hostname,"username":username,"password":password}).then(function(res){
 			console.log(res)
 			setIsSendingHostInfo(false)
+			if(res.data.isSuccess){
+				console.log("success")
+			}else{
+				setConnexionError(true)
+			}
 		}).catch(function(err){
 			console.log(err)
 			setIsSendingHostInfo(false)

@@ -60,7 +60,7 @@ export default function Login({setPageComponent}){
 		api.post("/connect",{"hostname":hostname,"username":username,"password":password}).then(function(res){
 			console.log(res)
 			if(res.data.isSuccess){
-				setPageComponent(<Explorer  remote={res.data.remote}/>)
+				setPageComponent(<Explorer setPageComponent={setPageComponent} remote={res.data.remote}/>)
 			}else{
 				setMessageFromServer("Error in your information")
 				setConnexionError(true)

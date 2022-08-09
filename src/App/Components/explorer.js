@@ -19,6 +19,9 @@ import Cyclone from '@mui/icons-material/Cyclone';
 import Download from '@mui/icons-material/Download';
 import CloudDownload from '@mui/icons-material/CloudDownload';
 
+
+// next page here
+import Login from "./login"
 //components pages
 
 import FileContainer from "./components/FileContainer"
@@ -35,7 +38,7 @@ const actions = [
 { icon: <History />, name: 'New history' },
 ];
 
-export default function Explorer({remote}) {
+export default function Explorer({remote,setPageComponent}) {
 	
 	//clientInformation
 	
@@ -97,7 +100,7 @@ export default function Explorer({remote}) {
 		 <div className="list-item active" ref={home} onClick={(e)=>{changeActive(home,activeElement,setActiveElement);setRightComponent(<FileContainer />)}}><Home className="icon"/><span className="responsive-menu"> <Typography sx={{ fontWeight: 500 ,display:"inline"}}>&nbsp;My Home</Typography></span></div>
 		 <div className="list-item" ref={hostDistant} onClick={(e)=>{changeActive(hostDistant,activeElement,setActiveElement);setRightComponent(<FileContainer />)}}><Computer className="icon"/><span className="responsive-menu"><Typography sx={{ fontWeight: 500 ,display:"inline"}}> &nbsp;{hostname}</Typography></span></div>
 		 <div className="list-item" ref={history} onClick={(e)=>{changeActive(history,activeElement,setActiveElement);setRightComponent(<HistoryContainer />)}}><History className="icon"/><span className="responsive-menu"> <Typography sx={{ fontWeight: 500 ,display:"inline"}}> &nbsp;Histories</Typography ></span></div>
-		 <div className="list-item"><Logout className="icon"/><span className="responsive-menu"><Typography sx={{ fontWeight: 500 ,display:"inline"}}> &nbsp;Logout</Typography></span></div>
+		 <div className="list-item" onClick={()=>{setPageComponent(<Login />)}}><Logout className="icon"/><span className="responsive-menu"><Typography sx={{ fontWeight: 500 ,display:"inline"}}> &nbsp;Logout</Typography></span></div>
 		 </Stack>
 		 
 		</Grid>

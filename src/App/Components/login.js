@@ -137,7 +137,7 @@ export default function Login({setPageComponent}){
 			//To show when loading
 			
 		}
-		<Backdrop open={isSendingHostInfo} sx={{opacity:"0.2"}} onClick={checkHostInfo}>
+		<Backdrop open={isSendingHostInfo} sx={{opacity:"0.2"}}>
 			<CircularProgress />
 			</Backdrop>
 		

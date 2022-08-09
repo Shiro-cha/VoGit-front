@@ -69,6 +69,7 @@ export default function Login({setPageComponent}){
 	}
 	
 	useEffect(()=>{
+		setConnexionError(false)
 		if(hostname && username ){
 			setReadyToSend(true)
 		}else{

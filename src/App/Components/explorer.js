@@ -4,12 +4,20 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid'; 
 import IconButton from "@mui/material/IconButton"
+import Button from "@mui/material/Button"
 import Box from '@mui/material/Box';
 import Badge from '@mui/material/Badge';
+import Alert from "@mui/material/Alert"
+import Snackbar from "@mui/material/Snackbar"
 import Stack from '@mui/material/Stack';
 import SpeedDial from '@mui/material/SpeedDial';
 import SpeedDialIcon from '@mui/material/SpeedDialIcon';
 import SpeedDialAction from '@mui/material/SpeedDialAction';
+import Dialog from "@mui/material/Dialog"
+import DialogTitle from "@mui/material/DialogTitle"
+import DialogContent from "@mui/material/DialogContent"
+import DialogContentText from "@mui/material/DialogContentText"
+import DialogActions from "@mui/material/DialogActions"
 import Home from '@mui/icons-material/Home';
 import Computer from '@mui/icons-material/Computer';
 import History from '@mui/icons-material/History';
@@ -19,6 +27,9 @@ import Cyclone from '@mui/icons-material/Cyclone';
 import Download from '@mui/icons-material/Download';
 import CloudDownload from '@mui/icons-material/CloudDownload';
 
+// axiossss
+
+import axios from "axios"
 
 // next page here
 import Login from "./login"
@@ -47,6 +58,11 @@ export default function Explorer({remote,setPageComponent}) {
 	let homePath = remote.path.home
 	let sep = remote.path.sep
 	
+	//create api
+	
+	let api = axios.create({
+		baseURL:"http://localhost:3001"
+	})
 	
 	//ref to set active style
 	let home = useRef(null)
@@ -57,12 +73,36 @@ export default function Explorer({remote,setPageComponent}) {
 	//state to set right component
 	const [rightComponent,setRightComponent] = useState(<FileContainer />)
 	
+	//logout handeler confimation
+	
+	const [openLogout,setOpenLogout] = useState(false)
+	const [logoutError,setlogoutError] = useState(false)
+	
 	function changeActive(elt, prevElt,setPrevelt){
 		let newelt = elt.current
 		let prev = prevElt.current 
 		prev.classList.remove("active")
 		newelt.classList.add("active")
 		setPrevelt(elt)
+	}
+	
+	//logout function
+	
+	function logout(){
+		api.post("/connect/logout").then(function(res){
+			setlogoutError(false)
+			if(res.data.isSuccess){
+				setPageComponent(<Login setPageComponent={setPageComponent}/>)		
+			}else{
+				console.log("Error")
+				setlogoutError(true)
+			}
+		}).catch(function(err){
+			if(err) throw err
+			console.log("Error...")
+			setlogoutError(true)
+		})
+		
 	}
 	
 	
@@ -98,9 +138,9 @@ export default function Explorer({remote,setPageComponent}) {
 		 sx={{height:"100%",padding:"5px"}}
 		 >
 		 <div className="list-item active" ref={home} onClick={(e)=>{changeActive(home,activeElement,setActiveElement);setRightComponent(<FileContainer />)}}><Home className="icon"/><span className="responsive-menu"> <Typography sx={{ fontWeight: 500 ,display:"inline"}}>&nbsp;My Home</Typography></span></div>
-		 <div className="list-item" ref={hostDistant} onClick={(e)=>{changeActive(hostDistant,activeElement,setActiveElement);setRightComponent(<FileContainer />)}}><Computer className="icon"/><span className="responsive-menu"><Typography sx={{ fontWeight: 500 ,display:"inline"}}> &nbsp;{hostname}</Typography></span></div>
+		 <div className="list-item" ref={hostDistant} onClick={(e)=>{changeActive(hostDistant,activeElement,setActiveElement);setRightComponent(<FileContainer homePath={homePath}/>)}}><Computer className="icon"/><span className="responsive-menu"><Typography sx={{ fontWeight: 500 ,display:"inline"}}> &nbsp;{hostname}</Typography></span></div>
 		 <div className="list-item" ref={history} onClick={(e)=>{changeActive(history,activeElement,setActiveElement);setRightComponent(<HistoryContainer />)}}><History className="icon"/><span className="responsive-menu"> <Typography sx={{ fontWeight: 500 ,display:"inline"}}> &nbsp;Histories</Typography ></span></div>
-		 <div className="list-item" onClick={()=>{setPageComponent(<Login setPageComponent={setPageComponent}/>)}}><Logout className="icon"/><span className="responsive-menu"><Typography sx={{ fontWeight: 500 ,display:"inline"}}> &nbsp;Logout</Typography></span></div>
+		 <div className="list-item" onClick={()=>{setOpenLogout(true)}}><Logout className="icon"/><span className="responsive-menu"><Typography sx={{ fontWeight: 500 ,display:"inline"}}> &nbsp;Logout</Typography></span></div>
 		 </Stack>
 		 
 		</Grid>
@@ -134,7 +174,30 @@ export default function Explorer({remote,setPageComponent}) {
 		</Grid>
 		</Grid>
 		
-		
+		{
+			//Logout confirmation dialog
+			
+		}
+		<Dialog 
+		open={openLogout}
+		keepMounted
+		>
+		<DialogTitle>{`Do you really want to logout ?`}</DialogTitle>
+		<DialogActions>
+		<Button sx={{color:"#D51062"}} onClick={()=>{setOpenLogout(false);setlogoutError(true)}}>Cancel</Button>
+		<Button sx={{color:"#D51062"}} onClick={()=>{logout()}}>Logout</Button>
+		</DialogActions>
+		</Dialog>
+		<Snackbar open={logoutError}
+		anchorOrigin={{
+			vertical:"bottom",
+		 horizontal:"center"
+		}}
+		key={"buttom","center"}>
+		<Alert severity="error">
+		{`Logout error`}
+		</Alert>
+		</Snackbar>
 		</div>
 	);
 }

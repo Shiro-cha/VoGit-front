@@ -1,4 +1,4 @@
-import React ,{useState,useEffect}from "react"
+ import React ,{useState,useEffect}from "react"
 //icon
 import FlashOn from "@mui/icons-material/FlashOn"
 
@@ -51,16 +51,14 @@ export default function Login({setPageComponent}){
 		setOpenDialog(true) 
 	}
 	let api = axios.create({
-		baseURL:"http://35.88.95.149:3001"
+		baseURL:"http://localhost:3001"
 	})
 	
 	function checkHostInfo(){
 		setOpenDialog(false)
 		setIsSendingHostInfo(true)
 		api.post("/connect",{"hostname":hostname,"username":username,"password":password}).then(function(res){
-			console.log(res)
 			if(res.data.isSuccess){
-				setPageComponent(console.log(setPageComponent))
 				setPageComponent(<Explorer setPageComponent={setPageComponent} remote={res.data.remote}/>)
 			}else{
 				setMessageFromServer("Error in your information")
@@ -87,29 +85,37 @@ export default function Login({setPageComponent}){
 	
 
 		useEffect(()=>{
-				setFirstLoad(false)
 			if(!hostname){
 				seterrorHostname(true)
 			}else{
+				if(firstLoad){
 				seterrorHostname(false)
+				}
 			}
 		},[hostname])
 		
 		useEffect(()=>{
-				setFirstLoad(false)
+				
 			if(!username){
 				seterrorUsername(true)
 			}else{
-				seterrorUsername(false)
+				if(firstLoad){
+					seterrorUsername(false)	
+				}
+				
 			}
+			setFirstLoad(false)
 		},[username])
 		
 		useEffect(()=>{
-				setFirstLoad(false)
+				
 			if(!password){
 				seterrorPassword(true)
 			}else{
+				if(firstLoad){
 				seterrorPassword(false)
+				}
+				setFirstLoad(false)
 			}
 		},[password])
 	
@@ -175,8 +181,8 @@ export default function Login({setPageComponent}){
 		</DialogContentText>
 		</DialogContent>
 		<DialogActions>
-		<Button onClick={()=>{setOpenDialog(false);setPassword("")}} sx={{color:"#D51062"}}>Annulé</Button>
-		<Button disabled={errorpassword} onClick={checkHostInfo}sx={{color:"#D51062"}}>Valider</Button> 
+		<Button onClick={()=>{setOpenDialog(false);setPassword("")}} sx={{color:"#D51062"}}>Cancel</Button>
+		<Button disabled={errorpassword} onClick={checkHostInfo}sx={{color:"#D51062"}}>Connect</Button> 
 		</DialogActions>
 		</Dialog>
 		

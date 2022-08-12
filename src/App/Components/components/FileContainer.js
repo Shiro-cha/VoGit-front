@@ -6,7 +6,10 @@ import Box from "@mui/material/Box"
 import IconButton from "@mui/material/IconButton"
 import Folder from '@mui/icons-material/Folder'
 
-export default function FileContainer(){
+//component list component
+import FileList from "./FileList"
+
+export default function FileContainer({homePath}){
 	 
 	return(
 		<Paper sx={{width:"97%",height:"100%",margin:"0 auto"}} elevation={1}>
@@ -19,71 +22,12 @@ export default function FileContainer(){
 		sx={{display:"flex",flexDirection:"row",flexWrap:"wrap",alignItems:"flex-start",justifyContent:"flex-start"}}
 		className="w-100"
 		>
-		<IconButton sx={{display:"flex",flexDirection:"column"}}>
-		<Folder sx={{fontSize:"70px"}}/>
-		<i className="file-name">My folder</i>
-		</IconButton>
-		<IconButton sx={{display:"flex",flexDirection:"column"}}>
-		<Folder sx={{fontSize:"70px"}}/>
-		<i className="file-name">My folder</i>
-		</IconButton>
-		<IconButton sx={{display:"flex",flexDirection:"column"}}>
-		<Folder sx={{fontSize:"70px"}}/>
-		<i className="file-name">My folder</i>
-		</IconButton>
-		<IconButton sx={{display:"flex",flexDirection:"column"}}>
-		<Folder sx={{fontSize:"70px"}}/>
-		<i className="file-name">My folder</i>
-		</IconButton>
-		<IconButton sx={{display:"flex",flexDirection:"column"}}>
-		<Folder sx={{fontSize:"70px"}}/>
-		<i className="file-name">My folder</i>
-		</IconButton>
-		<IconButton sx={{display:"flex",flexDirection:"column"}}>
-		<Folder sx={{fontSize:"70px"}}/>
-		<i className="file-name">My folder</i>
-		</IconButton>
-		<IconButton sx={{display:"flex",flexDirection:"column"}}>
-		<Folder sx={{fontSize:"70px"}}/>
-		<i className="file-name">My folder</i>
-		</IconButton>
-		<IconButton sx={{display:"flex",flexDirection:"column"}}>
-		<Folder sx={{fontSize:"70px"}}/>
-		<i className="file-name">My folder</i>
-		</IconButton>
-		<IconButton sx={{display:"flex",flexDirection:"column"}}>
-		<Folder sx={{fontSize:"70px"}}/>
-		<i className="file-name">My folder</i>
-		</IconButton>
-		<IconButton sx={{display:"flex",flexDirection:"column"}}>
-		<Folder sx={{fontSize:"70px"}}/>
-		<i className="file-name">My folder</i>
-		</IconButton>
-		<IconButton sx={{display:"flex",flexDirection:"column"}}>
-		<Folder sx={{fontSize:"70px"}}/>
-		<i className="file-name">My folder</i>
-		</IconButton>
-		<IconButton sx={{display:"flex",flexDirection:"column"}}>
-		<Folder sx={{fontSize:"70px"}}/>
-		<i className="file-name">My folder</i>
-		</IconButton>
-		<IconButton sx={{display:"flex",flexDirection:"column"}}>
-		<Folder sx={{fontSize:"70px"}}/>
-		<i className="file-name">My folder</i>
-		</IconButton>
-		<IconButton sx={{display:"flex",flexDirection:"column"}}>
-		<Folder sx={{fontSize:"70px"}}/>
-		<i className="file-name">My folder</i>
-		</IconButton>
-		<IconButton sx={{display:"flex",flexDirection:"column"}}>
-		<Folder sx={{fontSize:"70px"}}/>
-		<i className="file-name">My folder</i>
-		</IconButton>
-		<IconButton sx={{display:"flex",flexDirection:"column"}}>
-		<Folder sx={{fontSize:"70px"}}/>
-		<i className="file-name">My folder</i>
-		</IconButton>
 		
+		<FileList folder={homePath}/>
+		<IconButton sx={{display:"flex",flexDirection:"column"}}>
+		<Folder sx={{fontSize:"70px"}}/>
+		<i className="file-name">My folder</i>
+		</IconButton>
 		</Box>
 		</Paper>
 	)

@@ -44,11 +44,8 @@ export default function FileList({folder}){
 				
 				
 			}
-			<Skeleton width="100%" height={70} animation={false}/>
-			<Skeleton width="100%" height={70} animation={false}/>
-			<Skeleton width="100%" height={70} animation={false}/>
-			<Skeleton width="100%" height={70} animation={false}/>
-			<Skeleton width="100%" height={70} animation={false}/>
+			<Skeleton width="100%" height={70} animation="wave"/>
+			<Skeleton width="100%" height={70} animation="wave"/>
 			</div>
 		)
 	}else{

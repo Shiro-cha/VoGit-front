@@ -44,7 +44,7 @@ export default function FileList({folder}){
 				
 				
 			}
-			<Skeleton />
+			<Skeleton width="100%"/>
 			<Skeleton />
 			<Skeleton />
 			</div>

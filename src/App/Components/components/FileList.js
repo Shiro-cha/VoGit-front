@@ -40,10 +40,10 @@ export default function FileList({folder}){
 		console.log("file is null")
 		return (
 			<div style={{width:"100% !important",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center"}}>
-			<Skeleton width="90%" height={70} variant="reactangular" animation="wave"/>
-			<Skeleton width="90%" height={70} variant="reactangular" animation="wave"/>
+			<Skeleton width="90%" height={70}  animation="wave"/>
+			<Skeleton width="90%" height={70}  animation="wave"/>
 			<Skeleton width="90%" height={250} variant="reactangular" animation="wave"/>
-			<Skeleton width="90%" height={70} variant="reactangular" animation="wave"/>
+			<Skeleton width="90%" height={70}  animation="wave"/>
 			<CircularProgress color="success" sx={{opacity:0.5}}/>
 			</div>
 		)

@@ -44,7 +44,6 @@ export default function FileList({folder}){
 			<Skeleton width="90%" height={70} animation="wave"/>
 			<Skeleton width="90%" height={250} animation="wave"/>
 			<Skeleton width="90%" height={70} animation="wave"/>
-			<Skeleton width="90%" height={70} animation="wave"/>
 			<CircularProgress color="success" sx={{opacity:0.5}}/>
 			</div>
 		)

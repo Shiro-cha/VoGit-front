@@ -27,7 +27,7 @@ export default function FileList({folder}){
 			}
 			setIsLoading(false)
 		}).catch(function(err){
-			console.log("error")
+			console.log(err)
 			setIsLoading(false)
 		})  
 		

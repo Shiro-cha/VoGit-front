@@ -41,7 +41,7 @@ export default function FileList({folder}){
 	}else{
 		let ListFile = ()=>{
 			return(
-   				{
+   				
 					files.map(function(file){
 						return(
 							<IconButton sx={{display:"flex",flexDirection:"column"}}>
@@ -50,7 +50,7 @@ export default function FileList({folder}){
 							</IconButton>
 						)
 					})		
-				}
+				
 			)
 			
 		}

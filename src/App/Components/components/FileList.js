@@ -22,9 +22,9 @@ export default function FileList({folder}){
 	let ActivePath = path || folder
 	 
 	
-	function openPath(path){
-		if()
-	}
+// 	function openPath(path){
+// 		if()
+// 	}
 	
 	useEffect(()=>{
 		setIsLoading(true)

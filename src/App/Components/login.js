@@ -52,7 +52,7 @@ export default function Login({setPageComponent}){
 	}
 	let api = axios.create({
 		baseURL:"http://localhost:3001",
-		headers:"Allow-Cross-Origin":"*"
+		headers:{"Allow-Cross-Origin":"*"}
 		
 	})
 	

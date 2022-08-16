@@ -19,7 +19,7 @@ export default function FileContainer({homePath}){
 		<Chip label="Memoire" sx={{cursor:"pointer"}}/>
 		</Container>
 		<Box
-		sx={{display:"flex",flexDirection:"row",flexWrap:"wrap",alignItems:"flex-start",justifyContent:"flex-start"}}
+		sx={{display:"flex",flexDirection:"row",flexWrap:"wrap",alignItems:"flex-start",justifyContent:"flex-start",height:"100%"}}
 		className="w-100"
 		>
 		

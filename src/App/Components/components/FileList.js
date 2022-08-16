@@ -12,18 +12,20 @@ import baseURL from "../../config/baseURL"
 
 
 
-export default function FileList({folder}){
+export default function FileList({path}){
 	
 	const [isLoading,setIsLoading] = useState(false)
 	const [files,setFiles]=useState([])
+	const [customPath,setCustomPath] = useState("")
 	let api = axios.create(baseURL)
+	let ActivePath = customPath || path
 	 
 	
 	
 	useEffect(()=>{
 		setIsLoading(true)
 		setFiles([])
-		api.post("/files",{path:folder}).then(function(res){ 
+		api.post("/files",{path:ActivePath}).then(function(res){ 
 			if(res.data.files){
 				setFiles(res.data.files)
 			}

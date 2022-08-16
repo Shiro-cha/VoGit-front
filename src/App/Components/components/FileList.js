@@ -22,6 +22,7 @@ export default function FileList({folder}){
 	
 	useEffect(()=>{
 		setIsLoading(true)
+		setFiles([])
 		api.post("/files",{path:folder}).then(function(res){ 
 			if(res.data.files){
 				setFiles(res.data.files)

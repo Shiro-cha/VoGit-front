@@ -38,8 +38,9 @@ export default function FileList({folder}){
 	if(files.length===0){
 		console.log("file is null")
 		return (
-			<div style={{width:"100% !important",display:"flex !important",flexDirection:"column",justifyContent:"center"}}>
+			<div style={{width:"100% !important",display:"flex",flexDirection:"column",justifyContent:"center"}}>
 			<Skeleton width="90%" height={50} animation="wave"/>
+			<Skeleton width="90%" height={250} animation="wave"/>
 			<Skeleton width="90%" height={50} animation="wave"/>
 			<CircularProgress color="inherit" sx={{opacity:0.2}}/>
 			</div>

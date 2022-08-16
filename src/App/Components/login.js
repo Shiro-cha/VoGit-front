@@ -51,7 +51,9 @@ export default function Login({setPageComponent}){
 		setOpenDialog(true) 
 	}
 	let api = axios.create({
-		baseURL:"http://localhost:3001"
+		baseURL:"http://localhost:3001",
+		headers:"Allow-Cross-Origin":"*"
+		
 	})
 	
 	function checkHostInfo(){
@@ -66,7 +68,6 @@ export default function Login({setPageComponent}){
 			}
 			setIsSendingHostInfo(false)
 		}).catch(function(err){
-			console.log(err)
 			setIsSendingHostInfo(false)
 			if(err.response.data.message){
 				setMessageFromServer(err.response.data.message)	

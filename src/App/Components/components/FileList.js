@@ -5,15 +5,16 @@ import CircularProgress from '@mui/material/CircularProgress'
 import IconButton from "@mui/material/IconButton"
 import Folder from '@mui/icons-material/Folder'
 
+//baseURL configuration
+import baseURL from "../../config/baseURL"
+
 
 
 export default function FileList({folder}){
 	
 	const [isLoading,setIsLoading] = useState(false)
 	const [files,setFiles]=useState([])
-	let api = axios.create({
-		baseURL:"http://localhost:3001"
-	})
+	let api = axios.create(baseURL)
 	 
 	
 	

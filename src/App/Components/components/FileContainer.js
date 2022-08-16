@@ -24,10 +24,6 @@ export default function FileContainer({homePath}){
 		>
 		
 		<FileList folder={homePath}/>
-		<IconButton sx={{display:"flex",flexDirection:"column"}}>
-		<Folder sx={{fontSize:"70px"}}/>
-		<i className="file-name">My folder</i>
-		</IconButton>
 		</Box>
 		</Paper>
 	)

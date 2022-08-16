@@ -184,7 +184,7 @@ export default function Explorer({remote,setPageComponent}) {
 		>
 		<DialogTitle>{`Do you really want to logout ?`}</DialogTitle>
 		<DialogActions>
-		<Button sx={{color:"#D51062"}} onClick={()=>{setOpenLogout(false);setlogoutError(true)}}>Cancel</Button>
+		<Button sx={{color:"#D51062"}} onClick={()=>{setOpenLogout(false);setlogoutError(false)}}>Cancel</Button>
 		<Button sx={{color:"#D51062"}} onClick={()=>{logout()}}>Logout</Button>
 		</DialogActions>
 		</Dialog>

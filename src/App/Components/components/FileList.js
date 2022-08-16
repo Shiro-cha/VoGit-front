@@ -1,7 +1,7 @@
 import React , {useEffect,useState} from "react"
 // axios 
 import axios from "axios"
-
+import CircularProgress from '@mui/material/CircularProgress'
 import IconButton from "@mui/material/IconButton"
 import Folder from '@mui/icons-material/Folder'
 
@@ -10,7 +10,7 @@ import Folder from '@mui/icons-material/Folder'
 export default function FileList({folder}){
 	
 	const [isLoading,setIsLoading] = useState(false)
-	console.log(folder)
+	const [files,setFiles]=useState([])
 	let api = axios.create({
 		baseURL:"http://localhost:3001"
 	})
@@ -19,12 +19,9 @@ export default function FileList({folder}){
 	
 	useEffect(()=>{
 		setIsLoading(true)
-		api.post("/files",{path:folder}).then(function(res){
-			let files = res.data
-			if(files){
-				console.log(files)
-			}else{
-				console.log("no file our directory")
+		api.post("/files",{path:folder}).then(function(res){ 
+			if(res.data.files){
+				setFiles(res.data.files)
 			}
 			setIsLoading(false)
 		}).catch(function(err){
@@ -34,9 +31,34 @@ export default function FileList({folder}){
 		
 	},[folder])
 	
-	return (
-		<>
-		Folder here!!!
-		</>
-	)
+	
+	if(!files){
+		return (
+			<>
+			<CircularProgress />
+			</>
+		)
+	}else{
+		let ListFile = ()=>{
+			return(
+   				{
+					files.map(file=>{
+						return(
+							<IconButton sx={{display:"flex",flexDirection:"column"}}>
+							<Folder sx={{fontSize:"70px"}}/>
+							<i className="file-name">{file.name}</i>
+							</IconButton>
+						)
+					})		
+				}
+			)
+			
+		}
+		return (
+			<>
+			<ListFile />
+			</>
+		)	
+	}
+	
 }

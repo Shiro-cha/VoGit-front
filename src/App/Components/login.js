@@ -51,8 +51,8 @@ export default function Login({setPageComponent}){
 		setOpenDialog(true) 
 	}
 	let api = axios.create({
-		baseURL:"http://localhost:3001",
-		headers:{"Access-Control-Allow-Origin": "*"}
+		baseURL:"http://localhost:3001"
+		//,headers:{"Access-Control-Allow-Origin": "*"}
 		
 	})
 	

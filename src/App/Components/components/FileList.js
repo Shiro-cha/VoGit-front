@@ -37,7 +37,7 @@ export default function FileList({folder}){
 		console.log("file is null")
 		return (
 			<div style={{display:"flex",justifyContent:"center",alignItems:"center",background:"black",height:"100% !important",width:"100% !important"}}> 
-			<CircularProgress />
+			<CircularProgress color="#3d3d3d"/>
 			</div>
 		)
 	}else{

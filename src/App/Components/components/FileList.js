@@ -34,6 +34,7 @@ export default function FileList({folder}){
 	
 	
 	if(!files){
+		console.log("file is null")
 		return (
 			<>
 			Loading

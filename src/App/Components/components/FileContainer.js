@@ -9,7 +9,7 @@ import Folder from '@mui/icons-material/Folder'
 //component list component
 import FileList from "./FileList"
 
-export default function FileContainer({homePath}){
+export default function FileContainer({homePath ,sep}){
 	 
 	return(
 		<Paper sx={{width:"97%",height:"100%",margin:"0 auto"}} elevation={1}>
@@ -19,7 +19,7 @@ export default function FileContainer({homePath}){
 		<Chip label="Memoire" sx={{cursor:"pointer"}}/>
 		</Container>
 		
-		<FileList folder={homePath}/>
+		<FileList folder={homePath} sep={sep}/>
 		</Paper>
 	)
 	

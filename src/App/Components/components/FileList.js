@@ -13,17 +13,19 @@ import baseURL from "../../config/baseURL"
 
 
 
-export default function FileList({folder}){
+export default function FileList({folder,sep}){
 	
 	const [isLoading,setIsLoading] = useState(false)
 	const [files,setFiles]=useState([])
 	const [path,setPath] = useState("")
 	let api = axios.create(baseURL)
 	let ActivePath = path || folder
-	 
+	console.log(ActivePath)
 	
-	function openPath(type){
-		console.log(type)
+	function openPath(type,pathname){
+		if(type==="d"){
+			setPath(`${path}${sep}${pathname}`)
+		}
 	}
 	
 	useEffect(()=>{
@@ -39,7 +41,7 @@ export default function FileList({folder}){
 			setIsLoading(false)
 		})  
 		
-	},[folder])
+	},[ActivePath])
 	
 	
 	if(files.length===0){
@@ -70,7 +72,7 @@ export default function FileList({folder}){
 					}
 					
 					return(
-						<IconButton sx={{display:"flex",flexDirection:"column"}}  onClick={()=>{openPath(file.type)}}>
+						<IconButton sx={{display:"flex",flexDirection:"column"}}  onClick={()=>{openPath(file.type,file.name)}}>
 						{fileIcon}
 						<i className="file-name">{file.name}</i>
 						</IconButton>

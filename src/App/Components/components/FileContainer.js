@@ -18,13 +18,8 @@ export default function FileContainer({homePath}){
 		<Chip label="Desktop" sx={{cursor:"pointer"}}/>
 		<Chip label="Memoire" sx={{cursor:"pointer"}}/>
 		</Container>
-		<Box
-		sx={{display:"flex",flexDirection:"row",flexWrap:"wrap",alignItems:"flex-start",justifyContent:"flex-start"}}
-		className="w-100"
-		>
 		
 		<FileList folder={homePath}/>
-		</Box>
 		</Paper>
 	)
 	

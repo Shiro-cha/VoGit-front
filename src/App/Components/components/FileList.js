@@ -43,15 +43,21 @@ export default function FileList({folder}){
 	}else{
 		let ListFile = ()=>{
 			return(
-   				
-					files.map(function(file){
-						return(
-							<IconButton sx={{display:"flex",flexDirection:"column"}}>
-							<Folder sx={{fontSize:"70px"}}/>
-							<i className="file-name">{file.name}</i>
-							</IconButton>
-						)
-					})		
+				<Box
+				sx={{display:"flex",flexDirection:"row",flexWrap:"wrap",alignItems:"flex-start",justifyContent:"flex-start",height:"100%"}}
+				className="w-100"
+				>
+				
+				{files.map(function(file){
+					return(
+						<IconButton sx={{display:"flex",flexDirection:"column"}}>
+						<Folder sx={{fontSize:"70px"}}/>
+						<i className="file-name">{file.name}</i>
+						</IconButton>
+					)
+				})	}	
+				</Box>
+					
 				
 			)
 			

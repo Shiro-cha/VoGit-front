@@ -42,7 +42,7 @@ export default function FileList({folder}){
 		let ListFile = ()=>{
 			return(
    				{
-					files.map((file)=>{
+					files.map(function(file){
 						return(
 							<IconButton sx={{display:"flex",flexDirection:"column"}}>
 							<Folder sx={{fontSize:"70px"}}/>

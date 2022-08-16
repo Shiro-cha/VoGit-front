@@ -42,7 +42,7 @@ export default function FileList({folder}){
 			<Skeleton width="90%" height={50} animation="wave"/>
 			<Skeleton width="90%" height={250} animation="wave"/>
 			<Skeleton width="90%" height={50} animation="wave"/>
-			<CircularProgress color="success" sx={{opacity:0.2}}/>
+			<CircularProgress color="success" sx={{opacity:0.5}}/>
 			</div>
 		)
 	}else{

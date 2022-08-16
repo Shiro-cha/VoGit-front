@@ -44,9 +44,11 @@ export default function FileList({folder}){
 				
 				
 			}
-			<Skeleton width="100%" height={120}/>
-			<Skeleton width="100%" height={120}/>
-			<Skeleton width="100%" height={120}/>
+			<Skeleton width="100%" height={70}/>
+			<Skeleton width="100%" height={70}/>
+			<Skeleton width="100%" height={70}/>
+			<Skeleton width="100%" height={70}/>
+			<Skeleton width="100%" height={70}/>
 			</div>
 		)
 	}else{

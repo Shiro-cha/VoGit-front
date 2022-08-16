@@ -46,7 +46,7 @@ export default function FileList({folder}){
 			}
 			<Skeleton width="90%" height={50} animation="wave"/>
 			<Skeleton width="90%" height={50} animation="wave"/>
-			<CircularProgress color="inherit"/>
+			<CircularProgress color="inherit" sx={{opacity:0.5}}/>
 			</div>
 		)
 	}else{

@@ -38,7 +38,7 @@ export default function FileList({folder}){
 	if(files.length===0){
 		console.log("file is null")
 		return (
-			<div style={{height:"100% !important",width:"100% !important"}}> 
+			<div style={{height:"100% !important",width:"100% !important",display:"flex",flexDirection:"column",justifyContent:"center"}}> 
 			{
 				//<CircularProgress/>
 				

@@ -28,6 +28,8 @@ import "../css/login.css"
 // next page here
 import Explorer from "./explorer"
 
+//baseURL configuration
+import baseURL from "../config/baseURL"
 
 export default function Login({setPageComponent}){
 	const [isSendingHostInfo,setIsSendingHostInfo] = useState(false)
@@ -50,11 +52,7 @@ export default function Login({setPageComponent}){
 	function showPassWordDialog(e){
 		setOpenDialog(true) 
 	}
-	let api = axios.create({
-		baseURL:"http://54.218.48.9:3001"
-		//,headers:{"Access-Control-Allow-Origin": "*"}
-		
-	})
+	let api = axios.create(baseURL)
 	
 	function checkHostInfo(){
 		setOpenDialog(false)

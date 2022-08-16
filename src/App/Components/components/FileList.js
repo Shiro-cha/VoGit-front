@@ -20,7 +20,7 @@ export default function FileList({homePath,sep}){
 	const [path,setPath] = useState("")
 	let api = axios.create(baseURL)
 	let ActivePath = path ==="" ? homePath : path
-	console.log(homePath)
+	console.log(ActivePath)
 	
 	function openPath(type,pathname,path,sep){
 		if(type==="d"){

@@ -10,7 +10,7 @@ import Folder from '@mui/icons-material/Folder'
 import FileList from "./FileList"
 
 export default function FileContainer({homePath ,sep}){
-	 
+	console.log(homePath)
 	return(
 		<Paper sx={{width:"97%",height:"100%",margin:"0 auto"}} elevation={1}>
 		<Container sx={{transform:"translate(0%,-50%) !important"}}>

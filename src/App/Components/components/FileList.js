@@ -13,14 +13,14 @@ import baseURL from "../../config/baseURL"
 
 
 
-export default function FileList({folder,sep}){
+export default function FileList({homePath,sep}){
 	
 	const [isLoading,setIsLoading] = useState(false)
 	const [files,setFiles]=useState([])
 	const [path,setPath] = useState("")
 	let api = axios.create(baseURL)
-	let ActivePath = path || folder
-	console.log(folder)
+	let ActivePath = path ==="" ? homePath : path
+	console.log(homePath)
 	
 	function openPath(type,pathname,path,sep){
 		if(type==="d"){

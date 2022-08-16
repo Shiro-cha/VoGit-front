@@ -6,6 +6,7 @@ import Box from '@mui/material/Box'
 import Skeleton from '@mui/material/Skeleton'
 import IconButton from "@mui/material/IconButton"
 import Folder from '@mui/icons-material/Folder'
+import FlashOn from '@mui/icons-material/FlashOn'
 
 //baseURL configuration
 import baseURL from "../../config/baseURL"
@@ -21,6 +22,9 @@ export default function FileList({folder}){
 	let ActivePath = path || folder
 	 
 	
+	function openPath(path){
+		if()
+	}
 	
 	useEffect(()=>{
 		setIsLoading(true)
@@ -58,9 +62,16 @@ export default function FileList({folder}){
 				>
 				
 				{files.map(function(file){
+					let fileIcon = <FlashOn/>
+					switch(file.type){
+						case "d":
+							fileIcon = <Folder sx={{fontSize:"70px"}}/>
+							
+					}
+					
 					return(
 						<IconButton sx={{display:"flex",flexDirection:"column"}}>
-						<Folder sx={{fontSize:"70px"}}/>
+						{fileIcon}
 						<i className="file-name">{file.name}</i>
 						</IconButton>
 					)

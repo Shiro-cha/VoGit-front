@@ -41,9 +41,12 @@ export default function FileList({folder}){
 			<div style={{display:"flex",justifyContent:"center",alignItems:"center",height:"100% !important",width:"100% !important"}}> 
 			{
 				//<CircularProgress/>
-				<Skeleton/>
+				
 				
 			}
+			<Skeleton />
+			<Skeleton />
+			<Skeleton />
 			</div>
 		)
 	}else{

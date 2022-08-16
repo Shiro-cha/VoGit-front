@@ -33,7 +33,7 @@ export default function FileList({folder}){
 	},[folder])
 	
 	
-	if(!files){
+	if(files.length===0){
 		console.log("file is null")
 		return (
 			<>

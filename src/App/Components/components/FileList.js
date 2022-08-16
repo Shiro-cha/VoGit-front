@@ -36,7 +36,7 @@ export default function FileList({folder}){
 	if(!files){
 		return (
 			<>
-			<CircularProgress />
+			Loading
 			</>
 		)
 	}else{

@@ -45,7 +45,7 @@ export default function FileList({folder}){
 		let ListFile = ()=>{
 			return(
 				<Box
-				sx={{display:"flex",flexDirection:"row",flexWrap:"wrap",alignItems:"flex-start",justifyContent:"flex-start",height:"100%"}}
+				sx={{display:"flex",flexDirection:"row",flexWrap:"wrap",alignItems:"flex-start",justifyContent:"flex-start"}}
 				className="w-100"
 				>
 				

@@ -22,7 +22,7 @@ export default function FileList({folder,sep}){
 	let ActivePath = path || folder
 	console.log(ActivePath)
 	
-	function openPath(type,pathname){
+	function openPath(type,pathname,path,sep){
 		if(type==="d"){
 			setPath(`${path}${sep}${pathname}`)
 		}
@@ -72,7 +72,7 @@ export default function FileList({folder,sep}){
 					}
 					
 					return(
-						<IconButton sx={{display:"flex",flexDirection:"column"}}  onClick={()=>{openPath(file.type,file.name)}}>
+						<IconButton sx={{display:"flex",flexDirection:"column"}}  onClick={()=>{openPath(file.type,file.name,path,sep)}}>
 						{fileIcon}
 						<i className="file-name">{file.name}</i>
 						</IconButton>

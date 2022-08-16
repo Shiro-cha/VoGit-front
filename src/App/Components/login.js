@@ -26,7 +26,7 @@ import DialogActions from "@mui/material/DialogActions"
 import "../css/login.css"
 
 // next page here
-import Explorer from "./explorer"
+import Explorer from "./explorer" 
 
 //baseURL configuration
 import baseURL from "../config/baseURL"

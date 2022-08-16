@@ -31,6 +31,10 @@ import CloudDownload from '@mui/icons-material/CloudDownload';
 
 import axios from "axios"
 
+//baseURL configuration
+import baseURL from "../config/baseURL"
+
+
 // next page here
 import Login from "./login"
 //components pages
@@ -60,9 +64,7 @@ export default function Explorer({remote,setPageComponent}) {
 	
 	//create api
 	
-	let api = axios.create({
-		baseURL:"http://localhost:3001"
-	})
+	let api = axios.create(baseURL)
 	
 	//ref to set active style
 	let home = useRef(null)

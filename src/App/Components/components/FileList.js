@@ -37,7 +37,7 @@ export default function FileList({folder}){
 		console.log("file is null")
 		return (
 			<>
-			Loading
+			<CircularProgress />
 			</>
 		)
 	}else{

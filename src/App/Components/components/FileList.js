@@ -22,9 +22,9 @@ export default function FileList({folder}){
 	let ActivePath = path || folder
 	 
 	
-// 	function openPath(path){
-// 		if()
-// 	}
+	function openPath(type){
+		console.log(type)
+	}
 	
 	useEffect(()=>{
 		setIsLoading(true)
@@ -70,7 +70,7 @@ export default function FileList({folder}){
 					}
 					
 					return(
-						<IconButton sx={{display:"flex",flexDirection:"column"}}>
+						<IconButton sx={{display:"flex",flexDirection:"column"}}  onClick={()=>{openPath(file.type)}}>
 						{fileIcon}
 						<i className="file-name">{file.name}</i>
 						</IconButton>

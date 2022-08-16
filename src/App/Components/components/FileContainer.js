@@ -19,7 +19,7 @@ export default function FileContainer({homePath ,sep}){
 		<Chip label="Memoire" sx={{cursor:"pointer"}}/>
 		</Container>
 		
-		<FileList folder={homePath} sep={sep}/>
+		<FileList homePath={homePath} sep={sep}/>
 		</Paper>
 	)
 	

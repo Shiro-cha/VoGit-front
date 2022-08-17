@@ -44,7 +44,7 @@ export default function FileList({homePath,sep}){
 	
 	useEffect(()=>{
 		
-		openPath("d",homePath,sep)
+		openPath("d","","")
 		
 	},[homePath])
 	

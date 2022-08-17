@@ -20,7 +20,7 @@ export default function FileContainer({homePath ,sep,headFolder,setHeadFolder}){
 			
 		}
 		console.log(headFolder)
-	},[headFolder])
+	},[])
 	
 	if(myHead.length > 0){
 		

@@ -13,12 +13,12 @@ import baseURL from "../../config/baseURL"
 
 
 
-export default function FileList({homePath,sep}){
+export default function FileList({homePath,separator}){
 	
 	const [isLoading,setIsLoading] = useState(false)
 	const [files,setFiles]=useState([])
 	const [path,setPath] = useState("")
-	const [sep,setSep] =useState(sep)
+	//const [sep,setSep] =useState(sep)
 	
 	let api = axios.create(baseURL)
 	let ActivePath = path ==="" ? homePath : path

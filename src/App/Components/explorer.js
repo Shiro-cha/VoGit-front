@@ -72,7 +72,7 @@ export default function Explorer({remote,setPageComponent}) {
 	const [activeElement,setActiveElement] = useState(home)
 	
 	//state to set right component
-	const [rightComponent,setRightComponent] = useState(<FileContainer />)
+	const [rightComponent,setRightComponent] = useState(<FileContainer homePath={homePath} sep={sep}/>)
 	
 	//logout handeler confimation
 	

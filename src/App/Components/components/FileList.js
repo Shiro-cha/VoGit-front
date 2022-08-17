@@ -6,6 +6,7 @@ import Box from '@mui/material/Box'
 import Skeleton from '@mui/material/Skeleton'
 import IconButton from "@mui/material/IconButton"
 import Folder from '@mui/icons-material/Folder'
+import File from '@mui/icons-material/File'
 import FlashOn from '@mui/icons-material/FlashOn'
 
 //baseURL configuration
@@ -81,7 +82,9 @@ export default function FileList({homePath,sep}){
 					switch(file.type){
 						case "d":
 							fileIcon = <Folder sx={{fontSize:"70px"}}/>
-							
+							break
+						case "-":
+							fileIcon = <File sx={{fontSize:"70px"}}/>
 					}
 					
 					return(

@@ -38,7 +38,7 @@ export default function FileList({homePath,sep}){
 				console.log(err)
 				setIsLoading(false)
 			}) 
-			setPath(`${path}${sep}${pathname}${sep}`)
+			setPath(`${path}${pathname}`)
 		}
 	}
 	

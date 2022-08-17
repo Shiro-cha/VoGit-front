@@ -62,7 +62,7 @@ export default function Explorer({remote,setPageComponent}) {
 	const [homePath,setHomePath] = useState(remote.path.home)
 	const [headFolder,setHeadFolder] = useState(remote.path.home)
 	const [sep,setSep] = useState(remote.path.sep)
-	//create api
+	//create api 
 	let api = axios.create(baseURL)
 	
 	//ref to set active style

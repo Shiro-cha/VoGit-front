@@ -19,7 +19,7 @@ export default function FileList({homePath,sep}){
 	const [files,setFiles]=useState([])
 	const [path,setPath] = useState("")
 	const [sep,setSep] =useState(sep)
-	const [homePath,setHomePath] =useState(homePath)
+	
 	let api = axios.create(baseURL)
 	let ActivePath = path ==="" ? homePath : path
 	

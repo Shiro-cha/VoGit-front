@@ -25,11 +25,11 @@ export default function FileList({homePath,sep}){
 	
 	
 	
-	function openPath(type,pathname,path){
+	function openPath(type,pathname,path,sep){
 		if(type==="d"){
 			setIsLoading(true)
 			setFiles([])
-			api.post("/files",{path:`${path}${pathname}`}).then(function(res){ 
+			api.post("/files",{path:`${path}${sep}${pathname}`}).then(function(res){ 
 				if(res.data.files){
 					setFiles(res.data.files) 
 				}
@@ -85,7 +85,7 @@ export default function FileList({homePath,sep}){
 					}
 					
 					return(
-						<IconButton sx={{display:"flex",flexDirection:"column"}}  onClick={()=>{openPath(file.type,file.name,file.path)}}>
+						<IconButton sx={{display:"flex",flexDirection:"column"}}  onClick={()=>{openPath(file.type,file.name,file.path,sep)}}>
 						{fileIcon}
 						<i className="file-name">{file.name}</i>
 						</IconButton>

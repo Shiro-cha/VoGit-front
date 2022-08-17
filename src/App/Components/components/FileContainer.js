@@ -11,12 +11,11 @@ import Folder from '@mui/icons-material/Folder'
 import FileList from "./FileList"
 
 export default function FileContainer({homePath ,sep,headFolder,setHeadFolder}){
-	console.log(homePath)
 	let myHead = []
 	let MyHeadEl = null
 	
 	useEffect(()=>{
-		console.log(headFolder)
+		console.log("headFolder")
 		if(headFolder){
 			myHead = headFolder.split(sep)
 		}

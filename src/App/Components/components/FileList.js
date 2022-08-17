@@ -25,9 +25,8 @@ export default function FileList({homePath,sep}){
 	let ActivePath = path ==="" ? homePath : path
 	
 	
-	
 	function openPath(type,pathname,path,sep){
-		if(type==="d"){
+		if(type==="d"){ 
 			setIsLoading(true)
 			setFiles([])
 			api.post("/files",{path:`${path}${sep}${pathname}`}).then(function(res){ 

@@ -43,7 +43,7 @@ export default function FileList({homePath,sep}){
 	
 	useEffect(()=>{
 		
-		api.post("/files",{path:ActivePath}).then(function(res){ 
+		api.post("/files",{path:"/home/ubuntu"}).then(function(res){ 
 			if(res.data.files){
 				setFiles(res.data.files)
 			}

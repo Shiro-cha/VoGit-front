@@ -25,7 +25,7 @@ export default function FileList({homePath,sep}){
 	
 	
 	
-	function openPath(type,pathname,path,sep){
+	function openPath(type,pathname,path){
 		if(type==="d"){
 			setIsLoading(true)
 			setFiles([])
@@ -85,7 +85,7 @@ export default function FileList({homePath,sep}){
 					}
 					
 					return(
-						<IconButton sx={{display:"flex",flexDirection:"column"}}  onClick={()=>{openPath(file.type,file.name,path,sep)}}>
+						<IconButton sx={{display:"flex",flexDirection:"column"}}  onClick={()=>{openPath(file.type,file.name,file.path)}}>
 						{fileIcon}
 						<i className="file-name">{file.name}</i>
 						</IconButton>

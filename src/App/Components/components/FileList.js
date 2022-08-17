@@ -13,7 +13,7 @@ import baseURL from "../../config/baseURL"
 
 
 
-export default function FileList({homePath,separator}){
+export default function FileList({homePath,sep}){
 	
 	const [isLoading,setIsLoading] = useState(false)
 	const [files,setFiles]=useState([])

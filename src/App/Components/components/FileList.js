@@ -22,7 +22,6 @@ export default function FileList({homePath,sep}){
 	let ActivePath = path ==="" ? homePath : path
 	console.log(sep)
 	
-	function()
 	
 	
 	function openPath(type,pathname,path,sep){
@@ -44,7 +43,15 @@ export default function FileList({homePath,sep}){
 	
 	useEffect(()=>{
 		
-		openPath("d",)
+		api.post("/files",{path:ActivePath}).then(function(res){ 
+			if(res.data.files){
+				setFiles(res.data.files)
+			}
+			setIsLoading(false)
+		}).catch(function(err){
+			console.log(err)
+			setIsLoading(false)
+		}) 
 		
 	},[homePath])
 	

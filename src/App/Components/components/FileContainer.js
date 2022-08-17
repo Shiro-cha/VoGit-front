@@ -17,10 +17,10 @@ export default function FileContainer({homePath ,sep,headFolder,setHeadFolder}){
 	useEffect(()=>{
 		if(headFolder){
 			myHead = headFolder.split(sep)
-			console.log(myHead)
+			
 		}
 	},[headFolder])
-	
+	console.log(myHead)
 	
 	if(myHead.length > 0){
 		

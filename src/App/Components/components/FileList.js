@@ -29,7 +29,7 @@ export default function FileList({homePath,sep}){
 		if(type==="d"){
 			setIsLoading(true)
 			setFiles([])
-			api.post("/files",{path:`${path}${sep}${pathname}${sep}`}).then(function(res){ 
+			api.post("/files",{path:`${path}${pathname}`}).then(function(res){ 
 				if(res.data.files){
 					setFiles(res.data.files)
 				}

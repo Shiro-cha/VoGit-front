@@ -19,6 +19,7 @@ export default function FileContainer({homePath ,sep,headFolder,setHeadFolder}){
 			setMyHead(headFolder.split(sep))
 			
 		}
+		console.log(headFolder)
 	},[headFolder])
 	
 	if(myHead.length > 0){

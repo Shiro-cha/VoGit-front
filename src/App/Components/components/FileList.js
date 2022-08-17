@@ -22,26 +22,31 @@ export default function FileList({homePath,sep}){
 	let ActivePath = path ==="" ? homePath : path
 	console.log(sep)
 	
+	function()
+	
+	
 	function openPath(type,pathname,path,sep){
 		if(type==="d"){
+			setIsLoading(true)
+			setFiles([])
+			api.post("/files",{path:ActivePath}).then(function(res){ 
+				if(res.data.files){
+					setFiles(res.data.files)
+				}
+				setIsLoading(false)
+			}).catch(function(err){
+				console.log(err)
+				setIsLoading(false)
+			}) 
 			setPath(`${path}${sep}${pathname}`)
 		}
 	}
 	
 	useEffect(()=>{
-		setIsLoading(true)
-		setFiles([])
-		api.post("/files",{path:ActivePath}).then(function(res){ 
-			if(res.data.files){
-				setFiles(res.data.files)
-			}
-			setIsLoading(false)
-		}).catch(function(err){
-			console.log(err)
-			setIsLoading(false)
-		})  
 		
-	},[ActivePath])
+		openPath("d",)
+		
+	},[homePath])
 	
 	
 	if(files.length===0){

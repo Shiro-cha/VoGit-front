@@ -57,10 +57,10 @@ export default function Explorer({remote,setPageComponent}) {
 	
 	//clientInformation
 	
-	let hostname = remote.host.hostname
-	let username = remote.host.username
-	let homePath = remote.path.home
-	let sep = remote.path.sep
+	const [hostname,setHostname] = useState(remote.host.hostname)
+	const [username,setUsername] = useState(remote.host.username)
+	const [homePath,setHomePath] = useState(remote.path.home)
+	const [sep,setSep] = useState(remote.path.sep)
 	//create api
 	
 	let api = axios.create(baseURL)

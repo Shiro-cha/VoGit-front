@@ -180,7 +180,7 @@ export default function Login({setPageComponent}){
 		<DialogContentText id="alert-dialog-slide-description">
 		
 		<Input type="password" id="password" placeholder="Type your password" sx={{width:"100%",marginBottom:"30px"}} name="password" onChange={handleOnChange} value={password}
-		error={errorpassword} />
+		error={errorpassword} autofocus />
 		
 		</DialogContentText>
 		</DialogContent>

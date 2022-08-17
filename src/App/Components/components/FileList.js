@@ -14,7 +14,7 @@ import baseURL from "../../config/baseURL"
 
 
 
-export default function FileList({homePath,sep}){
+export default function FileList({homePath,sep,setHeadFolder}){
 	
 	const [isLoading,setIsLoading] = useState(false)
 	const [files,setFiles]=useState([])
@@ -22,7 +22,6 @@ export default function FileList({homePath,sep}){
 	//const [sep,setSep] =useState(sep)
 	
 	let api = axios.create(baseURL)
-	let ActivePath = path ==="" ? homePath : path
 	
 	
 	function openPath(type,pathname,path,sep){
@@ -39,12 +38,13 @@ export default function FileList({homePath,sep}){
 				setIsLoading(false)
 			}) 
 			setPath(`${path}${pathname}`)
+			setHeadFolder(path)
 		}
 	}
 	
 	useEffect(()=>{
 		console.log("Opening home")
-		openPath("d","","","")
+		openPath("d",path,"","")
 		
 	},[homePath])
 	

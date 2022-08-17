@@ -60,6 +60,7 @@ export default function Explorer({remote,setPageComponent}) {
 	const [hostname,setHostname] = useState(remote.host.hostname)
 	const [username,setUsername] = useState(remote.host.username)
 	const [homePath,setHomePath] = useState(remote.path.home)
+	const [headFolder,setHeadFolder] = useState(remote.path.home)
 	const [sep,setSep] = useState(remote.path.sep)
 	//create api
 	
@@ -72,7 +73,7 @@ export default function Explorer({remote,setPageComponent}) {
 	const [activeElement,setActiveElement] = useState(home)
 	
 	//state to set right component
-	const [rightComponent,setRightComponent] = useState(<FileContainer homePath={homePath} sep={sep}/>)
+	const [rightComponent,setRightComponent] = useState(<FileContainer homePath={homePath} sep={sep} headFolder={headFolder} setHeadFolder={setHeadFolder}/>)
 	
 	//logout handeler confimation
 	
@@ -138,8 +139,8 @@ export default function Explorer({remote,setPageComponent}) {
 		 
 		 sx={{height:"100%",padding:"5px"}}
 		 >
-		 <div className="list-item active" ref={home} onClick={(e)=>{changeActive(home,activeElement,setActiveElement);setRightComponent(<FileContainer homePath={homePath} sep={sep}/>)}}><Home className="icon"/><span className="responsive-menu"> <Typography sx={{ fontWeight: 500 ,display:"inline"}}>&nbsp;My Home</Typography></span></div>
-		 <div className="list-item" ref={hostDistant} onClick={(e)=>{changeActive(hostDistant,activeElement,setActiveElement);setRightComponent(<FileContainer homePath={homePath} sep={sep}/>)}}><Computer className="icon"/><span className="responsive-menu"><Typography sx={{ fontWeight: 500 ,display:"inline"}}> &nbsp;{hostname}</Typography></span></div>
+		 <div className="list-item active" ref={home} onClick={(e)=>{changeActive(home,activeElement,setActiveElement);setRightComponent(<FileContainer homePath={homePath} sep={sep} headFolder={headFolder} setHeadFolder={setHeadFolder}/>)}}><Home className="icon"/><span className="responsive-menu"> <Typography sx={{ fontWeight: 500 ,display:"inline"}}>&nbsp;My Home</Typography></span></div>
+		 <div className="list-item" ref={hostDistant} onClick={(e)=>{changeActive(hostDistant,activeElement,setActiveElement);setRightComponent(<FileContainer homePath={homePath} sep={sep} headFolder={headFolder} setHeadFolder={setHeadFolder}/>)}}><Computer className="icon"/><span className="responsive-menu"><Typography sx={{ fontWeight: 500 ,display:"inline"}}> &nbsp;{hostname}</Typography></span></div>
 		 <div className="list-item" ref={history} onClick={(e)=>{changeActive(history,activeElement,setActiveElement);setRightComponent(<HistoryContainer />)}}><History className="icon"/><span className="responsive-menu"> <Typography sx={{ fontWeight: 500 ,display:"inline"}}> &nbsp;Histories</Typography ></span></div>
 		 <div className="list-item" onClick={()=>{setOpenLogout(true)}}><Logout className="icon"/><span className="responsive-menu"><Typography sx={{ fontWeight: 500 ,display:"inline"}}> &nbsp;Logout</Typography></span></div>
 		 </Stack>

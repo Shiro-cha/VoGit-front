@@ -24,7 +24,7 @@ export default function FileList({homePath,sep,setHeadFolder}){
 	let api = axios.create(baseURL)
 	
 	
-	function openPath(type,pathname,path,sep){
+	function openPath(type,pathname,path,sep,setHeadFolder){
 		if(type==="d"){ 
 			setIsLoading(true)
 			setFiles([])
@@ -44,7 +44,7 @@ export default function FileList({homePath,sep,setHeadFolder}){
 	
 	useEffect(()=>{
 		console.log("Opening home")
-		openPath("d",path,"","")
+		openPath("d",path,"","",setHeadFolder)
 		
 	},[homePath])
 	
@@ -79,7 +79,7 @@ export default function FileList({homePath,sep,setHeadFolder}){
 					}
 					
 					return(
-						<IconButton sx={{display:"flex",flexDirection:"column"}}  onClick={()=>{openPath(file.type,file.name,file.path,sep)}}>
+						<IconButton sx={{display:"flex",flexDirection:"column"}}  onClick={()=>{openPath(file.type,file.name,file.path,sep,setHeadFolder)}}>
 						{fileIcon}
 						<i className="file-name">{file.name}</i>
 						</IconButton>

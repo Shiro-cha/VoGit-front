@@ -20,12 +20,12 @@ export default function FileContainer({homePath ,sep,headFolder,setHeadFolder}){
 			
 		}
 	},[headFolder])
-	console.log(myHead)
 	
 	if(myHead.length > 0){
 		
 		MyHeadEl = ()=>{
 			myHead.map(function(value){
+				console.log("my headd")
 				return(
 					<Chip label={value} sx={{cursor:"pointer"}}/>
 				)

@@ -35,7 +35,7 @@ export default function FileContainer({homePath ,sep,headFolder,setHeadFolder}){
 	}else{
 		MyHeadEl = ()=>{
 			return (
-				<Skeleton width=130 height=70/>
+				<Skeleton width={130} height={70}/>
 			)
 		}
 	}

@@ -24,14 +24,14 @@ export default function FileContainer({homePath ,sep,headFolder,setHeadFolder}){
 	if(myHead.length > 0){
 		
 		MyHeadEl = ()=>{
-			<>
-			myHead.map(function(value){
+			return(<>
+			{myHead.map(function(value){
 				console.log("my headd")
 				return(
 					<Chip label={value} sx={{cursor:"pointer"}}/>
 				)
-			})
-			</>
+			})}
+			</>)
 		}
 		
 	}else{

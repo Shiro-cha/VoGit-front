@@ -44,7 +44,7 @@ export default function FileList({homePath,sep}){
 	
 	useEffect(()=>{
 		console.log("Opening home")
-		openPath("d","","")
+		openPath("d","","","")
 		
 	},[homePath])
 	

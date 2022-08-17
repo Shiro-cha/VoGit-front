@@ -20,7 +20,6 @@ export default function FileList({homePath,sep}){
 	const [path,setPath] = useState("")
 	let api = axios.create(baseURL)
 	let ActivePath = path ==="" ? homePath : path
-	console.log(sep)
 	
 	
 	
@@ -37,7 +36,7 @@ export default function FileList({homePath,sep}){
 				console.log(err)
 				setIsLoading(false)
 			}) 
-			setPath(`${path}${sep}${pathname}`)
+			setPath(`${path}${sep}${pathname}${sep}`)
 		}
 	}
 	

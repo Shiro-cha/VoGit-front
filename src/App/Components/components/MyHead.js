@@ -4,16 +4,13 @@ import Skeleton from "@mui/material/Skeleton"
 
 function MyHeadEl({myHead,setCurrentFolder,sep,currentFolder}){
 	if(myHead.length > 0){
-		let headPath ="/"
+		let headPath =""
  			return(
 			
 			myHead.map(function(value){
 				if(value){
 					headPath = headPath+value+sep
-					console.log("!!!headPath!!!")
-					console.log(headPath) 
-					console.log("!!!value!!!")
-					console.log(value)
+					console.log(myHead)
 					return(
 						<Chip label={value} sx={{cursor:"pointer"}} onClick={()=>{setCurrentFolder(headPath)}}/>
 					)	

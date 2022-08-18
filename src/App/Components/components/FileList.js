@@ -54,7 +54,7 @@ export default function FileList({currentFolder,setCurrentFolder,sep}){
 		console.log("Opening home")
 		openPath("d",currentFolder,"","",setCurrentFolder)
 		
-	},[homePath])
+	},[currentFolder])
 	
 	
 	if(files.length===0 && !alreadyGet){

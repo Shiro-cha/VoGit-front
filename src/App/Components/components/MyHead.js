@@ -1,4 +1,5 @@
 import Chip from "@mui/material/Chip"
+import Skeleton from "@mui/material/Skeleton"
 
 function MyHeadEl({myHead}){
 	if(myHead.length > 0){

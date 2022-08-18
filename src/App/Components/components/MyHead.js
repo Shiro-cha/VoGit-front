@@ -1,4 +1,4 @@
-
+import Chip from "@mui/material/Chip"
 
 function MyHeadEl({myHead}){
 	if(myHead.length > 0){

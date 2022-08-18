@@ -6,14 +6,14 @@ function MyHeadEl({myHead}){
 	if(myHead.length > 0){
 		
  			return(
-			{myHead.map(function(value){
+			myHead.map(function(value){
 				if(value){
 					return(
 						<Chip label={value} sx={{cursor:"pointer"}}/>
 					)	
 				}
 				
-			})}
+			})
  			)
 		
 		

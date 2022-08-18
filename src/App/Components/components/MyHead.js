@@ -9,7 +9,7 @@ function MyHeadEl({myHead,setCurrentFolder,sep,currentFolder}){
 			
 			myHead.map(function(value){
 				if(value){
-					headPath = headPath+value
+					console.log(myHead)
 					return(
 						<Chip label={value} sx={{cursor:"pointer"}} onClick={()=>{setCurrentFolder(headPath);console.log(currentFolder);console.log(value)}}/>
 					)	

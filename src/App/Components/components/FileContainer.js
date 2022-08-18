@@ -38,7 +38,7 @@ export default function FileContainer({homePath ,sep,headFolder,setHeadFolder}){
 		}
 		
 	}else{
-		MyHeadEl = ()=>{
+		MyHeadEl = ({headFolder})=>{
 			return (
 				<Skeleton width={130} height={70}/>
 			)
@@ -47,7 +47,7 @@ export default function FileContainer({homePath ,sep,headFolder,setHeadFolder}){
 	return(
 		<Paper sx={{width:"97%",height:"100%",margin:"0 auto"}} elevation={1}>
 		<Container sx={{transform:"translate(0%,-50%) !important"}}>
-		<MyHeadEl />
+		<MyHeadEl headFolder={headFolder}/>
 		</Container>
 		
 		<FileList homePath={homePath} sep={sep} setHeadFolder={setHeadFolder}/>

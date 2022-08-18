@@ -9,12 +9,11 @@ import Folder from '@mui/icons-material/Folder'
 
 //component list component
 import FileList from "./FileList"
-import MyHead from "./MyHead"
+import MyHeadEl from "./MyHead"
 
 export default function FileContainer({homePath ,sep}){
 	const [currentFolder,setCurrentFolder] = useState(homePath)
 	const [myHead,setMyHead] = useState([])
-	let MyHeadEl = null
 	
 	useEffect(()=>{
 		if(currentFolder){

@@ -11,47 +11,26 @@ import Folder from '@mui/icons-material/Folder'
 import FileList from "./FileList"
 import MyHead from "./MyHead"
 
-export default function FileContainer({homePath ,sep,headFolder,setHeadFolder}){
+export default function FileContainer({homePath ,sep}){
+	const [currentFolder,setCurrentFolder] = useState(homePath)
 	const [myHead,setMyHead] = useState([])
 	let MyHeadEl = null
 	
 	useEffect(()=>{
 		if(headFolder){
-			setMyHead(headFolder.split(sep))
+			setMyHead(currentFolder.split(sep))
 			
 		}
-		console.log(headFolder)
-	},[headFolder])
+	},[currentFolder])
 	
-	if(myHead.length > 0){
-		
-		MyHeadEl = ()=>{
-			return(<>
-			{myHead.map(function(value){
-				if(value){
-					return(
-						<Chip label={value} sx={{cursor:"pointer"}}/>
-					)	
-				}
-				
-			})}
-			</>)
-		}
-		
-	}else{
-		MyHeadEl = ({headFolder})=>{
-			return (
-				<Skeleton width={130} height={70}/>
-			)
-		}
-	}
+	
 	return(
 		<Paper sx={{width:"97%",height:"100%",margin:"0 auto"}} elevation={1}>
 		<Container sx={{transform:"translate(0%,-50%) !important"}}>
 		<MyHeadEl myHead={myHead}/>
 		</Container>
 		
-		<FileList homePath={homePath} sep={sep} setHeadFolder={setHeadFolder}/>
+		<FileList currentFolder={currentFolder} setCurrentFolder={setCurrentFolder}  sep={sep} />
 		</Paper>
 	)
 	

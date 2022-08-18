@@ -3,6 +3,7 @@ import React , {useEffect,useState} from "react"
 import axios from "axios"
 import CircularProgress from '@mui/material/CircularProgress'
 import Box from '@mui/material/Box'
+import Typography from '@mui/material/Typography'
 import Skeleton from '@mui/material/Skeleton'
 import IconButton from "@mui/material/IconButton"
 import Folder from '@mui/icons-material/Folder'
@@ -14,31 +15,37 @@ import baseURL from "../../config/baseURL"
 
 
 
-export default function FileList({homePath,sep,setHeadFolder}){
+export default function FileList({currentFolder,setCurrentFolder,sep}){
 	
 	const [isLoading,setIsLoading] = useState(false)
 	const [files,setFiles]=useState([])
-	const [path,setPath] = useState("")
+	const [alreadyGet,setAlreadyGet] = useState(false)
+
 	//const [sep,setSep] =useState(sep)
 	
 	let api = axios.create(baseURL)
 	
 	
-	function openPath(type,pathname,path,sep,setHeadFolder){
+	function openPath(type,filename,path,sep,setHeadFolder){
 		if(type==="d"){ 
 			setIsLoading(true)
 			setFiles([])
-			api.post("/files",{path:`${path}${sep}${pathname}`}).then(function(res){ 
+			setAlreadyGet(false)
+			api.post("/files",{path:`${path}${sep}${filename}`}).then(function(res){ 
 				if(res.data.files){
-					setFiles(res.data.files) 
+					setFiles(res.data.files)
+					setCurrentFolder(`${path}${filename}`)
+				}else{
+					setAlreadyGet(true)
 				}
 				setIsLoading(false)
 			}).catch(function(err){
 				console.log(err)
 				setIsLoading(false)
+				setAlreadyGet(false)
 			})  
-			setHeadFolder(`${path}${pathname}`)
-			setPath(`${path}${pathname}`)
+			
+			
 			
 		}
 	}
@@ -50,7 +57,7 @@ export default function FileList({homePath,sep,setHeadFolder}){
 	},[homePath])
 	
 	
-	if(files.length===0){
+	if(files.length===0 && !alreadyGet){
 		console.log("file is null")
 		return (
 			<div style={{width:"100% !important",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center"}}>
@@ -61,6 +68,14 @@ export default function FileList({homePath,sep,setHeadFolder}){
 			<CircularProgress color="success" sx={{opacity:0.5}}/>
 			</div>
 		)
+	}else if(files.length===0){
+		
+		return(
+			<Typography>
+			Empty folder
+			</Typography>	
+		)
+		
 	}else{
 		let ListFile = ()=>{
 			return(

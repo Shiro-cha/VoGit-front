@@ -37,8 +37,9 @@ export default function FileList({homePath,sep,setHeadFolder}){
 				console.log(err)
 				setIsLoading(false)
 			})  
+			setHeadFolder(`${path}${pathname}`)
 			setPath(`${path}${pathname}`)
-			setHeadFolder(path)
+			
 		}
 	}
 	

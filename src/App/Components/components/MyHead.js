@@ -5,16 +5,16 @@ import Skeleton from "@mui/material/Skeleton"
 function MyHeadEl({myHead}){
 	if(myHead.length > 0){
 		
-// 			return(<>
-			{myHead.map(function(value,key){
+ 			return(
+			{myHead.map(function(value){
 				if(value){
 					return(
-						<Chip label={value} key={key} sx={{cursor:"pointer"}}/>
+						<Chip label={value} sx={{cursor:"pointer"}}/>
 					)	
 				}
 				
 			})}
-// 			</>)
+ 			)
 		
 		
 	}else{

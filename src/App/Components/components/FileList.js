@@ -52,7 +52,7 @@ export default function FileList({currentFolder,setCurrentFolder,sep}){
 	
 	useEffect(()=>{
 		console.log("Opening home")
-		openPath("d",path,"","",setHeadFolder)
+		openPath("d",currentFolder,"","",setCurrentFolder)
 		
 	},[homePath])
 	

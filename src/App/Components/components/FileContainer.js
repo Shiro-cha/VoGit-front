@@ -19,7 +19,7 @@ export default function FileContainer({homePath ,sep}){
 		if(currentFolder){
 			
 			setMyHead(currentFolder.split(sep))
-			
+			console.log("Herererere")
 		}
 	},[currentFolder])  
 	

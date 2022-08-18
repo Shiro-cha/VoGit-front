@@ -9,6 +9,7 @@ import Folder from '@mui/icons-material/Folder'
 
 //component list component
 import FileList from "./FileList"
+import MyHead from "./MyHead"
 
 export default function FileContainer({homePath ,sep,headFolder,setHeadFolder}){
 	const [myHead,setMyHead] = useState([])
@@ -20,7 +21,7 @@ export default function FileContainer({homePath ,sep,headFolder,setHeadFolder}){
 			
 		}
 		console.log(headFolder)
-	},[])
+	},[headFolder])
 	
 	if(myHead.length > 0){
 		
@@ -47,7 +48,7 @@ export default function FileContainer({homePath ,sep,headFolder,setHeadFolder}){
 	return(
 		<Paper sx={{width:"97%",height:"100%",margin:"0 auto"}} elevation={1}>
 		<Container sx={{transform:"translate(0%,-50%) !important"}}>
-		<MyHeadEl headFolder={headFolder}/>
+		<MyHeadEl myHead={myHead}/>
 		</Container>
 		
 		<FileList homePath={homePath} sep={sep} setHeadFolder={setHeadFolder}/>

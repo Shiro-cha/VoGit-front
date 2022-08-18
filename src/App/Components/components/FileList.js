@@ -26,7 +26,7 @@ export default function FileList({currentFolder,setCurrentFolder,sep}){
 	let api = axios.create(baseURL)
 	
 	
-	function openPath(type,filename,path,sep,setHeadFolder){
+	function openPath(type,filename,path,sep,setCurrentFolder){
 		if(type==="d"){ 
 			setIsLoading(true)
 			setFiles([])
@@ -95,7 +95,7 @@ export default function FileList({currentFolder,setCurrentFolder,sep}){
 					}
 					
 					return(
-						<IconButton sx={{display:"flex",flexDirection:"column"}}  onClick={()=>{openPath(file.type,file.name,file.path,sep,setHeadFolder)}}>
+						<IconButton sx={{display:"flex",flexDirection:"column"}}  onClick={()=>{openPath(file.type,file.name,file.path,sep,setCurrentFolder)}}>
 						{fileIcon}
 						<i className="file-name">{file.name}</i>
 						</IconButton>

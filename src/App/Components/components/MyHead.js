@@ -19,9 +19,9 @@ function MyHeadEl({myHead}){
 	}else{
 			return (
 				<>
-				<Skeleton width={70} height={50}/>
-				<Skeleton width={70} height={50}/>
-				<Skeleton width={70} height={50}/>
+				<Skeleton width={70} height={50}/>&nbsp;&nbsp;
+				<Skeleton width={70} height={50}/>&nbsp;&nbsp;
+				<Skeleton width={70} height={50}/>&nbsp;&nbsp;
 				<Skeleton width={70} height={50}/>
 				</>
 			)

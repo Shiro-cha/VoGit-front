@@ -26,7 +26,7 @@ export default function FileContainer({homePath ,sep}){
 	return(
 		<Paper sx={{width:"97%",height:"100%",margin:"0 auto"}} elevation={1}>
 		<Container sx={{transform:"translate(0%,-50%) !important"}}>
-		<MyHeadEl myHead={myHead} setCurrentFolder={setCurrentFolder} sep={sep}/>
+		<MyHeadEl myHead={myHead} setCurrentFolder={setCurrentFolder} sep={sep} currentFolder={currentFolder}/>
 		</Container>
 		
 		<FileList currentFolder={currentFolder} setCurrentFolder={setCurrentFolder}  sep={sep} />

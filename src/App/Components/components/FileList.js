@@ -58,7 +58,6 @@ export default function FileList({currentFolder,setCurrentFolder,sep}){
 	
 	
 	if(files.length===0 && !alreadyGet){
-		console.log("file is null")
 		return (
 			<div style={{width:"100% !important",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center"}}>
 			<Skeleton width="90%" height={70}  animation="wave"/>

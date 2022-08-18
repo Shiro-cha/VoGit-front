@@ -2,7 +2,7 @@ import Chip from "@mui/material/Chip"
 import React from "react"
 import Skeleton from "@mui/material/Skeleton"
 
-function MyHeadEl({myHead,setCurrentFolder,sep}){
+function MyHeadEl({myHead,setCurrentFolder,sep,currentFolder}){
 	if(myHead.length > 0){
 		let headPath =""
  			return(
@@ -11,7 +11,7 @@ function MyHeadEl({myHead,setCurrentFolder,sep}){
 				if(value){
 					headPath = headPath+sep+value
 					return(
-						<Chip label={value} sx={{cursor:"pointer"}} onClick={console.log(headPath)}/>
+						<Chip label={value} sx={{cursor:"pointer"}} onClick={()=>{setCurrentFolder(headPath);console.log(currentFolder)}}/>
 					)	
 				}
 				

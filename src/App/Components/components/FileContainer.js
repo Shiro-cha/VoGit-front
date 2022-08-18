@@ -17,7 +17,7 @@ export default function FileContainer({homePath ,sep}){
 	let MyHeadEl = null
 	
 	useEffect(()=>{
-		if(headFolder){
+		if(currentFolder){
 			setMyHead(currentFolder.split(sep))
 			
 		}

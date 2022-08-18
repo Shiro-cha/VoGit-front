@@ -11,7 +11,7 @@ function MyHeadEl({myHead,setCurrentFolder,sep,currentFolder}){
 				if(value){
 					headPath = headPath+sep+value
 					return(
-						<Chip label={value} sx={{cursor:"pointer"}} onClick={()=>{setCurrentFolder(headPath);console.log(currentFolder)}}/>
+						<Chip label={value} sx={{cursor:"pointer"}} onClick={()=>{setCurrentFolder(headPath);console.log(currentFolder);console.log(value)}}/>
 					)	
 				}
 				

@@ -13,7 +13,7 @@ function MyHeadEl({myHead,setCurrentFolder,sep,currentFolder}){
 					console.log("!!!head!!!")
 					console.log(headPath)
 					return(
-						<Chip label={value} sx={{cursor:"pointer"}} onClick={()=>{setCurrentFolder(headPath);console.log(currentFolder);console.log(value)}}/>
+						<Chip label={value} sx={{cursor:"pointer"}} onClick={()=>{setCurrentFolder(headPath)}}/>
 					)	
 				}
 				

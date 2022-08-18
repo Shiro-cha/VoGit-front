@@ -21,7 +21,7 @@ export default function FileList({currentFolder,setCurrentFolder,sep}){
 	const [files,setFiles]=useState([])
 	const [alreadyGet,setAlreadyGet] = useState(false)
 
-	//const [sep,setSep] =useState(sep)
+	//const [sep,setSep] =useState(sep) 
 	
 	let api = axios.create(baseURL)
 	

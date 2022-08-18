@@ -4,8 +4,9 @@ import Skeleton from "@mui/material/Skeleton"
 
 function MyHeadEl({myHead,setCurrentFolder,sep}){
 	if(myHead.length > 0){
-		let headPath = 0
+		
  			return(
+				let headPath = 0
 			myHead.map(function(value){
 				headPath = headPath +1
 				console.log(headPath)

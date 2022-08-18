@@ -21,7 +21,7 @@ export default function FileContainer({homePath ,sep}){
 			setMyHead(currentFolder.split(sep))
 			
 		}
-	},[currentFolder]) 
+	},[]) 
 	
 	
 	return(

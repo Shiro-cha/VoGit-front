@@ -8,6 +8,7 @@ function MyHeadEl({myHead,setCurrentFolder,sep,currentFolder}){
  			return(
 			
 			myHead.map(function(value){
+				console.log(value)
 				if(value){
 					headPath = headPath+value+sep
 					console.log(myHead)

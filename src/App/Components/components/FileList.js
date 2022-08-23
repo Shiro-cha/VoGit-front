@@ -94,7 +94,7 @@ export default function FileList({currentFolder,setCurrentFolder,sep}){
 					}
 					
 					return(
-						<IconButton sx={{display:"flex",flexDirection:"column"}}  onClick={()=>{openPath(file.type,file.name,file.path,sep,setCurrentFolder)}}>
+						<IconButton sx={{display:"flex",flexDirection:"column",width:"50px"}}  onClick={()=>{openPath(file.type,file.name,file.path,sep,setCurrentFolder)}}>
 						{fileIcon}
 						<i className="file-name">{file.name}</i>
 						</IconButton>

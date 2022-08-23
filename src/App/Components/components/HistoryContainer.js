@@ -1,4 +1,5 @@
 import React , {useState} from "react"
+import axios from "axios"
 import Paper from "@mui/material/Paper";
 import Chip from "@mui/material/Chip"
 import Container from "@mui/material/Container"
@@ -26,12 +27,22 @@ import Cyclone from '@mui/icons-material/Cyclone'
 import ChangeHistory from '@mui/icons-material/ChangeHistory'
 import ViewInArSharp from '@mui/icons-material/ViewInArSharp'
 
+//baseURL configuration
+import baseURL from "../../config/baseURL"
+
+
+let containerObjet =[]
+
 export default function HistoryContainer(){
 	const [anchor, setAnchor] = useState(null);
 	const [open,setOpen]=useState(false)
+	const [containers,setContainers] = useState([])
+	const [histories, setHistories] =  useState([])
 	const openMenu = (event) => {
 		setAnchor(event.currentTarget);
 	};
+	
+	let api = axios.create(baseURL)
 	
 	const closeMenu = () => {
 		setAnchor(null);
@@ -39,6 +50,43 @@ export default function HistoryContainer(){
 	const onMenuItemClick = (event) => {
 		setAnchor(null);
 	};
+	
+	
+	
+	let listeContainers = ()=>{
+		
+		
+		
+	}
+	let listeHistories = ()=>{
+		
+		
+		
+	}
+	
+	useEffect(()=>{
+		
+		api.post("/svc/containers").then(function(res){
+			
+			if(res.data){
+				console.log(res.data)
+				setContainers(res.data)
+			}else{
+				console.log("there is no container")
+			}
+			
+		}).catch(function(err){
+			console.log(err)
+		})
+		
+	},[])
+	
+	useEffect(()=>{
+		
+		
+		
+	},[containers])
+	
 	
 	
 	return(

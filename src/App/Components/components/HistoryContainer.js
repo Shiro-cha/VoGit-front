@@ -196,9 +196,9 @@ export default function HistoryContainer(){
 		sx={{display:"flex",flexDirection:"column",flexWrap:"wrap",alignItems:"flex-start",justifyContent:"flex-start"}}
 		className="w-100"
 		>
-		<Typography ></Typography>
-		<Grid container>
 		
+		<Grid container>
+		<Typography >Distant container</Typography>
 
 		<ListeContainersDistant/>
 		

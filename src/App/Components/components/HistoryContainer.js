@@ -70,7 +70,9 @@ export default function HistoryContainer(){
 			<>
 			containersDistant.map(function(cont){
 				
-				rerurn(<ListItemButton onClick={()=>{setOpen(!open)}} className="w-100 border-1">
+				rerurn(
+					<Grid item xs={11}>	
+				<ListItemButton onClick={()=>{setOpen(!open)}} className="w-100 border-1">
 				<Avatar sx={{backgroundColor:"#D51062"}}>
 				<Cyclone />
 				</Avatar>&nbsp;&nbsp;&nbsp;
@@ -198,7 +200,7 @@ export default function HistoryContainer(){
 		>
 		<Typography ></Typography>
 		<Grid container>
-		<Grid item xs={11}>
+		
 
 		<ListeContainersDistant/>
 		

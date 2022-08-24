@@ -143,7 +143,7 @@ export default function HistoryContainer(){
 	useEffect(()=>{
 		
 		api.post("/svc/containers").then(function(res){
-			
+			setOpenList([])
 			if(res.data["distant"] && res.data["local"]){
 				let containerTemp = []
 				let openListTemp = openList

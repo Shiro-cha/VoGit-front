@@ -198,7 +198,7 @@ export default function HistoryContainer(){
 		>
 		 
 		<Grid container>
-		<Typography component="h4" sx={{textALign:"center"}}>Distant container</Typography>
+		<Typography component="h1" sx={{textALign:"center"}}>Distant container</Typography>
 
 		<ListeContainersDistant/>
 		

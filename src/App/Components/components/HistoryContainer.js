@@ -36,7 +36,8 @@ let containerObjet =[]
 export default function HistoryContainer(){
 	const [anchor, setAnchor] = useState(null);
 	const [open,setOpen]=useState(false)
-	const [containers,setContainers] = useState([])
+	const [containersDistant,setContainersDistant] = useState([])
+	const [containersLocal,setContainersLocal] = useState([])
 	const [histories, setHistories] =  useState([])
 	const openMenu = (event) => {
 		setAnchor(event.currentTarget);
@@ -53,14 +54,110 @@ export default function HistoryContainer(){
 	
 	
 	
-	let listeContainers = ()=>{
+	let listeContainersLocal = ()=>{
 		
+		return(
+			containersLocal.map(function(cont){
+				
+			})
+		)
 		
+	}
+	
+	let ListeContainersDistant = ()=>{
+		
+		return(
+			<>
+			containersDistant.map(function(cont){
+				
+				rerurn(<ListItemButton onClick={()=>{setOpen(!open)}} className="w-100 border-1">
+				<Avatar sx={{backgroundColor:"#D51062"}}>
+				<Cyclone />
+				</Avatar>&nbsp;&nbsp;&nbsp;
+				<ListItemText primary="My message here" />
+				<Typography sx={{ fontSize:"12px",color:"#7d7d7d" ,display:"inline"}}>/home/shiro/Memoire/</Typography >
+				{open ? <ExpandLess /> : <ExpandMore />} 
+				</ListItemButton>
+				</Grid>
+				<Grid item xs={1}>
+				<IconButton><Delete /></IconButton>
+				</Grid>
+				<Collapse className="w-100" in={open} timeout="auto" unmountOnExit>
+				<List className="w-100">
+				<ListItem
+				secondaryAction={
+					<IconButton edge="end" aria-label="action">
+					<MoreVert />
+					</IconButton>}
+					>
+					<ListItemAvatar>
+					<Avatar>
+					<Commit />
+					</Avatar>
+					</ListItemAvatar>
+					<ListItemText
+					primary="Thrid commit of VoGit"
+					
+					/>
+					<Typography sx={{ fontSize:"12px" ,color:"#7d7d7d",display:"inline"}}>777baf3cdc592803940b1aaeb72e166598821d0c</Typography >
+					</ListItem>
+					<ListItem
+					secondaryAction={
+						<Box>
+						<IconButton edge="end" aria-label="action"
+						onClick={openMenu}>
+						<MoreVert />
+						</IconButton>
+						<Menu 
+						open={Boolean(anchor)}
+						anchorEl={anchor}
+						onClose={closeMenu}
+						keepMounted
+						>
+						<MenuItem onClick={(event) => onMenuItemClick(event)}>
+						<ListItemIcon>
+						<ChangeHistory fontSize="small" />
+						</ListItemIcon>
+						<ListItemText>Switch to this version</ListItemText>
+						</MenuItem>
+						<MenuItem onClick={(event) => onMenuItemClick(event)}>
+						<ListItemIcon>
+						<ViewInArSharp fontSize="small" />
+						</ListItemIcon>
+						<ListItemText>Index file head here</ListItemText>
+						</MenuItem>
+						</Menu>
+						
+						</Box>
+						
+					}
+					>
+					<ListItemAvatar>
+					<Avatar>
+					<Commit />
+					</Avatar>
+					</ListItemAvatar>
+					<ListItemText
+					primary="second verion of VoGit"
+					
+					/>
+					<Typography sx={{ fontSize:"12px" ,color:"#7d7d7d",display:"inline"}}>777baf3cdc592803940b1aaeb72e166598821d0c</Typography >
+					</ListItem>
+					</List>
+					</Collapse>	
+				
+							  )
+				
+			})
+			<>
+		)
 		
 	}
 	let listeHistories = ()=>{
 		
-		
+		return(
+			
+		)
 		
 	}
 	
@@ -68,11 +165,11 @@ export default function HistoryContainer(){
 		
 		api.post("/svc/containers").then(function(res){
 			
-			if(res.data){
-				console.log(res.data)
-				setContainers(res.data)
+			if(res.data["distant"] && res.data["local"]){
+				setContainersDistant(res.data["distant"])
+				setContainersDistant(res.data["local"])
 			}else{
-				console.log("there is no container")
+				console.log("Container is not validr")
 			}
 			
 		}).catch(function(err){
@@ -99,100 +196,11 @@ export default function HistoryContainer(){
 		sx={{display:"flex",flexDirection:"column",flexWrap:"wrap",alignItems:"flex-start",justifyContent:"flex-start"}}
 		className="w-100"
 		>
+		<Typography ></Typography>
 		<Grid container>
 		<Grid item xs={11}>
-		<ListItemButton onClick={()=>{setOpen(!open)}} className="w-100 border-1">
-		<Avatar sx={{backgroundColor:"#D51062"}}>
-		<Cyclone />
-		</Avatar>&nbsp;&nbsp;&nbsp;
-		<ListItemText primary="My message here" />
-		<Typography sx={{ fontSize:"12px",color:"#7d7d7d" ,display:"inline"}}>/home/shiro/Memoire/</Typography >
-		{open ? <ExpandLess /> : <ExpandMore />} 
-		</ListItemButton>
-		</Grid>
-		<Grid item xs={1}>
-		<IconButton><Delete /></IconButton>
-		</Grid>
-		<Collapse className="w-100" in={open} timeout="auto" unmountOnExit>
-		<List className="w-100">
-			<ListItem
-			secondaryAction={
-				<IconButton edge="end" aria-label="action">
-				<MoreVert />
-				</IconButton>}
-			>
-			<ListItemAvatar>
-			<Avatar>
-			<Commit />
-			</Avatar>
-			</ListItemAvatar>
-			<ListItemText
-			primary="Thrid commit of VoGit"
-			
-			/>
-			<Typography sx={{ fontSize:"12px" ,color:"#7d7d7d",display:"inline"}}>777baf3cdc592803940b1aaeb72e166598821d0c</Typography >
-			</ListItem>
-			<ListItem
-			secondaryAction={
-				<Box>
-				<IconButton edge="end" aria-label="action"
-				onClick={openMenu}>
-				<MoreVert />
-				</IconButton>
-				<Menu 
-				open={Boolean(anchor)}
-				anchorEl={anchor}
-				onClose={closeMenu}
-				keepMounted
-				>
-				<MenuItem onClick={(event) => onMenuItemClick(event)}>
-				<ListItemIcon>
-				<ChangeHistory fontSize="small" />
-				</ListItemIcon>
-				<ListItemText>Switch to this version</ListItemText>
-				</MenuItem>
-				<MenuItem onClick={(event) => onMenuItemClick(event)}>
-				<ListItemIcon>
-				<ViewInArSharp fontSize="small" />
-				</ListItemIcon>
-				<ListItemText>Index file head here</ListItemText>
-				</MenuItem>
-				</Menu>
-				
-				</Box>
-				
-			}
-				>
-				<ListItemAvatar>
-				<Avatar>
-				<Commit />
-				</Avatar>
-				</ListItemAvatar>
-				<ListItemText
-				primary="second verion of VoGit"
-				
-				/>
-				<Typography sx={{ fontSize:"12px" ,color:"#7d7d7d",display:"inline"}}>777baf3cdc592803940b1aaeb72e166598821d0c</Typography >
-				</ListItem>
-				<ListItem
-				secondaryAction={
-					<IconButton edge="end" aria-label="action">
-					<MoreVert />
-					</IconButton>}
-					>
-					<ListItemAvatar>
-					<Avatar>
-					<Commit />
-					</Avatar>
-					</ListItemAvatar>
-					<ListItemText
-					primary="First version of vogit"
-					
-					/>
-					<Typography sx={{ fontSize:"12px" ,color:"#7d7d7d",display:"inline"}}>777baf3cdc592803940b1aaeb72e166598821d0c</Typography >
-					</ListItem>
-		</List>
-		</Collapse>	
+
+		<ListeContainersDistant/>
 		
 		
 		<Grid item xs={11}>

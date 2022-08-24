@@ -147,6 +147,7 @@ export default function HistoryContainer(){
 			if(res.data["distant"] && res.data["local"]){
 				let containerTemp = []
 				let openListTemp = openList
+				console.log(openListTemp)
 				for (let i = 0 ; i < res.data["distant"].length ; i++){
 					containerTemp.push({content:res.data["distant"
 					][i],open:openListTemp.length ===0 ? 0: openListTemp.length-1 })
@@ -163,6 +164,7 @@ export default function HistoryContainer(){
 					containerTemp.push({content:res.data["local"][i],open:openListTemp.length ===0 ? 0: openListTemp.length-1})
 					openListTemp.push(false)
 					setOpenList(openListTemp)
+					console.log("local")
 				}
 				setContainersLocal(containerTemp)
 				

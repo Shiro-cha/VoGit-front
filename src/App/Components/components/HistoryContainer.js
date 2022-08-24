@@ -75,7 +75,7 @@ export default function HistoryContainer(){
 					return(
 						<>
 						<Grid item xs={11}>	
-						<ListItemButton onClick={()=>{cont.open = !cont.open}} className="w-100 border-1">
+						<ListItemButton onClick={()=>{cont.open = !cont.open;console.log("open")}} className="w-100 border-1">
 						<Avatar sx={{backgroundColor:"#D51062"}}>
 						<Cyclone />
 						</Avatar>&nbsp;&nbsp;&nbsp;

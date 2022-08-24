@@ -249,7 +249,9 @@ export default function Explorer({remote,setPageComponent}) {
 		
 		</DialogContent>
 		<DialogActions>
-		<Button sx={{color:"#D51062"}}>Cancel</Button>
+		<Button sx={{color:"#D51062"}} onClick={()=>{
+			setOpenAction(false)
+		}}>Cancel</Button>
 		<Button sx={{color:"#D51062"}}>Next</Button> 
 		</DialogActions>
 		

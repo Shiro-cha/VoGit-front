@@ -78,7 +78,7 @@ export default function HistoryContainer(){
 				<Cyclone />
 				</Avatar>&nbsp;&nbsp;&nbsp;
 				<ListItemText primary="My message here" />
-				<Typography sx={{ fontSize:"12px",color:"#7d7d7d" ,display:"inline"}}>{{cont.content.path}}</Typography >
+				<Typography sx={{ fontSize:"12px",color:"#7d7d7d" ,display:"inline"}}>{cont.content.path}</Typography >
 				{open ? <ExpandLess /> : <ExpandMore />} 
 				</ListItemButton>
 				</Grid>

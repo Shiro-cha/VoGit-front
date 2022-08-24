@@ -285,7 +285,7 @@ export default function Explorer({remote,setPageComponent}) {
 		open={whichAction}
 		message={actionName }
 		key={"top" + "center"}
-		sx={{opacity:"0.6"}}
+		sx={{opacity:"0.6",background:"#D51062"}}
 		/>
 		
 		</div>

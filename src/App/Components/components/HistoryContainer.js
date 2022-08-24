@@ -67,7 +67,7 @@ export default function HistoryContainer(){
 	let ListeContainersDistant = ()=>{
 		
 		return(
-			<>
+			
 			containersDistant.map(function(cont){
 				
 				rerurn(
@@ -152,7 +152,7 @@ export default function HistoryContainer(){
 							  )
 				</>
 			})
-			</>
+			
 		)
 		
 	}

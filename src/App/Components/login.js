@@ -183,7 +183,7 @@ export default function Login({setPageComponent}){
 		error={errorpassword} autofocus />
 		
 		</DialogContentText>
-		</DialogContent>
+		</DialogContent> 
 		<DialogActions>
 		<Button onClick={()=>{setOpenDialog(false);setPassword("");seterrorPassword(true)}} sx={{color:"#D51062"}}>Cancel</Button>
 		<Button disabled={errorpassword} onClick={checkHostInfo}sx={{color:"#D51062"}}>Connect</Button> 

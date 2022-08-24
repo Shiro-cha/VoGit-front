@@ -107,6 +107,39 @@ export default function Explorer({remote,setPageComponent}) {
 	}
 	
 	
+	//actions function list
+	
+	function newDownload(){
+		
+	}
+	function newUpload(){
+		
+	}
+	function newContainer(){
+		
+	}
+	function newHistory(){
+		
+	}
+	
+	//Choose action
+	
+	function handeleAction(action){
+		if(action){
+			switch(action){
+				case "New Download":
+					newDownload()
+				case 'New upload':
+					newUpload()
+				case 'New container':
+					newContainer()
+				case 'New history':
+					newHistory()
+			}
+		}
+	}
+	
+	
 	return (
 		<div style={{position:"fixed",top:0,bottom:0,left:0,right:0}}>
 		<Grid container sx={{height:"100%"}}>
@@ -167,7 +200,7 @@ export default function Explorer({remote,setPageComponent}) {
 			key={action.name}
 			icon={action.icon}
 			tooltipTitle={action.name}
-			onClick={()=>{console.log(action.name)}}/>
+			onClick={()=>{handeleAction(action.name)}}/>
 		))} 
 		</SpeedDial>
 		</Box>
@@ -199,6 +232,24 @@ export default function Explorer({remote,setPageComponent}) {
 		{`Logout error`}
 		</Alert>
 		</Snackbar>
+		</Snackbar>
+		<Dialog 
+		open={openLogout}
+		keepMounted
+		>
+		<DialogTitle>{`You must say something about your action`}</DialogTitle>
+		<DialogContent>
+		
+		<Input type="password" id="password" placeholder="Type your password" sx={{width:"100%",marginBottom:"30px"}} name="password" autofocus />
+		
+		</DialogContent>
+		<DialogActions>
+		<Button sx={{color:"#D51062"}}>Cancel</Button>
+		<Button sx={{color:"#D51062"}}>Connect</Button> 
+		</DialogActions>
+		
+		</Dialog>
+		
 		</div>
 	);
 }

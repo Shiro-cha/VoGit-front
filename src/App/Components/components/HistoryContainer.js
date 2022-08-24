@@ -179,7 +179,7 @@ export default function HistoryContainer(){
 	
 	useEffect(()=>{
 		
-		console.log("changed")
+		console.log("changed !!!")
 		
 		
 	},[openList])

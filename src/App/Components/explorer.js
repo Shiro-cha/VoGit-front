@@ -137,12 +137,16 @@ export default function Explorer({remote,setPageComponent}) {
 			switch(action){
 				case "New Download":
 					setActionName("Download")
+					break
 				case 'New upload':
 					setActionName("Upload")
+					break
 				case 'New container':
 					setActionName("Container")
+					break
 				case 'New history':
 					setActionName("History")
+					break
 			}
 		}
 	}

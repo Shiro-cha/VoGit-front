@@ -62,7 +62,7 @@ export default function HistoryContainer(){
 			})
 		)
 		
-	}
+	} 
 	
 	let ListeContainersDistant = ()=>{
 		

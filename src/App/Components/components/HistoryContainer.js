@@ -148,9 +148,9 @@ export default function HistoryContainer(){
 					</ListItem>
 					</List>
 					</Collapse>	
-				
+					</>
 							  )
-				</>
+				
 			})
 			
 		)

@@ -151,6 +151,7 @@ export default function HistoryContainer(){
 					containerTemp.push({content:res.data["distant"
 					][i],open:openListTemp.length ===0 ? 0: openListTemp.length-1 })
 					openListTemp.push(false)
+					console.log(res.data["distant"])
 					setOpenList(openListTemp)
 				}
 				

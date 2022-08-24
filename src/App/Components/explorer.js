@@ -85,6 +85,10 @@ export default function Explorer({remote,setPageComponent}) {
 	const [actionName,setActionName] = useState("No action")
 	const [whichAction,setwhichAction] = useState(false)
 	
+	//message
+	const [message,setMessage] = useState("")
+	const [messageValid,setMessageValid] = useState(false)
+	
 	function changeActive(elt, prevElt,setPrevelt){
 		let newelt = elt.current
 		let prev = prevElt.current 
@@ -92,6 +96,7 @@ export default function Explorer({remote,setPageComponent}) {
 		newelt.classList.add("active")
 		setPrevelt(elt)
 	}
+
 	
 	//logout function
 	
@@ -149,6 +154,16 @@ export default function Explorer({remote,setPageComponent}) {
 					break
 			}
 		}
+	}
+	
+	//handleChangeMessage
+	function handleChangeMessage(e){
+		if(e.target.value){
+			setMessageValid(true)
+		}else{
+			setMessageValid(false)
+		}
+		setMessage(e.target.value)
 	}
 	
 	
@@ -251,7 +266,7 @@ export default function Explorer({remote,setPageComponent}) {
 		<DialogTitle>{`You must say something about your action`}</DialogTitle>
 		<DialogContent>
 		
-		<Input type="text" id="message" placeholder="Type a message" sx={{width:"100%",marginBottom:"30px"}} name="message" autofocus />
+		<Input type="text" id="message" placeholder="Type a message" sx={{width:"100%",marginBottom:"30px"}} name="message" autofocus onChange={handleChangeMessage}/>
 		
 		</DialogContent>
 		<DialogActions>
@@ -261,14 +276,14 @@ export default function Explorer({remote,setPageComponent}) {
 		<Button sx={{color:"#D51062"}} onClick={()=>{
 			setwhichAction(true)
 			setOpenAction(false)
-		}}>Next</Button> 
+		}} disabled={!messageValid}>Next</Button> 
 		</DialogActions>
 		
 		</Dialog>
 		<Snackbar
 		anchorOrigin={{vertical:"top",horizontal:"center"}}
 		open={whichAction}
-		message={actionName}
+		message={actionName }
 		key={"top" + "center"}
 		/>
 		

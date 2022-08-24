@@ -104,48 +104,7 @@ export default function HistoryContainer(){
 					/>
 					<Typography sx={{ fontSize:"12px" ,color:"#7d7d7d",display:"inline"}}>777baf3cdc592803940b1aaeb72e166598821d0c</Typography >
 					</ListItem>
-					<ListItem
-					secondaryAction={
-						<Box>
-						<IconButton edge="end" aria-label="action"
-						onClick={openMenu}>
-						<MoreVert />
-						</IconButton>
-						<Menu 
-						open={Boolean(anchor)}
-						anchorEl={anchor}
-						onClose={closeMenu}
-						keepMounted
-						>
-						<MenuItem onClick={(event) => onMenuItemClick(event)}>
-						<ListItemIcon>
-						<ChangeHistory fontSize="small" />
-						</ListItemIcon>
-						<ListItemText>Switch to this version</ListItemText>
-						</MenuItem>
-						<MenuItem onClick={(event) => onMenuItemClick(event)}>
-						<ListItemIcon>
-						<ViewInArSharp fontSize="small" />
-						</ListItemIcon>
-						<ListItemText>Index file head here</ListItemText>
-						</MenuItem>
-						</Menu>
-						
-						</Box>
-						
-					}
-					>
-					<ListItemAvatar>
-					<Avatar>
-					<Commit />
-					</Avatar>
-					</ListItemAvatar>
-					<ListItemText
-					primary="second verion of VoGit"
-					
-					/>
-					<Typography sx={{ fontSize:"12px" ,color:"#7d7d7d",display:"inline"}}>777baf3cdc592803940b1aaeb72e166598821d0c</Typography >
-					</ListItem>
+				
 					</List>
 					</Collapse>	
 					</>
@@ -166,10 +125,20 @@ export default function HistoryContainer(){
 		api.post("/svc/containers").then(function(res){
 			
 			if(res.data["distant"] && res.data["local"]){
-				setContainersDistant(res.data["distant"])
-				setContainersDistant(res.data["local"])
+				let containerTemp = []
+				for (let i = 0 ; i < res.data["distant"].length ; i++){
+					containerTemp.push({content:res.data["distant"][i],open:false})
+				}
+				
+				
+				setContainersDistant(containerTemp)
+				containerTemp = []
+				for (let i = 0 ; i < res.data["local"].length ; i++){
+					containerTemp.push({content:res.data["local"][i],open:false})
+				}
+				containerTemp.push({content:res.data["local"][i],open:false})
 			}else{
-				console.log("Container is not validr")
+				console.log("Container is not valide")
 			}
 			
 		}).catch(function(err){

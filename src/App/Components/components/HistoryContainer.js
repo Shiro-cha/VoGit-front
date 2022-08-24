@@ -93,7 +93,7 @@ export default function HistoryContainer(){
 						<Grid item xs={1}>
 						<IconButton><Delete /></IconButton>
 						</Grid>
-						<Collapse className="w-100" in={openList ?openList[cont.open] : false} timeout="auto" unmountOnExit>
+						<Collapse className="w-100" in={openList[cont.open]} timeout="auto" unmountOnExit>
 						<List className="w-100">
 						<ListItem
 						secondaryAction={

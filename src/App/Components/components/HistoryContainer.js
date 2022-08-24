@@ -80,7 +80,7 @@ export default function HistoryContainer(){
 							console.log(cont.open)
 							openList[cont.open] = !openList[cont.open]
 							setOpenList(openList)
-							console.log(openList)
+							console.log(openList[cont.open])
 						}} className="w-100 border-1">
 						<Avatar sx={{backgroundColor:"#D51062"}}>
 						<Cyclone />

@@ -159,7 +159,7 @@ export default function HistoryContainer(){
 				
 				setContainersDistant(containerTemp)
 				containerTemp = []
-				openListeTemp = openList 
+				openListTemp = openList 
 				for (let i = 0 ; i < res.data["local"].length ; i++){
 					containerTemp.push({content:res.data["local"][i],open:openListTemp.length})
 					openListTemp.push(false)

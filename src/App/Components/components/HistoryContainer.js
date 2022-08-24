@@ -150,7 +150,7 @@ export default function HistoryContainer(){
 				console.log(openListTemp)
 				for (let i = 0 ; i < res.data["distant"].length ; i++){
 					containerTemp.push({content:res.data["distant"
-					][i],open:openListTemp.length ===0 ? 0: openListTemp.length-1 })
+					][i],open:openListTemp.length})
 					openListTemp.push(false)
 					console.log(res.data["distant"])
 					setOpenList(openListTemp)
@@ -159,9 +159,9 @@ export default function HistoryContainer(){
 				
 				setContainersDistant(containerTemp)
 				containerTemp = []
-				openListTemp = openList
+				openListeTemp = openList
 				for (let i = 0 ; i < res.data["local"].length ; i++){
-					containerTemp.push({content:res.data["local"][i],open:openListTemp.length ===0 ? 0: openListTemp.length-1})
+					containerTemp.push({content:res.data["local"][i],open:openListTemp.length})
 					openListTemp.push(false)
 					setOpenList(openListTemp)
 					console.log("local")

@@ -245,12 +245,12 @@ export default function Explorer({remote,setPageComponent}) {
 		<DialogTitle>{`You must say something about your action`}</DialogTitle>
 		<DialogContent>
 		
-		<Input type="password" id="password" placeholder="Type your password" sx={{width:"100%",marginBottom:"30px"}} name="password" autofocus />
+		<Input type="text" id="message" placeholder="Type message" sx={{width:"100%",marginBottom:"30px"}} name="message" autofocus />
 		
 		</DialogContent>
 		<DialogActions>
 		<Button sx={{color:"#D51062"}}>Cancel</Button>
-		<Button sx={{color:"#D51062"}}>Connect</Button> 
+		<Button sx={{color:"#D51062"}}>Next</Button> 
 		</DialogActions>
 		
 		</Dialog>

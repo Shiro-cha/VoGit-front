@@ -177,11 +177,12 @@ export default function HistoryContainer(){
 		
 	},[])
 	
-// 	useEffect(()=>{
-// 		
-// 		
-// 		
-// 	},[containers])
+	useEffect(()=>{
+		
+		console.log("changed")
+		
+		
+	},[openList])
 	
 	
 	

@@ -130,7 +130,7 @@ export default function Explorer({remote,setPageComponent}) {
 	
 	function handeleAction(action){
 		setOpenAction(false)
-		console.log("actions")
+		console.log(action)
 		if(action){
 			switch(action){
 				case "New Download":

@@ -232,7 +232,6 @@ export default function Explorer({remote,setPageComponent}) {
 		{`Logout error`}
 		</Alert>
 		</Snackbar>
-		</Snackbar>
 		<Dialog 
 		open={openLogout}
 		keepMounted

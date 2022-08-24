@@ -262,7 +262,7 @@ export default function Explorer({remote,setPageComponent}) {
 		
 		</Dialog>
 		<Snackbar
-		anchorOrigin={"top","center"}
+		anchorOrigin={{vertical:"top",horizontal:"center"}}
 		open={whichAction}
 		message={actionName}
 		key={"top" + "center"}

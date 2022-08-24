@@ -52,6 +52,7 @@ export default function FileList({currentFolder,setCurrentFolder,sep}){
 	
 	useEffect(()=>{
 		console.log("Opening home")
+		console.log(fromAbutton)
 		if(!fromAbutton){
 			openPath("d",currentFolder,"","",setCurrentFolder);
 			setFromAbutton(false)

@@ -76,11 +76,11 @@ export default function HistoryContainer(){
 					return(
 						<>
 						<Grid item xs={11}>	
-						<ListItemButton onClick={()=>{let openTemp =openList;
+						<ListItemButton onClick={()=>{
 							console.log(openList)
 							console.log(cont.open)
-						openTemp[cont.open] = !openTemp[cont.open];
-						setOpenList(openTemp)
+							openList[cont.open] = !openList[cont.open]
+							setOpenList(openList)
 						}} className="w-100 border-1">
 						<Avatar sx={{backgroundColor:"#D51062"}}>
 						<Cyclone />

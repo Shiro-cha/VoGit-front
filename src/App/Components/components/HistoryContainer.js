@@ -136,7 +136,8 @@ export default function HistoryContainer(){
 				for (let i = 0 ; i < res.data["local"].length ; i++){
 					containerTemp.push({content:res.data["local"][i],open:false})
 				}
-				containerTemp.push({content:res.data["local"][i],open:false})
+				setContainersLocal(containerTemp)
+				
 			}else{
 				console.log("Container is not valide")
 			}

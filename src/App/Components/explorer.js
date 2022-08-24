@@ -82,6 +82,8 @@ export default function Explorer({remote,setPageComponent}) {
 	
 	//action 
 	const [openAction,setOpenAction] = useState(false)
+	const [actionName,setActionName] = useState("No action")
+	const [whichAction,setwhichAction] = useState(false)
 	
 	function changeActive(elt, prevElt,setPrevelt){
 		let newelt = elt.current
@@ -129,18 +131,18 @@ export default function Explorer({remote,setPageComponent}) {
 	//Choose action
 	
 	function handeleAction(action){
-		setOpenAction(false)
+		setOpenAction(true)
 		console.log(action)
 		if(action){
 			switch(action){
 				case "New Download":
-					newDownload()
+					setActionName("Download")
 				case 'New upload':
-					newUpload()
+					setActionName("Upload")
 				case 'New container':
-					newContainer()
+					setActionName("Container")
 				case 'New history':
-					newHistory()
+					setActionName("History")
 			}
 		}
 	}
@@ -252,10 +254,19 @@ export default function Explorer({remote,setPageComponent}) {
 		<Button sx={{color:"#D51062"}} onClick={()=>{
 			setOpenAction(false)
 		}}>Cancel</Button>
-		<Button sx={{color:"#D51062"}}>Next</Button> 
+		<Button sx={{color:"#D51062"}} onClick={()=>{
+			setwhichAction(true)
+			setOpenAction(false)
+		}}>Next</Button> 
 		</DialogActions>
 		
 		</Dialog>
+		<Snackbar
+		anchorOrigin={"top","center"}
+		open={whichAction}
+		message={actionName}
+		key={"top" + "center"}
+		/>
 		
 		</div>
 	);

@@ -17,7 +17,7 @@ function MyHeadEl({myHead,setCurrentFolder,sep,currentFolder}){
 				
 				if(value){
 					ChipFolder.push(value)
-					console.log(ChipFolder)
+					console.log(ChipFolder.join(sep))
 					console.log(value)
 					return(
 						<Chip label={value} sx={{cursor:"pointer"}} onClick={()=>{setCurrentFolder(ChipFolder.join(sep))}}/>

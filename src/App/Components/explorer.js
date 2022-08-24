@@ -80,6 +80,9 @@ export default function Explorer({remote,setPageComponent}) {
 	const [openLogout,setOpenLogout] = useState(false)
 	const [logoutError,setlogoutError] = useState(false)
 	
+	//action 
+	const [openAction,setOpenAction] = useState(false)
+	
 	function changeActive(elt, prevElt,setPrevelt){
 		let newelt = elt.current
 		let prev = prevElt.current 
@@ -111,21 +114,23 @@ export default function Explorer({remote,setPageComponent}) {
 	//actions function list
 	
 	function newDownload(){
-		
+		setOpenAction(true)
 	}
 	function newUpload(){
-		
+		setOpenAction(true)
 	}
 	function newContainer(){
-		
+		setOpenAction(true)
 	}
 	function newHistory(){
-		
+		setOpenAction(true)
 	}
 	
 	//Choose action
 	
 	function handeleAction(action){
+		setOpenAction(false)
+		console.log("actions")
 		if(action){
 			switch(action){
 				case "New Download":
@@ -234,7 +239,7 @@ export default function Explorer({remote,setPageComponent}) {
 		</Alert>
 		</Snackbar>
 		<Dialog 
-		open={openLogout}
+		open={openAction}
 		keepMounted
 		>
 		<DialogTitle>{`You must say something about your action`}</DialogTitle>

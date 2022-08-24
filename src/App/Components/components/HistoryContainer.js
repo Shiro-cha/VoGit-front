@@ -119,9 +119,9 @@ export default function HistoryContainer(){
 		}else{
 			return(
 				<>
-				<Skeleton width="90%" height="80px"/>
-				<Skeleton width="90%" height="80px" />
-				<Skeleton width="90%" height="80px"/>
+				<Skeleton width="90%" height="80px" sx={{margin:"2px"}}/>
+				<Skeleton width="90%" height="80px" sx={{margin:"2px"}}/>
+				<Skeleton width="90%" height="80px" sx={{margin:"2px"}}/>
 				</>
 			)
 		}

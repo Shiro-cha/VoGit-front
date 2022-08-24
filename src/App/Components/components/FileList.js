@@ -21,7 +21,7 @@ export default function FileList({currentFolder,setCurrentFolder,sep}){
 	const [files,setFiles]=useState([])
 	const [alreadyGet,setAlreadyGet] = useState(false)
 
-	//const [sep,setSep] =useState(sep) 
+	const [fromAbutton,setFromAbutton] =useState(false) 
 	
 	let api = axios.create(baseURL)
 	
@@ -52,7 +52,11 @@ export default function FileList({currentFolder,setCurrentFolder,sep}){
 	
 	useEffect(()=>{
 		console.log("Opening home")
-		openPath("d",currentFolder,"","",setCurrentFolder)
+		if(!fromAbutton){
+			openPath("d",currentFolder,"","",setCurrentFolder);
+			setFromAbutton(false)
+		}
+		
 		
 	},[currentFolder])
 	
@@ -94,7 +98,7 @@ export default function FileList({currentFolder,setCurrentFolder,sep}){
 					}
 					
 					return(
-						<IconButton sx={{display:"flex",flexDirection:"column",width:"100px"}}  onClick={()=>{openPath(file.type,file.name,file.path,sep,setCurrentFolder)}}>
+						<IconButton sx={{display:"flex",flexDirection:"column",width:"100px"}}  onClick={()=>{openPath(file.type,file.name,file.path,sep,setCurrentFolder);setFromAbutton(true)}}>
 						{fileIcon}
 						<i className="file-name">{file.name}</i>
 						</IconButton>

@@ -202,10 +202,9 @@ export default function HistoryContainer(){
 
 		<ListeContainersDistant/>
 		
+		<Typography component="h1" sx={{textAlign:"center",fontWeight:"bold",width:"100%",margin:"20px 30px"}} color="#4d4d4d">Distant container</Typography>
 		
 		<Grid item xs={11}>
-		
-		<Typography component="h1" sx={{textAlign:"center",fontWeight:"bold",width:"100%",margin:"20px 30px"}} color="#4d4d4d">Distant container</Typography>
 		
 		<ListItemButton onClick={()=>{setOpen(!open)}} className="w-100 border-1"> 
 		<Avatar sx={{backgroundColor:"#D51062"}}>

@@ -34,7 +34,7 @@ export default function FileList({currentFolder,setCurrentFolder,sep}){
 			api.post("/files",{path:`${path}${sep}${filename}`}).then(function(res){ 
 				if(res.data.files){
 					setFiles(res.data.files)
-					setCurrentFolder(`${path}${filename}`)
+					setCurrentFolder(`${path}${sep}${filename}`)
 				}else{
 					setAlreadyGet(true)
 				}

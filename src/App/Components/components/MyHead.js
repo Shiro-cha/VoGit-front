@@ -19,8 +19,9 @@ function MyHeadEl({myHead,setCurrentFolder,sep,currentFolder}){
 					ChipFolder.push(value)
 					console.log(value)
 					console.log(ChipFolder)
+					let clickPath = `${sep}${ChipFolder.join(sep)}`
 					return(
-						<Chip label={value} sx={{cursor:"pointer"}} onClick={()=>{setCurrentFolder(`${sep}${ChipFolder.join(sep)}`);console.log(ChipFolder.join(sep))}}/>
+						<Chip label={value} sx={{cursor:"pointer"}} onClick={()=>{setCurrentFolder(clickPath);console.log(clickPath)}}/>
 					)	
 				}
 				

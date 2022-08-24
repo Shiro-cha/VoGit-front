@@ -265,7 +265,7 @@ export default function Explorer({remote,setPageComponent}) {
 		>
 		<DialogTitle>{`You must say something about your action`}</DialogTitle>
 		<DialogContent>
-		
+		 
 		<Input type="text" id="message" placeholder="Type a message" sx={{width:"100%",marginBottom:"30px"}} name="message" autofocus onChange={handleChangeMessage}/>
 		
 		</DialogContent>

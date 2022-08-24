@@ -70,7 +70,7 @@ export default function HistoryContainer(){
 			 
 			containersDistant.map(function(cont){
 				
-				rerurn(
+				return(
 					<>
 				<Grid item xs={11}>	
 				<ListItemButton onClick={()=>{setOpen(!open)}} className="w-100 border-1">
@@ -178,11 +178,11 @@ export default function HistoryContainer(){
 		
 	},[])
 	
-	useEffect(()=>{
-		
-		
-		
-	},[containers])
+// 	useEffect(()=>{
+// 		
+// 		
+// 		
+// 	},[containers])
 	
 	
 	

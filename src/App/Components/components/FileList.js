@@ -54,10 +54,10 @@ export default function FileList({currentFolder,setCurrentFolder,sep}){
 		console.log("Opening home")
 		console.log(fromAbutton)
 		console.log("------")
-		if(!fromAbutton){
+		//if(!fromAbutton){
 			openPath("d",currentFolder,"","",setCurrentFolder);
 			setFromAbutton(false)
-		}
+		//}
 		
 		
 	},[currentFolder])

@@ -37,6 +37,7 @@ let containerObjet =[]
 export default function HistoryContainer(){
 	const [anchor, setAnchor] = useState(null);
 	const [open,setOpen]=useState(false)
+	const [openList,setOpenList] = useState([])
 	const [containersDistant,setContainersDistant] = useState([])
 	const [containersLocal,setContainersLocal] = useState([])
 	const [histories, setHistories] =  useState([])
@@ -75,7 +76,10 @@ export default function HistoryContainer(){
 					return(
 						<>
 						<Grid item xs={11}>	
-						<ListItemButton onClick={()=>{cont.open = !cont.open;console.log("open")}} className="w-100 border-1">
+						<ListItemButton onClick={()=>{let openTemp =openListTemp;
+						openTemp[cont.open] = !openTemp[cont.open];
+						setOpenList(openListTemp)
+						}} className="w-100 border-1">
 						<Avatar sx={{backgroundColor:"#D51062"}}>
 						<Cyclone />
 						</Avatar>&nbsp;&nbsp;&nbsp;
@@ -87,7 +91,7 @@ export default function HistoryContainer(){
 						<Grid item xs={1}>
 						<IconButton><Delete /></IconButton>
 						</Grid>
-						<Collapse className="w-100" in={cont.open} timeout="auto" unmountOnExit>
+						<Collapse className="w-100" in={openListTemp[cont.open]} timeout="auto" unmountOnExit>
 						<List className="w-100">
 						<ListItem
 						secondaryAction={
@@ -140,15 +144,22 @@ export default function HistoryContainer(){
 			
 			if(res.data["distant"] && res.data["local"]){
 				let containerTemp = []
+				let openListTemp = openList
 				for (let i = 0 ; i < res.data["distant"].length ; i++){
-					containerTemp.push({content:res.data["distant"][i],open:false})
+					containerTemp.push({content:res.data["distant"
+					][i],open:openListTemp.length})
+					openListTemp.push(false)
+					setOpenList(openListTemp)
 				}
 				
 				
 				setContainersDistant(containerTemp)
 				containerTemp = []
+				openListTemp = openList
 				for (let i = 0 ; i < res.data["local"].length ; i++){
-					containerTemp.push({content:res.data["local"][i],open:false})
+					containerTemp.push({content:res.data["local"][i],open:openListTemp.length})
+					openListTemp.push(false)
+					setOpenList(openListTemp)
 				}
 				setContainersLocal(containerTemp)
 				

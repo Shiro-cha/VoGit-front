@@ -212,7 +212,7 @@ export default function Explorer({remote,setPageComponent}) {
 			key={action.name}
 			icon={action.icon}
 			tooltipTitle={action.name}
-			onClick={()=>{handeleAction(action.name)}}/>
+			onClick={()=>{handeleAction(action.name);setwhichAction(false)}}/>
 		))} 
 		</SpeedDial>
 		</Box>

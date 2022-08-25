@@ -3,6 +3,7 @@ import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid'; 
+import Alert from '@mui/material/Alert'; 
 import Input from '@mui/material/Input';
 import IconButton from "@mui/material/IconButton"
 import Button from "@mui/material/Button"
@@ -285,7 +286,7 @@ export default function Explorer({remote,setPageComponent}) {
 		open={whichAction}
 		message={actionName }
 		key={"top" + "center"}
-		primary="success"
+		severity="success"
 		sx={{opacity:"0.98",background:"#D51062"}}
 		/>
 		

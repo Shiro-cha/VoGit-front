@@ -73,7 +73,7 @@ export default function HistoryContainer(){
 				
 				containersDistant.map(function(cont){
 					
-					return(
+					return( 
 						<>
 						<Grid item xs={11}>	
 						<ListItemButton onClick={()=>{

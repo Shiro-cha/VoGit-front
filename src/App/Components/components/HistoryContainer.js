@@ -187,7 +187,7 @@ export default function HistoryContainer(){
 	
 	
 	return(
-		<Paper sx={{width:"97%",height:"100%",margin:"0 auto",overflow:"scroll"}} elevation={1}>
+		<Paper sx={{width:"97%",height:"100%",margin:"0 auto",overflow:"auto"}} elevation={1}>
 		<Container>
 		<Chip label="Manage your history and file version here" sx={{cursor:"pointer",zIndex:"1700 !important"}}/>
 		</Container>

@@ -285,6 +285,7 @@ export default function Explorer({remote,setPageComponent}) {
 		open={whichAction}
 		message={actionName }
 		key={"top" + "center"}
+		primary="success"
 		sx={{opacity:"0.98",background:"#D51062"}}
 		/>
 		

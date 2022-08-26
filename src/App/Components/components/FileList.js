@@ -63,7 +63,7 @@ export default function FileList({currentFolder,setCurrentFolder,sep}){
 	},[currentFolder])
 	
 	
-	if(files){
+	if(files.length===0 && !alreadyGet){
 		return (
 			<div style={{width:"100% !important",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center"}}>
 			<Skeleton width="90%" height={70}  animation="wave"/>
@@ -73,7 +73,7 @@ export default function FileList({currentFolder,setCurrentFolder,sep}){
 			<CircularProgress color="success" sx={{opacity:0.5}}/>
 			</div>
 		)
-	}else if(files && files.length===0){
+	}else if(files.length===0){
 		
 		return(
 			<Typography>

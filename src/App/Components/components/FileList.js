@@ -90,26 +90,31 @@ export default function FileList({currentFolder,setCurrentFolder,sep}){
 				>
 				
 				{files.map(function(file){
-					let fileIcon = <FlashOn/>
-					switch(file.type){
-						case "d":
-							fileIcon = <Folder sx={{fontSize:"70px"}}/>
-							break
-						case "-":
-							fileIcon = <Description sx={{fontSize:"70px"}}/>
+					if(file.name[0]!=="."){
+					
+						let fileIcon = <FlashOn/>
+						switch(file.type){
+							case "d":
+								fileIcon = <Folder sx={{fontSize:"70px"}}/>
+								break
+							case "-":
+								fileIcon = <Description sx={{fontSize:"70px"}}/>
+						}
+						
+						return(
+							<IconButton sx={{display:"flex",flexDirection:"column",width:"100px"}}  onClick={()=>{openPath(file.type,file.name,file.path,sep,setCurrentFolder);setFromAbutton(true)}}>
+							{fileIcon}
+							<i className="file-name">{file.name}</i>
+							</IconButton>
+						)
+					})	}	
+					</Box>
+					
+					
+			)
+						
 					}
 					
-					return(
-						<IconButton sx={{display:"flex",flexDirection:"column",width:"100px"}}  onClick={()=>{openPath(file.type,file.name,file.path,sep,setCurrentFolder);setFromAbutton(true)}}>
-						{fileIcon}
-						<i className="file-name">{file.name}</i>
-						</IconButton>
-					)
-				})	}	
-				</Box>
-					
-				
-			)
 			
 		}
 		return (

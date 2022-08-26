@@ -18,7 +18,7 @@ import baseURL from "../../config/baseURL"
 export default function FileList({currentFolder,setCurrentFolder,sep}){
 	
 	const [isLoading,setIsLoading] = useState(false)
-	const [files,setFiles]=useState([])
+	const [files,setFiles]=useState(null)
 	const [alreadyGet,setAlreadyGet] = useState(false)
 
 	const [fromAbutton,setFromAbutton] =useState(false) 
@@ -63,7 +63,7 @@ export default function FileList({currentFolder,setCurrentFolder,sep}){
 	},[currentFolder])
 	
 	
-	if(files.length===0 && !alreadyGet){
+	if(files){
 		return (
 			<div style={{width:"100% !important",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center"}}>
 			<Skeleton width="90%" height={70}  animation="wave"/>

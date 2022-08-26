@@ -107,14 +107,14 @@ export default function FileList({currentFolder,setCurrentFolder,sep}){
 							<i className="file-name">{file.name}</i>
 							</IconButton>
 						)
-					})	}	
-					</Box>
-					
-					
-			)
 						
 					}
 					
+				})	}	
+				</Box>
+					
+				
+			)
 			
 		}
 		return (

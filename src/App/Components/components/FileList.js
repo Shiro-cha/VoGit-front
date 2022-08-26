@@ -18,7 +18,7 @@ import baseURL from "../../config/baseURL"
 export default function FileList({currentFolder,setCurrentFolder,sep}){
 	
 	const [isLoading,setIsLoading] = useState(false)
-	const [files,setFiles]=useState(null)
+	const [files,setFiles]=useState([])
 	const [alreadyGet,setAlreadyGet] = useState(false)
 
 	const [fromAbutton,setFromAbutton] =useState(false) 
@@ -73,7 +73,7 @@ export default function FileList({currentFolder,setCurrentFolder,sep}){
 			<CircularProgress color="success" sx={{opacity:0.5}}/>
 			</div>
 		)
-	}else if(files.length===0){
+	}else if(files && files.length===0){
 		
 		return(
 			<Typography>

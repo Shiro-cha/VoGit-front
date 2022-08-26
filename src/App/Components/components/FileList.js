@@ -97,7 +97,7 @@ export default function FileList({currentFolder,setCurrentFolder,sep}){
 							case "d":
 								fileIcon = <Folder sx={{fontSize:"70px"}}/>
 								break
-							case "-" || "md":
+							case "-" | "md":
 								fileIcon = <Description sx={{fontSize:"70px"}}/>
 						}
 						

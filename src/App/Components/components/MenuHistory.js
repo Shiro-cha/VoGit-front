@@ -52,7 +52,7 @@ const StyledMenu = styled((props: MenuProps) => (
 	},
 }));
 
-export default function MenuHistory({key}) {
+export default function MenuHistory({nombre}) {
 	const [anchorEl, setAnchorEl] = useState(null);
 	const open = Boolean(anchorEl);
 	const handleClick = (event) => {
@@ -66,7 +66,7 @@ export default function MenuHistory({key}) {
 		<div>
 		<IconButton edge="end" aria-label="action"
 		id="demo-customized-button"
-		key={key.toString()}
+		key={nombre.toString()}
 		aria-controls={open ? 'demo-customized-menu' : undefined}
 		aria-haspopup="true"
 		aria-expanded={open ? 'true' : undefined}

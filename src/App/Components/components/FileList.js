@@ -104,6 +104,8 @@ export default function FileList({currentFolder,setCurrentFolder,sep,host,homePa
 								fileIcon = <Description sx={{fontSize:"70px"}}/>
 							case "sh":
 								fileIcon = <Description sx={{fontSize:"70px"}}/>
+							case "txt":
+								fileIcon = <Description sx={{fontSize:"70px"}}/>
 						}
 						
 						return(

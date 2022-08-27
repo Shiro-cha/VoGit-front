@@ -124,10 +124,7 @@ export default function ListLocal(){
 				<>
 				<Grid item xs={11}>	
 				<ListItemButton onClick={()=>{
-					console.log(cont.open)
-					openList[cont.open] = !openList[cont.open]
-					setOpenList(openList)
-					console.log(openList[cont.open])
+					console.log(cont.content.hash)
 				}} className="w-100 border-1">
 				<Avatar sx={{backgroundColor:"#D51062"}}>
 				<Cyclone />

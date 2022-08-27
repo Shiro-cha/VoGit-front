@@ -34,7 +34,7 @@ export default function ListDistant(){
 	const [containersDistant,setContainersDistant] = useState([])
 	
 	
-	
+	let api = axios.create(baseURL) 
 	
 	api.post("/svc/containers").then(function(res){
 		if(res.data["distant"] && res.data["local"]){
@@ -46,7 +46,7 @@ export default function ListDistant(){
 						containerTemp = []		
 					}
 					containerTemp.push({content:res.data["distant"
-					][i],open:openListTemp.length,commits:resc.data["All"]})
+					][i],commits:resc.data["All"]})
 					
 					
 					if(i === (res.data["distant"].length-1) ){
@@ -126,10 +126,7 @@ export default function ListDistant(){
 				<>
 				<Grid item xs={11}>	
 				<ListItemButton onClick={()=>{
-					console.log(cont.open)
-					openList[cont.open] = !openList[cont.open]
-					setOpenList(openList)
-					console.log(openList[cont.open])
+					console.log(cont.content.hash)
 				}} className="w-100 border-1">
 				<Avatar sx={{backgroundColor:"#D51062"}}>
 				<Cyclone />

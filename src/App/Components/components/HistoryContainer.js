@@ -265,7 +265,7 @@ export default function HistoryContainer(){
 				let openListTemp = openList 
 				for (let i = 0 ; i < res.data["local"].length ; i++){
 					console.log("iiiiii")
-					console.log(res.data["local"].length)
+					console.log(i)
 					api.post("/svc/log/",{path:res.data["local"][i].path}).then(function(resc){
 						if(i===0){
 							containerTemp = []		

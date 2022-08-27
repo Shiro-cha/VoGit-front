@@ -65,7 +65,7 @@ export default function HistoryContainer(){
 		</Container>
 		<br/><br/><br/>
 		<Box
-		sx={{display:"flex",flexDirection:"column",flexWrap:"wrap",alignItems:"flex-start",justifyContent:"flex-start"}}
+	sx={{display:"flex",flexDirection:"column",flexWrap:"wrap",alignItems:"flex-start",justifyContent:"flex-start"}}
 		className="w-100"
 		>
 		 

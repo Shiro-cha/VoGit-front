@@ -277,7 +277,7 @@ export default function HistoryContainer(){
 						
 						if(i === (res.data["local"].length-1) ){
 							setContainersLocal(containerTemp)
-							console(containersLocal)
+							console.log(containersLocal)
 						}
 						
 						

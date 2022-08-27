@@ -31,7 +31,7 @@ export default function FileList({currentFolder,setCurrentFolder,sep,host}){
 			setIsLoading(true)
 			setFiles([])
 			setAlreadyGet(false)
-			api.post("/files",{path:`${path}${sep}${filename}`}).then(function(res){ 
+			api.post("/files",{path:`${path}${sep}${filename}`,hostname:host}).then(function(res){ 
 				if(res.data.files){
 					setFiles(res.data.files)
 					setCurrentFolder(`${path}${sep}${filename}`)

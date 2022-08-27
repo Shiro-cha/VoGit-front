@@ -258,13 +258,11 @@ export default function HistoryContainer(){
 	useEffect(()=>{
 		
 		api.post("/svc/containers").then(function(res){
-			console.log("1")
 			setOpenList([])
 			if(res.data["distant"] && res.data["local"]){
 				let containerTemp = []
 				let openListTemp = openList 
 				for (let i = 0 ; i < res.data["local"].length ; i++){
-					console.log("iiiiii")
 					console.log(i)
 					api.post("/svc/log/",{path:res.data["local"][i].path}).then(function(resc){
 						if(i===0){
@@ -296,7 +294,6 @@ export default function HistoryContainer(){
 		
 		
 		api.post("/svc/containers").then(function(res){
-			console.log("2")
 			setOpenList([])
 			if(res.data["distant"] && res.data["local"]){
 				let containerTemp = []

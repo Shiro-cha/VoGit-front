@@ -262,11 +262,11 @@ export default function HistoryContainer(){
 				let containerTemp = []
 				let openListTemp = openList
 				for (let i = 0 ; i < res.data["distant"].length ; i++){
-					if(i===0){
-						containerTemp = []		
-					}
-					console.log(res.data["distant"][i].path)
+					)
 					api.post("/svc/log/distant",{path:res.data["distant"][i].path}).then(function(resc){
+						if(i===0){
+							containerTemp = []		
+						}
 						containerTemp.push({content:res.data["distant"
 						][i],open:openListTemp.length,commits:resc.data["All"]})
 						
@@ -285,10 +285,11 @@ export default function HistoryContainer(){
 				
 				
 				for (let i = 0 ; i < res.data["local"].length ; i++){
-					if(i===0){
-						containerTemp = []		
-					}
+					
 					api.post("/svc/log/",{path:res.data["local"][i].path}).then(function(resc){
+						if(i===0){
+							containerTemp = []		
+						}
 						containerTemp.push({content:res.data["local"
 						][i],open:openListTemp.length,commits:resc.data["all"]})
 						openListTemp.push(false)

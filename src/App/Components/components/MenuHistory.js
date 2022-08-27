@@ -11,6 +11,8 @@ import FileCopyIcon from '@mui/icons-material/FileCopy';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import MoreVert from '@mui/icons-material/MoreVert'
 import MoveDown from '@mui/icons-material/MoveDown'
+import Adjust from '@mui/icons-material/MoveDown'
+import Cancel from '@mui/icons-material/MoveDown'
 
 const StyledMenu = styled((props: MenuProps) => (
 	<Menu

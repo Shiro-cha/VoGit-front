@@ -260,29 +260,6 @@ export default function HistoryContainer(){
 			setOpenList([])
 			if(res.data["distant"] && res.data["local"]){
 				let containerTemp = []
-				let openListTemp = openList
-				for (let i = 0 ; i < res.data["distant"].length ; i++){
-					
-					api.post("/svc/log/distant",{path:res.data["distant"][i].path}).then(function(resc){
-						if(i===0){
-							containerTemp = []		
-						}
-						containerTemp.push({content:res.data["distant"
-						][i],open:openListTemp.length,commits:resc.data["All"]})
-						
-						openListTemp.push(false)
-						setOpenList(openListTemp)	
-					
-						if(i === (res.data["distant"].length-1) ){
-							setContainersDistant(containerTemp)
-							console.log(containersDistant)
-						}
-						
-						
-					})
-					
-				}
-				
 				let localcontainerTemp = []
 				for (let i = 0 ; i < res.data["local"].length ; i++){
 					
@@ -312,6 +289,43 @@ export default function HistoryContainer(){
 		}).catch(function(err){
 			console.log(err)
 		})
+		
+		
+		api.post("/svc/containers").then(function(res){
+			setOpenList([])
+			if(res.data["distant"] && res.data["local"]){
+				let containerTemp = []
+				let openListTemp = openList
+				for (let i = 0 ; i < res.data["distant"].length ; i++){
+					
+					api.post("/svc/log/distant",{path:res.data["distant"][i].path}).then(function(resc){
+						if(i===0){
+							containerTemp = []		
+						}
+						containerTemp.push({content:res.data["distant"
+						][i],open:openListTemp.length,commits:resc.data["All"]})
+						
+						openListTemp.push(false)
+						setOpenList(openListTemp)	
+						
+						if(i === (res.data["distant"].length-1) ){
+							setContainersDistant(containerTemp)
+							console.log(containersDistant)
+						}
+						
+						
+					})
+					
+				}
+				
+			}else{
+				console.log("Container is not valide")
+			}
+			
+		}).catch(function(err){
+			console.log(err)
+		})
+		
 		
 	},[])
 	

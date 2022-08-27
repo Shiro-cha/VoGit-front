@@ -1,4 +1,4 @@
-import React from "react"
+import React ,{useState,useEffect} from "react"
 import axios from "axios"
 
 //baseURL configuration
@@ -15,7 +15,6 @@ export default function ListDistant(){
 		setOpenList([])
 		if(res.data["distant"] && res.data["local"]){
 			let containerTemp = []
-			let openListTemp = openList
 			for (let i = 0 ; i < res.data["distant"].length ; i++){
 				
 				api.post("/svc/log/distant",{path:res.data["distant"][i].path}).then(function(resc){
@@ -25,8 +24,7 @@ export default function ListDistant(){
 					containerTemp.push({content:res.data["distant"
 					][i],open:openListTemp.length,commits:resc.data["All"]})
 					
-					openListTemp.push(false)
-					setOpenList(openListTemp)	
+					*	
 					
 					if(i === (res.data["distant"].length-1) ){
 						setContainersDistant(containerTemp)

@@ -24,7 +24,6 @@ export default function ListDistant(){
 					containerTemp.push({content:res.data["distant"
 					][i],open:openListTemp.length,commits:resc.data["All"]})
 					
-					*	
 					
 					if(i === (res.data["distant"].length-1) ){
 						setContainersDistant(containerTemp)

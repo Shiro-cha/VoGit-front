@@ -1,4 +1,4 @@
-import React from "react"
+import React,{useState,useEffect} from "react"
 import axios from "axios"
 
 //baseURL configuration
@@ -18,9 +18,7 @@ export default function ListLocal(){
 			for (let i = 0 ; i < res.data["local"].length ; i++){
 				console.log()
 				api.post("/svc/log/",{path:res.data["local"][i].path}).then(function(resc){
-					if(i===0){
-						containerTemp = []		
-					}
+					
 					containerTemp.push({content:res.data["local"
 					][i],commits:resc.data["all"]})
 					

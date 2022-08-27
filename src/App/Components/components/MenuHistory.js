@@ -10,6 +10,7 @@ import IconButton from "@mui/material/IconButton"
 import FileCopyIcon from '@mui/icons-material/FileCopy';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import MoreVert from '@mui/icons-material/MoreVert'
+import MoveDown from '@mui/icons-material/MoveDown'
 
 const StyledMenu = styled((props: MenuProps) => (
 	<Menu
@@ -86,16 +87,16 @@ export default function MenuHistory({nombre}) {
 		onClose={handleClose}
 		>
 		<MenuItem onClick={handleClose} disableRipple>
-		<FileCopyIcon />
+		<MoveDown />
 		Checkout
 		</MenuItem>
 		<Divider sx={{ my: 0.5 }} />
 		<MenuItem onClick={handleClose} disableRipple>
-		<ArchiveIcon />
+		<Adjust />
 		Switch
 		</MenuItem>
 		<MenuItem onClick={handleClose} disableRipple>
-		<MoreHorizIcon />
+		<Cancel />
 		Close
 		</MenuItem>
 		</StyledMenu>

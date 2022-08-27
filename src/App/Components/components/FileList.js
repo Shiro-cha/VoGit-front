@@ -107,30 +107,41 @@ export default function FileList({currentFolder,setCurrentFolder,sep,host,homePa
 								break
 							case "-":
 								fileIcon = <Description sx={{fontSize:"70px"}}/>
+								break
 							case "md":
 								fileIcon = <Description sx={{fontSize:"70px"}}/>
+								break
 							case "sh":
 								fileIcon = <Description sx={{fontSize:"70px"}}/>
+								break
 							case "txt":
 								fileIcon = <Description sx={{fontSize:"70px"}}/>
+								break
 							case "json":
 								fileIcon = <InsertDriveFile sx={{fontSize:"70px"}}/>
+								break
 							case "html":
 								fileIcon = <Code sx={{fontSize:"70px"}}/>
+								break
 							case "css":
 								fileIcon = <Css sx={{fontSize:"70px"}}/>
 							case "js":
 								fileIcon = <Javascript sx={{fontSize:"70px"}}/>
+								break
 							case "mp3":
 								fileIcon = <AudioFile sx={{fontSize:"70px"}}/>
 							case "mp4":
 								fileIcon = <Description sx={{fontSize:"70px"}}/>
+								break
 							case "png":
 								fileIcon = <InsertPhoto sx={{fontSize:"70px"}}/>
+								break
 							case "jpg":
 								fileIcon = <InsertPhoto sx={{fontSize:"70px"}}/>
+								break
 							case "jpeg":
 								fileIcon = <InsertPhoto sx={{fontSize:"70px"}}/>
+								break
 							case "gif":
 								fileIcon = <InsertPhoto sx={{fontSize:"70px"}}/>
 						}

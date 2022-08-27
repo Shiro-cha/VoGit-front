@@ -131,7 +131,7 @@ export default function ListDistant(){
 				
 				return( 
 				<>
-				<Grid item xs={11}>	
+				<Grid item xs={12>	
 				<ListItemButton onClick={()=>{
 					setOpen(!open)
 				}}
@@ -147,9 +147,7 @@ export default function ListDistant(){
 				{open ? <ExpandLess />:<ExpandMore />}
 				</ListItemButton>
 				</Grid>
-				<Grid item xs={1}>
-				<IconButton><Delete /></IconButton>
-				</Grid>
+				
 				<Collapse className="w-100" in={open} timeout="auto" unmountOnExit>
 				<ListHistDistant commits={cont.commits}/>
 				</Collapse>	

@@ -128,7 +128,7 @@ export default function ListLocal(){
 				
 				return( 
 				<>
-				<Grid item xs={11}>	
+				<Grid item xs={12}>	
 				<ListItemButton  onClick={()=>{
 					setOpen(!open)
 				}} className="w-100 border-1"
@@ -141,9 +141,6 @@ export default function ListLocal(){
 				<Typography sx={{ fontSize:"12px",color:"#7d7d7d" ,display:"inline"}}>{cont.content.path}</Typography >
 				{open ? <ExpandLess />:<ExpandMore />}
 				</ListItemButton>
-				</Grid>
-				<Grid item xs={1}>
-				<IconButton><Delete /></IconButton>
 				</Grid>
 				<Collapse className="w-100" in={open} timeout="auto" unmountOnExit>
 				<ListHistoryLocal commits={cont.commits}/>

@@ -131,7 +131,7 @@ export default function ListLocal(){
 				</Avatar>&nbsp;&nbsp;&nbsp;
 				<ListItemText primary={cont.content.message} />
 				<Typography sx={{ fontSize:"12px",color:"#7d7d7d" ,display:"inline"}}>{cont.content.path}</Typography >
-				{open ? <ExpandLess /> : <ExpandMore />} 
+				 <ExpandMore />
 				</ListItemButton>
 				</Grid>
 				<Grid item xs={1}>

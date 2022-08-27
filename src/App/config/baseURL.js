@@ -1,6 +1,6 @@
  
 const baseURL ={
-	baseURL:"http://34.217.24.123:3001"  
+	baseURL:"http://54.244.202.192:3001"  
 // 	,headers:{"Access-Control-Allow-Origin": "*"}
 }
 export default baseURL  

@@ -56,11 +56,11 @@ export default function HistoryContainer(){
 	
 	
 	
-	let ListHistoryLocal = ({commitsDistant})=>{
-		if(commitsDistant.length !==0){
+	let ListHistoryLocal = ({containersLocal})=>{
+		if(containersLocal.length !==0){
 			
 			return(
-				commitsDistant.map(function(commit){
+				containersLocal.map(function(commit){
 					
 					return(
 						<List className="w-100">
@@ -275,8 +275,8 @@ export default function HistoryContainer(){
 						setOpenList(openListTemp)	
 						
 						if(i === (res.data["local"].length-1) ){
-							setContainersDistant(containerTemp)
-							console.log(containersDistant)
+							setContainersLocal(containerTemp)
+							
 						}
 						
 						

@@ -53,9 +53,9 @@ const StyledMenu = styled((props: MenuProps) => (
 }));
 
 export default function MenuHistory({key}) {
-	const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+	const [anchorEl, setAnchorEl] = useState(null);
 	const open = Boolean(anchorEl);
-	const handleClick = (event: React.MouseEvent<HTMLElement>) => {
+	const handleClick = (event) => {
 		setAnchorEl(event.currentTarget);
 	};
 	const handleClose = () => {

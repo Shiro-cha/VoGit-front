@@ -265,7 +265,7 @@ export default function HistoryContainer(){
 		<Typography component="h1" sx={{textAlign:"center",fontWeight:"bold",width:"100%",margin:"20px 30px"}} color="#4d4d4d">Local container</Typography>
 		
 		<ListeContainersLocal/>
-		
+		</Gird>
 		</Box>
 		</Paper>
 	)

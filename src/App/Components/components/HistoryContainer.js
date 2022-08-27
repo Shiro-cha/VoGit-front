@@ -270,10 +270,8 @@ export default function HistoryContainer(){
 						}		
 						
 						localcontainerTemp.push({content:res.data["local"
-						][i],open:openListTemp.length,commits:resc.data["all"]})
-						openListTemp.push(false)
-						
-						setOpenList(openListTemp)	
+						][i],open:0,commits:resc.data["all"]})
+		
 					})
 					
 					if(i === (res.data["local"].length-1) ){

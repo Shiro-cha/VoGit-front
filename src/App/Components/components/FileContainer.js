@@ -14,7 +14,6 @@ import MyHeadEl from "./MyHead"
 export default function FileContainer({homePath ,sep ,host}){
 	const [currentFolder,setCurrentFolder] = useState(homePath)
 	const [myHead,setMyHead] = useState([])
-	console.log(host)
 	useEffect(()=>{
 		if(currentFolder){
 			console.log(currentFolder)

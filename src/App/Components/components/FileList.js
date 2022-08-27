@@ -24,14 +24,14 @@ export default function FileList({currentFolder,setCurrentFolder,sep,host}){
 	const [fromAbutton,setFromAbutton] =useState(false) 
 	
 	let api = axios.create(baseURL)
-	
+	console.log(host)
 	function openPath(type,filename,path,sep,setCurrentFolder,host){
 		if(type==="d"){ 
 			setIsLoading(true)
 			setFiles([])
 			setAlreadyGet(false)
-			console.log(host)
-			api.post("/files",{path:`${path}${sep}${filename}`,hostname:host}).then(function(res){ 
+			
+			api.post("/files",{path:`${path}${sep}${filename}`,hostname:host||"localhost"}).then(function(res){ 
 				if(res.data.files){
 					setFiles(res.data.files)
 					setCurrentFolder(`${path}${sep}${filename}`)

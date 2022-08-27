@@ -262,7 +262,7 @@ export default function HistoryContainer(){
 				let containerTemp = []
 				let openListTemp = openList
 				for (let i = 0 ; i < res.data["distant"].length ; i++){
-					)
+					
 					api.post("/svc/log/distant",{path:res.data["distant"][i].path}).then(function(resc){
 						if(i===0){
 							containerTemp = []		

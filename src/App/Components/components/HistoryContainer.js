@@ -156,6 +156,9 @@ export default function HistoryContainer(){
 	} 
 	
 	let ListeContainersDistant = ()=>{
+		console.log("---------")
+		console.log(containersDistant)
+		console.log("---------")
 		if(containersDistant.length > 0){
 		
 			return(
@@ -218,9 +221,7 @@ export default function HistoryContainer(){
 					api.post("/svc/log/distant",{path:res.data["distant"][i].path}).then(function(resc){
 						containerTemp.push({content:res.data["distant"
 						][i],open:openListTemp.length,commits:resc.data["All"]})
-						console.log("-----")
-						console.log(resc.data["All"])
-						console.log("-----")
+						
 						openListTemp.push(false)
 						setOpenList(openListTemp)	
 					})

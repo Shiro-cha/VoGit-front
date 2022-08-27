@@ -290,9 +290,11 @@ export default function HistoryContainer(){
 						setOpenList(openListTemp)	
 					})
 					
-					
+					if(i === (res.data["local"].length-1) ){
+						setContainersLocal(containerTemp)
+						console.log(containersDistant)
+					}
 				}
-				setContainersLocal(containerTemp)
 				
 			}else{
 				console.log("Container is not valide")

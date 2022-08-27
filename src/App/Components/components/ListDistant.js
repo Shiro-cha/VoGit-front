@@ -132,7 +132,7 @@ export default function ListDistant(){
 				return( 
 				<>
 				<Grid item xs={11}>	
-				<ListItemButton )
+				<ListItemButton 
 				}} className="w-100 border-1"
 				key={nombre}
 				

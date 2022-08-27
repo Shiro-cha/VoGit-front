@@ -41,7 +41,7 @@ export default function ListLocal(){
 	const [anchorEl, setAnchorEl] = useState(null)
 	
 	let api = axios.create(baseURL)  
-	
+	useEffect(()=>{
 
 	api.post("/svc/containers").then(function(res){
 		if(res.data["distant"] && res.data["local"]){
@@ -71,7 +71,7 @@ export default function ListLocal(){
 		console.log(err)
 	})
 
-
+	},[])
 
 	let ListHistoryLocal = ({commits})=>{
 		if(commits.length !==0){

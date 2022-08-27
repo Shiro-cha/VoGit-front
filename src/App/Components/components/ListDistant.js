@@ -39,37 +39,43 @@ export default function ListDistant(){
 	
 	
 	let api = axios.create(baseURL) 
+	useEffect(()=>{
+		
 	
-	api.post("/svc/containers").then(function(res){
-		if(res.data["distant"] && res.data["local"]){
-			let containerTemp = []
-			for (let i = 0 ; i < res.data["distant"].length ; i++){
+		api.post("/svc/containers").then(function(res){
+			if(res.data["distant"] && res.data["local"]){
+				let containerTemp = []
+				for (let i = 0 ; i < res.data["distant"].length ; i++){
+					
+					api.post("/svc/log/distant",{path:res.data["distant"][i].path}).then(function(resc){
+						if(i===0){
+							containerTemp = []		
+						}
+						containerTemp.push({content:res.data["distant"
+						][i],commits:resc.data["All"]})
+						
+						
+						if(i === (res.data["distant"].length-1) ){
+							setContainersDistant(containerTemp)
+							console.log(containersDistant)
+						}
+						
+						
+					})
+					
+				}
 				
-				api.post("/svc/log/distant",{path:res.data["distant"][i].path}).then(function(resc){
-					if(i===0){
-						containerTemp = []		
-					}
-					containerTemp.push({content:res.data["distant"
-					][i],commits:resc.data["All"]})
-					
-					
-					if(i === (res.data["distant"].length-1) ){
-						setContainersDistant(containerTemp)
-						console.log(containersDistant)
-					}
-					
-					
-				})
-				
+			}else{
+				console.log("Container is not valide")
 			}
 			
-		}else{
-			console.log("Container is not valide")
-		}
+		}).catch(function(err){
+			console.log(err)
+		})
 		
-	}).catch(function(err){
-		console.log(err)
-	})
+		
+	},[])
+	
 	
 	
 	let ListHistDistant = ({commits})=>{

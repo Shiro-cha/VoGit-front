@@ -38,25 +38,10 @@ import ListDistant from "./ListDistant"
 import baseURL from "../../config/baseURL"
 
 
-let containerObjet =[]
+
 
 export default function HistoryContainer(){
-	const [anchor, setAnchor] = useState(null);
-	const [open,setOpen]=useState(false)
-	const [histories, setHistories] =  useState([])
-	const openMenu = (event) => {
-		setAnchor(event.currentTarget);
-	};
-	
-	let api = axios.create(baseURL)
-	
-	const closeMenu = () => {
-		setAnchor(null);
-	};
-	const onMenuItemClick = (event) => {
-		setAnchor(null);
-	};
-	
+
 	
 	
 	return(

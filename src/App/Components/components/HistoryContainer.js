@@ -259,25 +259,28 @@ export default function HistoryContainer(){
 		api.post("/svc/containers").then(function(res){
 			setOpenList([])
 			if(res.data["distant"] && res.data["local"]){
-				let localcontainerTemp = []
+				let containerTemp = []
 				let openListTemp = openList
 				for (let i = 0 ; i < res.data["local"].length ; i++){
 					
 					api.post("/svc/log/",{path:res.data["local"][i].path}).then(function(resc){
-						
 						if(i===0){
-							localcontainerTemp = []		
-						}		
+							containerTemp = []		
+						}
+						containerTemp.push({content:res.data["local"
+						][i],open:openListTemp.length,commits:resc.data["all"]})
 						
-						localcontainerTemp.push({content:res.data["local"
-						][i],open:0,commits:resc.data["all"]})
-		
+						openListTemp.push(false)
+						setOpenList(openListTemp)	
+						
+						if(i === (res.data["local"].length-1) ){
+							setContainersDistant(containerTemp)
+							console.log(containersDistant)
+						}
+						
+						
 					})
 					
-					if(i === (res.data["local"].length-1) ){
-						setContainersLocal(localcontainerTemp)
-						console.log(containersDistant)
-					}
 				}
 				
 			}else{

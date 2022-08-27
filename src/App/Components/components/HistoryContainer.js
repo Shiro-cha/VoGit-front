@@ -283,14 +283,16 @@ export default function HistoryContainer(){
 					
 				}
 				
-				
+				let localcontainerTemp = []
 				for (let i = 0 ; i < res.data["local"].length ; i++){
 					
 					api.post("/svc/log/",{path:res.data["local"][i].path}).then(function(resc){
+						
 						if(i===0){
-							containerTemp = []		
-						}
-						containerTemp.push({content:res.data["local"
+							localcontainerTemp = []		
+						}		
+						
+						localcontainerTemp.push({content:res.data["local"
 						][i],open:openListTemp.length,commits:resc.data["all"]})
 						openListTemp.push(false)
 						
@@ -298,7 +300,7 @@ export default function HistoryContainer(){
 					})
 					
 					if(i === (res.data["local"].length-1) ){
-						setContainersLocal(containerTemp)
+						setContainersLocal(localcontainerTemp)
 						console.log(containersDistant)
 					}
 				}

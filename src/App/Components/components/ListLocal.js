@@ -74,10 +74,12 @@ export default function ListLocal(){
 
 	let ListHistoryLocal = ({commits})=>{
 		if(commits.length !==0){
-			console.log(commits)
 			return(
 				commits.map(function(nombre,commit){
-					
+					console.log("---------")
+					console.log(nombre)
+					console.log(commit)
+					console.log("---------")
 					return(
 						<List className="w-100">
 						<ListItem

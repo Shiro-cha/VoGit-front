@@ -47,7 +47,6 @@ export default function ListLocal(){
 		if(res.data["distant"] && res.data["local"]){
 			let containerTemp = []
 			for (let i = 0 ; i < res.data["local"].length ; i++){
-				console.log()
 				api.post("/svc/log/",{path:res.data["local"][i].path}).then(function(resc){
 					
 					containerTemp.push({content:res.data["local"
@@ -75,7 +74,7 @@ export default function ListLocal(){
 
 	let ListHistoryLocal = ({commits})=>{
 		if(commits.length !==0){
-			
+			console.log(commits)
 			return(
 				commits.map(function(nombre,commit){
 					

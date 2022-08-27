@@ -57,7 +57,6 @@ export default function ListDistant(){
 						
 						if(i === (res.data["distant"].length-1) ){
 							setContainersDistant(containerTemp)
-							console.log(containersDistant)
 						}
 						
 						

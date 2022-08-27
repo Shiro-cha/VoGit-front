@@ -258,6 +258,7 @@ export default function HistoryContainer(){
 	useEffect(()=>{
 		
 		api.post("/svc/containers").then(function(res){
+			console.log("2")
 			setOpenList([])
 			if(res.data["distant"] && res.data["local"]){
 				let containerTemp = []
@@ -294,6 +295,7 @@ export default function HistoryContainer(){
 		
 		
 		api.post("/svc/containers").then(function(res){
+			console.log("2")
 			setOpenList([])
 			if(res.data["distant"] && res.data["local"]){
 				let containerTemp = []
@@ -330,14 +332,6 @@ export default function HistoryContainer(){
 		
 		
 	},[])
-	
-	useEffect(()=>{
-		
-		console.log("changed !!!")
-		
-		
-	},[openList])
-	
 	
 	
 	return(

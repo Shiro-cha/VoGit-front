@@ -53,7 +53,7 @@ export default function FileList({currentFolder,setCurrentFolder,sep,host}){
 	useEffect(()=>{
 		
 		//if(!fromAbutton){
-		openPath("d","","","",setCurrentFolder,host);
+		openPath("d",currentFolder,"","",setCurrentFolder,host);
 			setFromAbutton(false)
 		//}
 		

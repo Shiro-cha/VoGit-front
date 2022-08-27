@@ -25,6 +25,9 @@ import Cyclone from '@mui/icons-material/Cyclone'
 import ChangeHistory from '@mui/icons-material/ChangeHistory'
 import ViewInArSharp from '@mui/icons-material/ViewInArSharp'
 
+//externe componennt
+
+import MenuHistory from "./MenuHistory"
 
 //baseURL configuration
 import baseURL from "../../config/baseURL"
@@ -32,6 +35,10 @@ import baseURL from "../../config/baseURL"
 export default function ListLocal(){
 	const [containersLocal,setContainersLocal] = useState([])
 
+	
+	//list menu action
+	
+	const [anchorEl, setAnchorEl] = useState(null)
 	
 	let api = axios.create(baseURL)  
 	
@@ -76,9 +83,7 @@ export default function ListLocal(){
 						<List className="w-100">
 						<ListItem
 						secondaryAction={
-							<IconButton edge="end" aria-label="action">
-							<MoreVert />
-							</IconButton>}
+							<MenuHistory/>}
 							>
 							<ListItemAvatar>
 							<Avatar>

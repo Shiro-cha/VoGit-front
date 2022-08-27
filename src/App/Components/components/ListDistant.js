@@ -26,6 +26,10 @@ import ChangeHistory from '@mui/icons-material/ChangeHistory'
 import ViewInArSharp from '@mui/icons-material/ViewInArSharp'
 
 
+//externe componennt
+
+import MenuHistory from "./MenuHistory"
+
 //baseURL configuration
 import baseURL from "../../config/baseURL"
 
@@ -78,9 +82,7 @@ export default function ListDistant(){
 						<List className="w-100">
 						<ListItem
 						secondaryAction={
-							<IconButton edge="end" aria-label="action">
-							<MoreVert />
-							</IconButton>}
+							<MenuHistory/>}
 							>
 							<ListItemAvatar>
 							<Avatar>

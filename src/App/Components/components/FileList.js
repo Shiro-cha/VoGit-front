@@ -9,6 +9,13 @@ import IconButton from "@mui/material/IconButton"
 import Folder from '@mui/icons-material/Folder'
 import Description from '@mui/icons-material/Description'
 import FlashOn from '@mui/icons-material/FlashOn'
+import InsertDriveFile from '@mui/icons-material/InsertDriveFile'
+import AudioFile from '@mui/icons-material/AudioFile'
+import Code from '@mui/icons-material/Code'
+import Css from '@mui/icons-material/Css'
+import Javascript from '@mui/icons-material/Javascript'
+import Php from '@mui/icons-material/Php'
+import InsertPhoto from '@mui/icons-material/InsertPhoto'
 
 //baseURL configuration
 import baseURL from "../../config/baseURL"
@@ -106,6 +113,26 @@ export default function FileList({currentFolder,setCurrentFolder,sep,host,homePa
 								fileIcon = <Description sx={{fontSize:"70px"}}/>
 							case "txt":
 								fileIcon = <Description sx={{fontSize:"70px"}}/>
+							case "json":
+								fileIcon = <InsertDriveFile sx={{fontSize:"70px"}}/>
+							case "html":
+								fileIcon = <Code sx={{fontSize:"70px"}}/>
+							case "css":
+								fileIcon = <Css sx={{fontSize:"70px"}}/>
+							case "js":
+								fileIcon = <Javascript sx={{fontSize:"70px"}}/>
+							case "mp3":
+								fileIcon = <AudioFile sx={{fontSize:"70px"}}/>
+							case "mp4":
+								fileIcon = <Description sx={{fontSize:"70px"}}/>
+							case "png":
+								fileIcon = <InsertPhoto sx={{fontSize:"70px"}}/>
+							case "jpg":
+								fileIcon = <InsertPhoto sx={{fontSize:"70px"}}/>
+							case "jpeg":
+								fileIcon = <InsertPhoto sx={{fontSize:"70px"}}/>
+							case "gif":
+								fileIcon = <InsertPhoto sx={{fontSize:"70px"}}/>
 						}
 						
 						return(

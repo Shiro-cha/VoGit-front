@@ -262,7 +262,7 @@ export default function HistoryContainer(){
 			setOpenList([])
 			if(res.data["distant"] && res.data["local"]){
 				let containerTemp = []
-				let openListTemp = openList
+				let openListTemp = openList 
 				for (let i = 0 ; i < res.data["local"].length ; i++){
 					
 					api.post("/svc/log/",{path:res.data["local"][i].path}).then(function(resc){

@@ -222,16 +222,16 @@ export default function HistoryContainer(){
 						
 						openListTemp.push(false)
 						setOpenList(openListTemp)	
-					})
 					
+						if(i === (res.data["distant"].length-1) ){
+							setContainersDistant(containerTemp)
+						}
+						
+						
+					})
 					
 				}
 				
-				
-				setContainersDistant(containerTemp)
-				console.log("---------")
-				console.log(containersDistant)
-				console.log("---------")
 				containerTemp = []
 				for (let i = 0 ; i < res.data["local"].length ; i++){
 					api.post("/svc/log/",{path:res.data["local"][i].path}).then(function(resc){

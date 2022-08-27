@@ -1,6 +1,6 @@
  
 const baseURL ={
-	baseURL:"http://54.244.202.192:3001"  
+	baseURL:"http://ec2-54-149-158-31.us-west-2.compute.amazonaws.com:3001"  
 // 	,headers:{"Access-Control-Allow-Origin": "*"}
 }
 export default baseURL  

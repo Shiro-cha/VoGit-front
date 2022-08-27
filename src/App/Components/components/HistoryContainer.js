@@ -56,6 +56,34 @@ export default function HistoryContainer(){
 	
 	
 	
+	let ListHistory = ()=>{
+	
+		return(
+			<List className="w-100">
+			<ListItem
+			secondaryAction={
+				<IconButton edge="end" aria-label="action">
+				<MoreVert />
+				</IconButton>}
+				>
+				<ListItemAvatar>
+				<Avatar>
+				<Commit />
+				</Avatar>
+				</ListItemAvatar>
+				<ListItemText
+				primary="Thrid commit of VoGit"
+				
+				/>
+				<Typography sx={{ fontSize:"12px" ,color:"#7d7d7d",display:"inline"}}>777baf3cdc592803940b1aaeb72e166598821d0c</Typography >
+				</ListItem>
+				
+				</List>
+		)
+		
+	}
+	
+	
 	let ListeContainersLocal = ()=>{
 		
 		if(containersLocal.length > 0){
@@ -85,26 +113,7 @@ export default function HistoryContainer(){
 					<IconButton><Delete /></IconButton>
 					</Grid>
 					<Collapse className="w-100" in={openList[cont.open] || true} timeout="auto" unmountOnExit>
-					<List className="w-100">
-					<ListItem
-					secondaryAction={
-						<IconButton edge="end" aria-label="action">
-						<MoreVert />
-						</IconButton>}
-						>
-						<ListItemAvatar>
-						<Avatar>
-						<Commit />
-						</Avatar>
-						</ListItemAvatar>
-						<ListItemText
-						primary="Thrid commit of VoGit"
-						
-						/>
-						<Typography sx={{ fontSize:"12px" ,color:"#7d7d7d",display:"inline"}}>777baf3cdc592803940b1aaeb72e166598821d0c</Typography >
-						</ListItem>
-						
-						</List>
+					
 						</Collapse>	
 						</>
 					)

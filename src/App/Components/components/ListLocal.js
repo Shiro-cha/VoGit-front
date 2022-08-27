@@ -77,13 +77,13 @@ export default function ListLocal(){
 		if(commits.length !==0){
 			
 			return(
-				commits.map(function(commit){
+				commits.map(function(key,commit){
 					
 					return(
 						<List className="w-100">
 						<ListItem
 						secondaryAction={
-							<MenuHistory/>}
+							<MenuHistory key={key}/>}
 							>
 							<ListItemAvatar>
 							<Avatar>

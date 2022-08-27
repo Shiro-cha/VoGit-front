@@ -15,7 +15,7 @@ import baseURL from "../../config/baseURL"
 
 
 
-export default function FileList({currentFolder,setCurrentFolder,sep}){
+export default function FileList({currentFolder,setCurrentFolder,sep,host}){
 	
 	const [isLoading,setIsLoading] = useState(false)
 	const [files,setFiles]=useState([])
@@ -61,6 +61,9 @@ export default function FileList({currentFolder,setCurrentFolder,sep}){
 		
 		
 	},[currentFolder])
+	useEffect(()=>{
+		console.log('host change')
+	},[host])
 	
 	
 	if(files.length===0 && !alreadyGet){

@@ -11,7 +11,7 @@ import Folder from '@mui/icons-material/Folder'
 import FileList from "./FileList"
 import MyHeadEl from "./MyHead"
 
-export default function FileContainer({homePath ,sep}){
+export default function FileContainer({homePath ,sep ,host}){
 	const [currentFolder,setCurrentFolder] = useState(homePath)
 	const [myHead,setMyHead] = useState([])
 	
@@ -29,7 +29,7 @@ export default function FileContainer({homePath ,sep}){
 		<MyHeadEl myHead={myHead} setCurrentFolder={setCurrentFolder} sep={sep} currentFolder={currentFolder}/>
 		</Container>
 		
-		<FileList currentFolder={currentFolder} setCurrentFolder={setCurrentFolder}  sep={sep} />
+		<FileList currentFolder={currentFolder} setCurrentFolder={setCurrentFolder}  sep={sep} host={host}/>
 		</Paper>
 	)
 	

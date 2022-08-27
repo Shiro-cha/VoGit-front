@@ -25,7 +25,6 @@ export default function FileList({currentFolder,setCurrentFolder,sep,host}){
 	
 	let api = axios.create(baseURL)
 	
-	console.log(host)
 	function openPath(type,filename,path,sep,setCurrentFolder,host){
 		if(type==="d"){ 
 			setIsLoading(true)
@@ -52,9 +51,7 @@ export default function FileList({currentFolder,setCurrentFolder,sep,host}){
 	}
 	
 	useEffect(()=>{
-		console.log("Opening home")
-		console.log(fromAbutton)
-		console.log("------")
+		
 		//if(!fromAbutton){
 		openPath("d",currentFolder,"","",setCurrentFolder,host);
 			setFromAbutton(false)
@@ -63,7 +60,7 @@ export default function FileList({currentFolder,setCurrentFolder,sep,host}){
 		
 	},[currentFolder])
 	useEffect(()=>{
-		console.log('host change')
+		openPath("d",currentFolder,"","",setCurrentFolder,host);
 	},[host])
 	
 	

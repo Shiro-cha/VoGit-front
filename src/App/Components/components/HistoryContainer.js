@@ -56,30 +56,50 @@ export default function HistoryContainer(){
 	
 	
 	
-	let ListHistory = ()=>{
-	
-		return(
-			<List className="w-100">
-			<ListItem
-			secondaryAction={
-				<IconButton edge="end" aria-label="action">
-				<MoreVert />
-				</IconButton>}
-				>
-				<ListItemAvatar>
-				<Avatar>
-				<Commit />
-				</Avatar>
-				</ListItemAvatar>
-				<ListItemText
-				primary="Thrid commit of VoGit"
-				
-				/>
-				<Typography sx={{ fontSize:"12px" ,color:"#7d7d7d",display:"inline"}}>777baf3cdc592803940b1aaeb72e166598821d0c</Typography >
-				</ListItem>
-				
-				</List>
-		)
+	let ListHistory = ({commits})=>{
+		if(commits.length !==0){
+			
+			return(
+				commits.map(function(commit){
+					
+					return(
+						<List className="w-100">
+						<ListItem
+						secondaryAction={
+							<IconButton edge="end" aria-label="action">
+							<MoreVert />
+							</IconButton>}
+							>
+							<ListItemAvatar>
+							<Avatar>
+							<Commit />
+							</Avatar>
+							</ListItemAvatar>
+							<ListItemText
+							primary="Thrid commit of VoGit"
+							
+							/>
+							<Typography sx={{ fontSize:"12px" ,color:"#7d7d7d",display:"inline"}}>{tags}</Typography >
+							</ListItem>
+							
+							</List>
+					)
+					
+				})	
+			)
+			
+		}else{
+			
+			return(
+				<>
+				<Skeleton width="90%" height="80px" sx={{margin:"2px"}}/>
+				<Skeleton width="90%" height="80px" sx={{margin:"2px"}}/>
+				<Skeleton width="90%" height="80px" sx={{margin:"2px"}}/>
+				</>
+			)
+			
+		}
+		
 		
 	}
 	
@@ -113,7 +133,7 @@ export default function HistoryContainer(){
 					<IconButton><Delete /></IconButton>
 					</Grid>
 					<Collapse className="w-100" in={openList[cont.open] || true} timeout="auto" unmountOnExit>
-					
+					<ListHistory commits={count.commits}/>
 						</Collapse>	
 						</>
 					)
@@ -163,26 +183,7 @@ export default function HistoryContainer(){
 						<IconButton><Delete /></IconButton>
 						</Grid>
 						<Collapse className="w-100" in={openList[cont.open] || true} timeout="auto" unmountOnExit>
-						<List className="w-100">
-						<ListItem
-						secondaryAction={
-							<IconButton edge="end" aria-label="action">
-							<MoreVert />
-							</IconButton>}
-							>
-							<ListItemAvatar>
-							<Avatar>
-							<Commit />
-							</Avatar>
-							</ListItemAvatar>
-							<ListItemText
-							primary="Thrid commit of VoGit"
-							
-							/>
-							<Typography sx={{ fontSize:"12px" ,color:"#7d7d7d",display:"inline"}}>777baf3cdc592803940b1aaeb72e166598821d0c</Typography >
-							</ListItem>
-							
-							</List>
+						<ListHistory commits={count.commits}/>
 							</Collapse>	
 							</>
 					)
@@ -218,21 +219,30 @@ export default function HistoryContainer(){
 				let openListTemp = openList
 				console.log(openListTemp)
 				for (let i = 0 ; i < res.data["distant"].length ; i++){
-					containerTemp.push({content:res.data["distant"
-					][i],open:openListTemp.length})
-					openListTemp.push(false)
-					console.log(res.data["distant"])
-					setOpenList(openListTemp)
+					api.post("/svc/log/distant",{path:res.data["distant"].path}).then(function(res){
+						containerTemp.push({content:res.data["distant"
+						][i],open:openListTemp.length,commits:res.data["All"]})
+						openListTemp.push(false)
+						console.log(res.data["distant"])
+						setOpenList(openListTemp)	
+					})
+					
+					
 				}
 				
 				
 				setContainersDistant(containerTemp)
 				containerTemp = []
 				for (let i = 0 ; i < res.data["local"].length ; i++){
-					containerTemp.push({content:res.data["local"][i],open:openListTemp.length})
-					openListTemp.push(false)
-					setOpenList(openListTemp)
-					console.log("local")
+					api.post("/svc/log/",{path:res.data["local"].path}).then(function(res){
+						containerTemp.push({content:res.data["local"
+						][i],open:openListTemp.length,commits:res.data["All"]})
+						openListTemp.push(false)
+						console.log(res.data["local"])
+						setOpenList(openListTemp)	
+					})
+					
+					
 				}
 				setContainersLocal(containerTemp)
 				

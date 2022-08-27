@@ -94,7 +94,7 @@ export default function MenuHistory({nombre}) {
 		</MenuItem>
 		<Divider sx={{ my: 0.5 }} />
 		<MenuItem onClick={handleClose} disableRipple>
-		<Adjust />
+		<Adjust /> 
 		Switch
 		</MenuItem>
 		<MenuItem onClick={handleClose} disableRipple>

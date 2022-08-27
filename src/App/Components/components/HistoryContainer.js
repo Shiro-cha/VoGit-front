@@ -133,7 +133,7 @@ export default function HistoryContainer(){
 					<IconButton><Delete /></IconButton>
 					</Grid>
 					<Collapse className="w-100" in={openList[cont.open] || true} timeout="auto" unmountOnExit>
-					<ListHistory commits={count.commits}/>
+					<ListHistory commits={cont.commits}/>
 						</Collapse>	
 						</>
 					)
@@ -183,7 +183,7 @@ export default function HistoryContainer(){
 						<IconButton><Delete /></IconButton>
 						</Grid>
 						<Collapse className="w-100" in={openList[cont.open] || true} timeout="auto" unmountOnExit>
-						<ListHistory commits={count.commits}/>
+						<ListHistory commits={cont.commits}/>
 							</Collapse>	
 							</>
 					)

@@ -225,6 +225,7 @@ export default function HistoryContainer(){
 					
 						if(i === (res.data["distant"].length-1) ){
 							setContainersDistant(containerTemp)
+							console.log(containersDistant)
 						}
 						
 						

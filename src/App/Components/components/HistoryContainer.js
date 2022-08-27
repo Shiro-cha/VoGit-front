@@ -232,7 +232,7 @@ export default function HistoryContainer(){
 				for (let i = 0 ; i < res.data["local"].length ; i++){
 					api.post("/svc/log/",{path:res.data["local"][i].path}).then(function(resc){
 						containerTemp.push({content:res.data["local"
-						][i],open:openListTemp.length,commits:resc.data["All"]})
+						][i],open:openListTemp.length,commits:resc.data["all"]})
 						console.log(resc.data["All"])
 						openListTemp.push(false)
 						

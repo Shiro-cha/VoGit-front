@@ -56,11 +56,11 @@ export default function HistoryContainer(){
 	
 	
 	
-	let ListHistoryLocal = ({commitsLocal})=>{
-		if(commitsLocal.length !==0){
+	let ListHistoryLocal = ({commitsDistant})=>{
+		if(commitsDistant.length !==0){
 			
 			return(
-				commitsLocal.map(function(commit){
+				commitsDistant.map(function(commit){
 					
 					return(
 						<List className="w-100">
@@ -153,11 +153,11 @@ export default function HistoryContainer(){
 	
 	let ListeContainersLocal = ()=>{
 		
-		if(containersLocal.length > 0){
+		if(containersDistant.length > 0){
 			
 			return(
 				
-				containersLocal.map(function(cont){
+				containersDistant.map(function(cont){
 					
 					return( 
 					<>
@@ -171,7 +171,7 @@ export default function HistoryContainer(){
 					<Avatar sx={{backgroundColor:"#D51062"}}>
 					<Cyclone />
 					</Avatar>&nbsp;&nbsp;&nbsp;
-					<ListItemText primary={cont.content.message} /> 
+					<ListItemText primary={cont.content.message} />
 					<Typography sx={{ fontSize:"12px",color:"#7d7d7d" ,display:"inline"}}>{cont.content.path}</Typography >
 					{open ? <ExpandLess /> : <ExpandMore />} 
 					</ListItemButton>
@@ -180,9 +180,9 @@ export default function HistoryContainer(){
 					<IconButton><Delete /></IconButton>
 					</Grid>
 					<Collapse className="w-100" in={openList[cont.open] || true} timeout="auto" unmountOnExit>
-					<ListHistoryLocal commitsLocal={cont.commits}/>
-						</Collapse>	
-						</>
+					<ListHistoryLocal commitsDistant={cont.commits}/>
+					</Collapse>	
+					</>
 					)
 					
 				})
@@ -200,7 +200,8 @@ export default function HistoryContainer(){
 		}
 		
 		
-	} 
+		
+	}
 	
 	let ListeContainersDistant = ()=>{
 		

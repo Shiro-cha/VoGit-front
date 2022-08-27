@@ -56,7 +56,54 @@ export default function HistoryContainer(){
 	
 	
 	
-	let ListHistory = ({commits})=>{
+	let ListHistoryLocal = ({commits})=>{
+		if(commits.length !==0){
+			
+			return(
+				commits.map(function(commit){
+					
+					return(
+						<List className="w-100">
+						<ListItem
+						secondaryAction={
+							<IconButton edge="end" aria-label="action">
+							<MoreVert />
+							</IconButton>}
+							>
+							<ListItemAvatar>
+							<Avatar>
+							<Commit />
+							</Avatar>
+							</ListItemAvatar>
+							<ListItemText
+							primary={commit.message}
+							
+							/>
+							<Typography sx={{ fontSize:"12px" ,color:"#7d7d7d",display:"inline"}}>{commit.hash}</Typography >
+							</ListItem>
+							
+							</List>
+					)
+					
+				})	
+			)
+			
+		}else{
+			
+			return(
+				<>
+				<Skeleton width="90%" height="80px" sx={{margin:"2px"}}/>
+				<Skeleton width="90%" height="80px" sx={{margin:"2px"}}/>
+				<Skeleton width="90%" height="80px" sx={{margin:"2px"}}/>
+				</>
+			)
+			
+		}
+		
+		
+	}
+	
+	let ListHistDistant = ({commits})=>{
 		if(commits.length !==0){
 			
 			return(
@@ -133,7 +180,7 @@ export default function HistoryContainer(){
 					<IconButton><Delete /></IconButton>
 					</Grid>
 					<Collapse className="w-100" in={openList[cont.open] || true} timeout="auto" unmountOnExit>
-					<ListHistory commits={cont.commits}/>
+					<ListHistoryLocal commits={cont.commits}/>
 						</Collapse>	
 						</>
 					)
@@ -184,7 +231,7 @@ export default function HistoryContainer(){
 						<IconButton><Delete /></IconButton>
 						</Grid>
 						<Collapse className="w-100" in={openList[cont.open] || true} timeout="auto" unmountOnExit>
-						<ListHistory commits={cont.commits}/>
+						<ListHistDistant commits={cont.commits}/>
 							</Collapse>	
 							</>
 					)

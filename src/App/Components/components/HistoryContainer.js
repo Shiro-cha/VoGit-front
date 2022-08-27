@@ -58,11 +58,71 @@ export default function HistoryContainer(){
 	
 	let listeContainersLocal = ()=>{
 		
-		return(
-			containersLocal.map(function(cont){
+		if(containersLocal.length > 0){
+			
+			return(
 				
-			})
-		)
+				containersLocal.map(function(cont){
+					
+					return( 
+					<>
+					<Grid item xs={11}>	
+					<ListItemButton onClick={()=>{
+						console.log(cont.open)
+						openList[cont.open] = !openList[cont.open]
+						setOpenList(openList)
+						console.log(openList[cont.open])
+					}} className="w-100 border-1">
+					<Avatar sx={{backgroundColor:"#D51062"}}>
+					<Cyclone />
+					</Avatar>&nbsp;&nbsp;&nbsp;
+					<ListItemText primary="My message here" />
+					<Typography sx={{ fontSize:"12px",color:"#7d7d7d" ,display:"inline"}}>{cont.content.path}</Typography >
+					{open ? <ExpandLess /> : <ExpandMore />} 
+					</ListItemButton>
+					</Grid>
+					<Grid item xs={1}>
+					<IconButton><Delete /></IconButton>
+					</Grid>
+					<Collapse className="w-100" in={openList[cont.open] || true} timeout="auto" unmountOnExit>
+					<List className="w-100">
+					<ListItem
+					secondaryAction={
+						<IconButton edge="end" aria-label="action">
+						<MoreVert />
+						</IconButton>}
+						>
+						<ListItemAvatar>
+						<Avatar>
+						<Commit />
+						</Avatar>
+						</ListItemAvatar>
+						<ListItemText
+						primary="Thrid commit of VoGit"
+						
+						/>
+						<Typography sx={{ fontSize:"12px" ,color:"#7d7d7d",display:"inline"}}>777baf3cdc592803940b1aaeb72e166598821d0c</Typography >
+						</ListItem>
+						
+						</List>
+						</Collapse>	
+						</>
+					)
+					
+				})
+				
+			)
+			
+		}else{
+			return(
+				<>
+				<Skeleton width="90%" height="80px" sx={{margin:"2px"}}/>
+				<Skeleton width="90%" height="80px" sx={{margin:"2px"}}/>
+				<Skeleton width="90%" height="80px" sx={{margin:"2px"}}/>
+				</>
+			)
+		}
+		
 		
 	} 
 	

@@ -36,7 +36,7 @@ import baseURL from "../../config/baseURL"
 export default function ListDistant(){
 	
 	const [containersDistant,setContainersDistant] = useState([])
-	
+	const [open,setOpen]= useState(false)
 	
 	let api = axios.create(baseURL) 
 	useEffect(()=>{
@@ -127,14 +127,16 @@ export default function ListDistant(){
 		
 		return(
 			
-			containersDistant.map(function(cont){
+			containersDistant.map(function(cont,nombre){
 				
 				return( 
 				<>
 				<Grid item xs={11}>	
-				<ListItemButton onClick={()=>{
-					console.log(cont.content.hash)
-				}} className="w-100 border-1">
+				<ListItemButton )
+				}} className="w-100 border-1"
+				key={nombre}
+				
+				>
 				<Avatar sx={{backgroundColor:"#D51062"}}>
 				<Cyclone />
 				</Avatar>&nbsp;&nbsp;&nbsp;
@@ -146,7 +148,7 @@ export default function ListDistant(){
 				<Grid item xs={1}>
 				<IconButton><Delete /></IconButton>
 				</Grid>
-				<Collapse className="w-100" in={true} timeout="auto" unmountOnExit>
+				<Collapse className="w-100" in={open} timeout="auto" unmountOnExit>
 				<ListHistDistant commits={cont.commits}/>
 				</Collapse>	
 				</>

@@ -15,7 +15,7 @@ import baseURL from "../../config/baseURL"
 
 
 
-export default function FileList({currentFolder,setCurrentFolder,sep,host}){
+export default function FileList({currentFolder,setCurrentFolder,sep,host,homePath}){
 	
 	const [isLoading,setIsLoading] = useState(false)
 	const [files,setFiles]=useState([])
@@ -60,8 +60,7 @@ export default function FileList({currentFolder,setCurrentFolder,sep,host}){
 		
 	},[currentFolder])
 	useEffect(()=>{
-		setCurrentFolder("")
-		openPath("d",currentFolder,"","",setCurrentFolder,host); 
+		openPath("d",homePath,"","",setCurrentFolder,host); 
 	},[host])
 	
 	

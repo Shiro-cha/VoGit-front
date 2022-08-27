@@ -34,7 +34,7 @@ import baseURL from "../../config/baseURL"
 
 export default function ListLocal(){
 	const [containersLocal,setContainersLocal] = useState([])
-	const [open,setOpen] useState(false)
+	const [open,setOpen] =useState(false)
 	
 	//list menu action
 	

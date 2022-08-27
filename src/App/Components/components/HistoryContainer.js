@@ -56,11 +56,11 @@ export default function HistoryContainer(){
 	
 	
 	
-	let ListHistoryLocal = ({commits})=>{
-		if(commits.length !==0){
+	let ListHistoryLocal = ({commitsLocal})=>{
+		if(commitsLocal.length !==0){
 			
 			return(
-				commits.map(function(commit){
+				commitsLocal.map(function(commit){
 					
 					return(
 						<List className="w-100">
@@ -103,11 +103,11 @@ export default function HistoryContainer(){
 		
 	}
 	
-	let ListHistDistant = ({commits})=>{
-		if(commits.length !==0){
+	let ListHistDistant = ({commitsDistant})=>{
+		if(commitsDistant.length !==0){
 			
 			return(
-				commits.map(function(commit){
+				commitsDistant.map(function(commit){
 					
 					return(
 						<List className="w-100">
@@ -180,7 +180,7 @@ export default function HistoryContainer(){
 					<IconButton><Delete /></IconButton>
 					</Grid>
 					<Collapse className="w-100" in={openList[cont.open] || true} timeout="auto" unmountOnExit>
-					<ListHistoryLocal commits={cont.commits}/>
+					<ListHistoryLocal commitsLocal={cont.commits}/>
 						</Collapse>	
 						</>
 					)
@@ -231,7 +231,7 @@ export default function HistoryContainer(){
 						<IconButton><Delete /></IconButton>
 						</Grid>
 						<Collapse className="w-100" in={openList[cont.open] || true} timeout="auto" unmountOnExit>
-						<ListHistDistant commits={cont.commits}/>
+						<ListHistDistant commitsDistant={cont.commits}/>
 							</Collapse>	
 							</>
 					)

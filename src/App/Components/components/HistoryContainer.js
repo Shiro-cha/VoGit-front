@@ -205,10 +205,6 @@ export default function HistoryContainer(){
 		
 		
 	}
-	let listeHistories = ()=>{
-		 
-		
-	} 
 	
 	useEffect(()=>{
 		
@@ -222,6 +218,7 @@ export default function HistoryContainer(){
 					api.post("/svc/log/distant",{path:res.data["distant"][i].path}).then(function(resc){
 						containerTemp.push({content:res.data["distant"
 						][i],open:openListTemp.length,commits:resc.data["All"]})
+						console.log(resc.data["All"])
 						openListTemp.push(false)
 						setOpenList(openListTemp)	
 					})
@@ -236,6 +233,7 @@ export default function HistoryContainer(){
 					api.post("/svc/log/",{path:res.data["local"][i].path}).then(function(resc){
 						containerTemp.push({content:res.data["local"
 						][i],open:openListTemp.length,commits:resc.data["All"]})
+						console.log(resc.data["All"])
 						openListTemp.push(false)
 						
 						setOpenList(openListTemp)	

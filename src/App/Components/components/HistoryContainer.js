@@ -76,7 +76,7 @@ export default function HistoryContainer(){
 					<Avatar sx={{backgroundColor:"#D51062"}}>
 					<Cyclone />
 					</Avatar>&nbsp;&nbsp;&nbsp;
-					<ListItemText primary={cont.message} /> 
+					<ListItemText primary={cont.content.message} /> 
 					<Typography sx={{ fontSize:"12px",color:"#7d7d7d" ,display:"inline"}}>{cont.content.path}</Typography >
 					{open ? <ExpandLess /> : <ExpandMore />} 
 					</ListItemButton>

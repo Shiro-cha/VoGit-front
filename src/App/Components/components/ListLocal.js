@@ -34,7 +34,7 @@ import baseURL from "../../config/baseURL"
 
 export default function ListLocal(){
 	const [containersLocal,setContainersLocal] = useState([])
-
+	const [open,setOpen] useState(false)
 	
 	//list menu action
 	
@@ -124,14 +124,16 @@ export default function ListLocal(){
 		
 		return(
 			
-			containersLocal.map(function(cont){
+			containersLocal.map(function(cont,nombre){
 				
 				return( 
 				<>
 				<Grid item xs={11}>	
-				<ListItemButton onClick={()=>{
-					console.log(cont.content.hash)
-				}} className="w-100 border-1">
+				<ListItemButton  onClick={()=>{
+					setOpen(!open)
+				}} className="w-100 border-1"
+				key={nombre}
+				>
 				<Avatar sx={{backgroundColor:"#D51062"}}>
 				<Cyclone />
 				</Avatar>&nbsp;&nbsp;&nbsp;
@@ -143,7 +145,7 @@ export default function ListLocal(){
 				<Grid item xs={1}>
 				<IconButton><Delete /></IconButton>
 				</Grid>
-				<Collapse className="w-100" in={true} timeout="auto" unmountOnExit>
+				<Collapse className="w-100" in={open} timeout="auto" unmountOnExit>
 				<ListHistoryLocal commits={cont.commits}/>
 				</Collapse>	
 				</>

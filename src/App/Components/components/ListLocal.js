@@ -114,11 +114,11 @@ export default function ListLocal(){
 	}
 	
 	
-	if(containersDistant.length > 0){
+	if(containersLocal.length > 0){
 		
 		return(
 			
-			containersDistant.map(function(cont){
+			containersLocal.map(function(cont){
 				
 				return( 
 				<>
@@ -137,7 +137,7 @@ export default function ListLocal(){
 				<Grid item xs={1}>
 				<IconButton><Delete /></IconButton>
 				</Grid>
-				<Collapse className="w-100" in={openList[cont.open] || true} timeout="auto" unmountOnExit>
+				<Collapse className="w-100" in={true} timeout="auto" unmountOnExit>
 				<ListHistoryLocal commits={cont.commits}/>
 				</Collapse>	
 				</>

@@ -139,7 +139,7 @@ export default function ListDistant(){
 				<Grid item xs={1}>
 				<IconButton><Delete /></IconButton>
 				</Grid>
-				<Collapse className="w-100" in={openList[cont.open] || true} timeout="auto" unmountOnExit>
+				<Collapse className="w-100" in={true} timeout="auto" unmountOnExit>
 				<ListHistDistant commits={cont.commits}/>
 				</Collapse>	
 				</>

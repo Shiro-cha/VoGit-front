@@ -60,6 +60,7 @@ export default function FileList({currentFolder,setCurrentFolder,sep,host}){
 		
 	},[currentFolder])
 	useEffect(()=>{
+		setCurrentFolder("")
 		openPath("d",currentFolder,"","",setCurrentFolder,host); 
 	},[host])
 	

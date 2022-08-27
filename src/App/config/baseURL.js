@@ -1,6 +1,6 @@
  
 const baseURL ={
-	baseURL:"54.149.158.31:3001"  
+	baseURL:"52.27.106.29:3001"  
 // 	,headers:{"Access-Control-Allow-Origin": "*"}
 }
 export default baseURL  

@@ -76,10 +76,10 @@ export default function HistoryContainer(){
 							</Avatar>
 							</ListItemAvatar>
 							<ListItemText
-							primary="Thrid commit of VoGit"
+							primary={commit.message}
 							
 							/>
-							<Typography sx={{ fontSize:"12px" ,color:"#7d7d7d",display:"inline"}}>{tags}</Typography >
+							<Typography sx={{ fontSize:"12px" ,color:"#7d7d7d",display:"inline"}}>{commit.hash}</Typography >
 							</ListItem>
 							
 							</List>

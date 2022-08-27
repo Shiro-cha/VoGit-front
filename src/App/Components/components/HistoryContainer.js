@@ -156,9 +156,7 @@ export default function HistoryContainer(){
 	} 
 	
 	let ListeContainersDistant = ()=>{
-		console.log("---------")
-		console.log(containersDistant)
-		console.log("---------")
+		
 		if(containersDistant.length > 0){
 		
 			return(
@@ -231,6 +229,9 @@ export default function HistoryContainer(){
 				
 				
 				setContainersDistant(containerTemp)
+				console.log("---------")
+				console.log(containersDistant)
+				console.log("---------")
 				containerTemp = []
 				for (let i = 0 ; i < res.data["local"].length ; i++){
 					api.post("/svc/log/",{path:res.data["local"][i].path}).then(function(resc){

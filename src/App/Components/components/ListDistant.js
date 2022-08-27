@@ -81,7 +81,7 @@ export default function ListDistant(){
 		if(commits.length !==0){
 			
 			return(
-				commits.map(function(nombre,commit){
+				commits.map(function(commit,nombre){
 					console.log(nombre)
 					return(
 						<List className="w-100">

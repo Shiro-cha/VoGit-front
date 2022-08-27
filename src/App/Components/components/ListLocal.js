@@ -75,7 +75,7 @@ export default function ListLocal(){
 	let ListHistoryLocal = ({commits})=>{
 		if(commits.length !==0){
 			return(
-				commits.map(function(nombre,commit){
+				commits.map(function(commit,nombre){
 					console.log("---------")
 					console.log(nombre)
 					console.log(commit)

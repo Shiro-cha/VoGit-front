@@ -56,7 +56,7 @@ export default function HistoryContainer(){
 	
 	
 	
-	let listeContainersLocal = ()=>{
+	let ListeContainersLocal = ()=>{
 		
 		if(containersLocal.length > 0){
 			
@@ -264,75 +264,7 @@ export default function HistoryContainer(){
 		  
 		<Typography component="h1" sx={{textAlign:"center",fontWeight:"bold",width:"100%",margin:"20px 30px"}} color="#4d4d4d">Local container</Typography>
 		
-		<Grid item xs={11}>
-		
-		<ListItemButton onClick={()=>{setOpen(!open)}} className="w-100 border-1"> 
-		<Avatar sx={{backgroundColor:"#D51062"}}>
-		<Cyclone />
-		</Avatar>&nbsp;&nbsp;&nbsp;
-		<ListItemText primary="Your message here" />
-		<Typography sx={{ fontSize:"12px" ,color:"#7d7d7d",display:"inline"}}>/home/shiro/Memoire/</Typography >
-		{open ? <ExpandLess /> : <ExpandMore />} 
-		</ListItemButton>
-		</Grid>
-		<Grid item xs={1}>
-		<IconButton><Delete /></IconButton>
-		</Grid>
-		<Collapse className="w-100" in={open} timeout="auto" unmountOnExit>
-		<List className="w-100">
-		<ListItem
-		secondaryAction={
-			<IconButton edge="end" aria-label="action">
-			<MoreVert />
-			</IconButton>}
-			>
-			<ListItemAvatar>
-			<Avatar>
-			<Commit />
-			</Avatar>
-			</ListItemAvatar>
-			<ListItemText
-			primary="Single-line item"
-			
-			/>
-			</ListItem>
-			<ListItem
-			secondaryAction={
-				<IconButton edge="end" aria-label="action">
-				<MoreVert />
-				</IconButton>}
-				>
-				<ListItemAvatar>
-				<Avatar>
-				<Commit />
-				</Avatar>
-				</ListItemAvatar>
-				<ListItemText
-				primary="Single-line item"
-				
-				/>
-				</ListItem>
-				<ListItem
-				secondaryAction={
-					<IconButton edge="end" aria-label="action">
-					<MoreVert />
-					</IconButton>}
-					>
-					<ListItemAvatar>
-					<Avatar>
-					<Commit />
-					</Avatar>
-					</ListItemAvatar>
-					<ListItemText
-					primary="Single-line item"
-					
-					/>
-					</ListItem>
-					</List>
-					</Collapse>	
-		
-		
-		</Grid>
+		<ListeContainersLocal/>
 		
 		</Box>
 		</Paper>

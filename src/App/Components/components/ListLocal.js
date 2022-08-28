@@ -84,8 +84,7 @@ export default function ListLocal(){
 						<List className="w-100">
 						<ListItem
 						secondaryAction={
-							<MenuHistory nombre={nombre} tags={commit.hash} repo={repo}/>}
-							host={"local"}>
+							<MenuHistory nombre={nombre} tags={commit.hash} repo={repo} host="local"/>}
 							<ListItemAvatar>
 							<Avatar>
 							<Commit />

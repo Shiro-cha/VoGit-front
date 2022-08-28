@@ -31,7 +31,7 @@ export default function FileList({currentFolder,setCurrentFolder,sep,host,homePa
 	const [fromAbutton,setFromAbutton] =useState(false) 
 	
 	let api = axios.create(baseURL)
-	console.log(host)
+	console.log(openAction)
 	function openPath(type,filename,path,sep,setCurrentFolder,host){
 		if(type==="d"){ 
 			setIsLoading(true)

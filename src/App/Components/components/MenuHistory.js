@@ -73,7 +73,7 @@ export default function MenuHistory({nombre,tags,repo,host}) {
 	const handleClose = () => {
 		setAnchorEl(null);
 	};
-	
+	console.log(host)
 	function switchTags(tags,repo){
 		console.log('h')
 	}

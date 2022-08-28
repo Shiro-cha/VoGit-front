@@ -22,7 +22,7 @@ import baseURL from "../../config/baseURL"
 
 
 
-export default function FileList({currentFolder,setCurrentFolder,sep,host,homePath},openAction){
+export default function FileList({currentFolder,setCurrentFolder,sep,host,homePath,openAction}){
 	
 	const [isLoading,setIsLoading] = useState(false)
 	const [files,setFiles]=useState([])

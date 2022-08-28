@@ -85,6 +85,7 @@ export default function ListLocal(){
 						<ListItem
 						secondaryAction={
 							<MenuHistory nombre={nombre} tags={commit.hash} repo={repo} host="local"/>}
+							>
 							<ListItemAvatar>
 							<Avatar>
 							<Commit />

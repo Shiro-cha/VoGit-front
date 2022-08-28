@@ -86,8 +86,8 @@ export default function ListDistant(){
 						<List className="w-100">
 						<ListItem
 						secondaryAction={
-							<MenuHistory nombre={nombre} tags={commit.hash} repo={repo} host="distant"/>}
-							 
+							<MenuHistory nombre={nombre} tags={commit.hash} repo={repo} host={'distant'}/>}
+							 >
 							<ListItemAvatar>
 							<Avatar>
 							<Commit />

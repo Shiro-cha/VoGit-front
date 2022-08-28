@@ -70,7 +70,7 @@ export default function FileList({currentFolder,setCurrentFolder,sep,host,homePa
 					})
 					
 				}else{
-					api.post("/svc/init/distant",{path:path,message:message}).then(function(res){
+					api.post("/svc/init/distant",{path:path+sep+filename+sep,message:message}).then(function(res){
 						console.log(res)
 					}).catch(function(err){
 						console.log(err)
@@ -84,13 +84,40 @@ export default function FileList({currentFolder,setCurrentFolder,sep,host,homePa
 		}else if(actionName.toLowerCase() === "new download"){
 			
 			
-			console.log(`adding new download on ${path+sep+name}`)
+			if(host!=="localhost"){
+				let filename = name
+				if(type==="d"){
+					filename = filename+sep
+				}
+				
+				api.post("/transfert/download",{path:path,file:filename,message:message}).then(function(res){
+					console.log(res)
+				}).catch(function(err){
+					console;log(err)
+				})
+				
+			}else{
+				console.log("You can't download file from you own host")	
+			}
 			
 			
 		}else if(actionName.toLowerCase() === "new upload"){
 			
 			
-			console.log(`adding new upload on ${path+sep+name}`)
+			if(host==="localhost"){
+				let filename = name
+				if(type==="d"){
+					filename = filename+sep
+				}
+				
+				api.post("/transfert/upload",{path:path,file:filename,message:message}).then(function(res){
+					console.log(res)
+				}).catch(function(err){
+					console;log(err)
+				})
+			}else{
+				console.log("Your can't distant file to your distant host")
+			}
 			
 			
 		}

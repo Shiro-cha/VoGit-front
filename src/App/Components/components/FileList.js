@@ -60,7 +60,7 @@ export default function FileList({currentFolder,setCurrentFolder,sep,host,homePa
 	function executeAction(actionName,path,type,name,sep,host){
 		if(actionName.toLowerCase() === "new container"){
 			console.log(`adding new container on ${path+sep+name}`)
-		}else if(actionName.toLowerCase() === "new download){
+		}else if(actionName.toLowerCase() === "new download"){
 			console.log(`adding new download on ${path+sep+name}`
 		}else if(actionName.toLowerCase() === "new upload"){
 			console.log(`adding new upload on ${path+sep+name}`

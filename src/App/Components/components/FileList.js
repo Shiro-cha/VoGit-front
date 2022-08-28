@@ -60,7 +60,7 @@ export default function FileList({currentFolder,setCurrentFolder,sep,host,homePa
 	function executeAction(actionName,path,type,name){
 		console.log(path)
 		console.log(actionName)
-		console.log(type)
+		console.log(name)
 	}
 	
 	useEffect(()=>{

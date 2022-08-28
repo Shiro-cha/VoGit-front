@@ -78,7 +78,7 @@ export default function MenuHistory({nombre,tags,repo,host}) {
 		console.log('h')
 	}
 	function checkoutTags(tags,repo){
-		console.log('hello')
+		console.log(host)
 		if(host==="local"){
 		
 			api.post('/svc/checkout',{tags:tags,path:repo}).then(function(res){

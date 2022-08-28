@@ -11,7 +11,7 @@ import Folder from '@mui/icons-material/Folder'
 import FileList from "./FileList"
 import MyHeadEl from "./MyHead"
 
-export default function FileContainer({homePath ,sep ,host}){
+export default function FileContainer({homePath ,sep ,host,openAction}){
 	const [currentFolder,setCurrentFolder] = useState(homePath)
 	const [myHead,setMyHead] = useState([])
 	useEffect(()=>{
@@ -28,7 +28,7 @@ export default function FileContainer({homePath ,sep ,host}){
 		<MyHeadEl myHead={myHead} setCurrentFolder={setCurrentFolder} sep={sep} currentFolder={currentFolder}/>
 		</Container>
 		
-		<FileList currentFolder={currentFolder} setCurrentFolder={setCurrentFolder}  sep={sep} host={host} homePath={homePath}/>
+		<FileList currentFolder={currentFolder} setCurrentFolder={setCurrentFolder}  sep={sep} host={host} homePath={homePath} openAction={openAction}/>
 		</Paper>
 	)
 	

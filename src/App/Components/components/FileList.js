@@ -22,7 +22,7 @@ import baseURL from "../../config/baseURL"
 
 
 
-export default function FileList({currentFolder,setCurrentFolder,sep,host,homePath}){
+export default function FileList({currentFolder,setCurrentFolder,sep,host,homePath},openAction){
 	
 	const [isLoading,setIsLoading] = useState(false)
 	const [files,setFiles]=useState([])
@@ -147,7 +147,7 @@ export default function FileList({currentFolder,setCurrentFolder,sep,host,homePa
 						}
 						
 						return(
-							<IconButton sx={{display:"flex",flexDirection:"column",width:"100px"}}  onClick={()=>{openPath(file.type,file.name,file.path,sep,setCurrentFolder,host);setFromAbutton(true)}}>
+							<IconButton sx={{display:"flex",flexDirection:"column",width:"100px"}}  onClick={()=>{openAction? console.log("action"):openPath(file.type,file.name,file.path,sep,setCurrentFolder,host);setFromAbutton(true)}}>
 							{fileIcon}
 							<i className="file-name">{file.name}</i>
 							</IconButton>

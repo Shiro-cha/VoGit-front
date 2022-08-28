@@ -71,22 +71,24 @@ export default function Explorer({remote,setPageComponent}) {
 	let hostDistant = useRef(null)
 	const [activeElement,setActiveElement] = useState(home)
 	
+	//action 
+	const [openAction,setOpenAction] = useState(false)
+	const [actionName,setActionName] = useState("No action")
+	const [whichAction,setwhichAction] = useState(false)
+	//message
+	const [message,setMessage] = useState("")
+	const [messageValid,setMessageValid] = useState(false)
+	
 	//state to set right component
-	const [rightComponent,setRightComponent] = useState(<FileContainer homePath={homePath} sep={sep} headFolder={headFolder} setHeadFolder={setHeadFolder}/>)
+	const [rightComponent,setRightComponent] = useState(<FileContainer homePath={homePath} sep={sep} headFolder={headFolder} setHeadFolder={setHeadFolder} openAction={openAction}/>)
 	
 	//logout handeler confimation
 	
 	const [openLogout,setOpenLogout] = useState(false)
 	const [logoutError,setlogoutError] = useState(false)
 	
-	//action 
-	const [openAction,setOpenAction] = useState(false)
-	const [actionName,setActionName] = useState("No action")
-	const [whichAction,setwhichAction] = useState(false)
 	
-	//message
-	const [message,setMessage] = useState("")
-	const [messageValid,setMessageValid] = useState(false)
+	
 	
 	function changeActive(elt, prevElt,setPrevelt){
 		let newelt = elt.current

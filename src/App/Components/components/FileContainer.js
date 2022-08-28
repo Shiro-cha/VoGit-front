@@ -153,7 +153,7 @@ export default function FileContainer({homePath ,sep ,host}){
 		<Snackbar
 		anchorOrigin={{vertical:"top",horizontal:"center"}}
 		open={whichAction}
-		message={actionName }
+		message={actionName + " : Click on a file"}
 		key={"top" + "center"}
 		severity="success"
 		sx={{opacity:"0.98",background:"#D51062"}}

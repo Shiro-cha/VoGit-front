@@ -113,7 +113,7 @@ export default function FileContainer({homePath ,sep ,host}){
 		<MyHeadEl myHead={myHead} setCurrentFolder={setCurrentFolder} sep={sep} currentFolder={currentFolder}/>
 		</Container>
 		
-		<FileList currentFolder={currentFolder} setCurrentFolder={setCurrentFolder}  sep={sep} host={host} homePath={homePath} openAction={openAction}/>
+		<FileList currentFolder={currentFolder} setCurrentFolder={setCurrentFolder}  sep={sep} host={host} homePath={homePath} openAction={whichAction}/>
 		
 		<SpeedDial
 		ariaLabel="SpeedDial basic "

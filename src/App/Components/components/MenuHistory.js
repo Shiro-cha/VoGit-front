@@ -75,7 +75,7 @@ export default function MenuHistory({nombre,tags,repo,host}) {
 	};
 	
 	function switchTags(tags,repo){
-		console.log('h)
+		console.log('h')
 	}
 	function checkoutTags(tags,repo){
 		if(host==="local"){

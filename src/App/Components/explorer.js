@@ -288,6 +288,8 @@ export default function Explorer({remote,setPageComponent}) {
 		key={"top" + "center"}
 		severity="success"
 		sx={{opacity:"0.98",background:"#D51062"}}
+		
+		onClick={setOpenAction(false)}
 		/>
 		
 		</div>

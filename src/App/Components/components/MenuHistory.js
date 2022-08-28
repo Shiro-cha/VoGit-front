@@ -2,6 +2,8 @@ import React, {useState} from 'react';
 import axios from "axios"
 import { styled, alpha } from '@mui/material/styles';
 import Button from '@mui/material/Button';
+import Backdrop from '@mui/material/Backdrop';
+import CircularProgress from '@mui/material/CircularProgress';
 import Menu, { MenuProps } from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import EditIcon from '@mui/icons-material/Edit';
@@ -66,8 +68,9 @@ export default function MenuHistory({nombre,tags,repo,host}) {
 	
 	const [anchorEl, setAnchorEl] = useState(null);
 	const open = Boolean(anchorEl);
-	const [isChecking,setIsChecking] = useState(false)
+	const [isLoading,setIsLoading] = useState(false)
 	const [canSwitch,setCanSwitch]=useState(false)
+	
 	const handleClick = (event) => {
 		setAnchorEl(event.currentTarget);
 	};
@@ -78,21 +81,25 @@ export default function MenuHistory({nombre,tags,repo,host}) {
 	function switchTags(tags,repo){
 		console.log(host)
 		if(host==="local"){
-			
+			setIsLoading(true)
 			api.post('/svc/switch',{tags:tags,path:repo}).then(function(res){
 				console.log(res.data)
 				setCanSwitch(true)
+				setIsLoading(false)
 			}).catch(function(err){
 				console.log(err)
+				setIsLoading(false)
 			})
 			
 		}else if(host==="distant"){
-			
+			setIsLoading(true)
 			api.post('/svc/switch/distant',{tags:tags,path:repo}).then(function(res){
 				console.log(res.data)
 				setCanSwitch(true)
+				setIsLoading(false)
 			}).catch(function(err){
 				console.log(err)
+				setIsLoading(false)
 			})
 			
 		}
@@ -100,21 +107,25 @@ export default function MenuHistory({nombre,tags,repo,host}) {
 	function checkoutTags(tags,repo){
 		console.log(host)
 		if(host==="local"){
-		
+			setIsLoading(true)
 			api.post('/svc/checkout',{tags:tags,path:repo}).then(function(res){
 				console.log(res.data)
 				setCanSwitch(true)
+				setIsLoading(false)
 			}).catch(function(err){
 				console.log(err)
+				setIsLoading(false)
 			})
 			
 		}else if(host==="distant"){
-			
+			setIsLoading(true)
 			api.post('/svc/checkout/distant',{tags:tags,path:repo}).then(function(res){
 				console.log(res.data)
 				setCanSwitch(true)
+				setIsLoading(false)
 			}).catch(function(err){
 				console.log(err)
+				setIsLoading(false)
 			})
 			
 		}
@@ -158,6 +169,9 @@ export default function MenuHistory({nombre,tags,repo,host}) {
 		Close
 		</MenuItem>
 		</StyledMenu>
+		<Backdrop open={isLoading}>
+		<CircularProgress/>
+		</Backdrop>
 		</div>
 	);
 }

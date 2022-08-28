@@ -57,10 +57,15 @@ export default function FileList({currentFolder,setCurrentFolder,sep,host,homePa
 		}
 	}
 	
-	function executeAction(actionName,path,type,name){
-		console.log(path)
-		console.log(actionName)
-		console.log(name)
+	function executeAction(actionName,path,type,name,sep,host){
+		if(actionName.toLowerCase() === "new container"){
+			console.(`adding new container on ${path+sep+name}`)
+		}else if(actionName.toLowerCase() === "new download){
+			console.(`adding new download on ${path+sep+name}`
+		}else if(actionName.toLowerCase() === "new upload"){
+			console.(`adding new upload on ${path+sep+name}`
+		}
+	}
 	}
 	
 	useEffect(()=>{
@@ -153,7 +158,7 @@ export default function FileList({currentFolder,setCurrentFolder,sep,host,homePa
 						}
 						
 						return(
-							<IconButton sx={{display:"flex",flexDirection:"column",width:"100px"}}  onClick={()=>{openAction? executeAction(actionName,file.path,file.type,file.name):openPath(file.type,file.name,file.path,sep,setCurrentFolder,host);setFromAbutton(true)}}>
+							<IconButton sx={{display:"flex",flexDirection:"column",width:"100px"}}  onClick={()=>{openAction? executeAction(actionName,file.path,file.type,file.name,sep,host):openPath(file.type,file.name,file.path,sep,setCurrentFolder,host);setFromAbutton(true)}}>
 							{fileIcon}
 							<i className="file-name">{file.name}</i>
 							</IconButton>

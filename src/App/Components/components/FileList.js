@@ -57,7 +57,7 @@ export default function FileList({currentFolder,setCurrentFolder,sep,host,homePa
 		}
 	}
 	
-	function executeAction(actionName,path,type,name,sep,host,message){
+	function executeAction(actionName,path,type,C,sep,host,message){
 		if(actionName.toLowerCase() === "new container"){
 			if(type==="d"){
 			
@@ -70,7 +70,7 @@ export default function FileList({currentFolder,setCurrentFolder,sep,host,homePa
 					})
 					
 				}else{
-					api.post("/svc/init/distant",{path:path+sep+filename+sep,message:message}).then(function(res){
+					api.post("/svc/init/distant",{path:path+sep+name+sep,message:message}).then(function(res){
 						console.log(res)
 					}).catch(function(err){
 						console.log(err)
@@ -93,7 +93,7 @@ export default function FileList({currentFolder,setCurrentFolder,sep,host,homePa
 				api.post("/transfert/download",{path:path,file:filename,message:message}).then(function(res){
 					console.log(res)
 				}).catch(function(err){
-					console;log(err)
+					console.log(err)
 				})
 				
 			}else{

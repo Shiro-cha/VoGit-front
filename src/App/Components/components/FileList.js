@@ -59,17 +59,26 @@ export default function FileList({currentFolder,setCurrentFolder,sep,host,homePa
 	
 	function executeAction(actionName,path,type,name,sep,host,message){
 		if(actionName.toLowerCase() === "new container"){
-			if(host==="localhost"){
-				
-				api.post("/svc/init",{path:path,message:message}).then(function(res){
-					console.log(res)
-				}).catch(function(err){
-					console.log(err)
-				})
-				
-			}else{
+			if(type==="d"){
+			
+				if(host==="localhost"){
+					
+					api.post("/svc/init",{path:path,message:message}).then(function(res){
+						console.log(res)
+					}).catch(function(err){
+						console.log(err)
+					})
+					
+				}else{
+					api.post("/svc/init/distant",{path:path,message:message}).then(function(res){
+						console.log(res)
+					}).catch(function(err){
+						console.log(err)
+					})
+				}
 				
 			}
+			
 			
 			
 		}else if(actionName.toLowerCase() === "new download"){

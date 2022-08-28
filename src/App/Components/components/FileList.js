@@ -61,7 +61,11 @@ export default function FileList({currentFolder,setCurrentFolder,sep,host,homePa
 		if(actionName.toLowerCase() === "new container"){
 			if(host==="localhost"){
 				
-				api.post("/svc/init",{path:path,message:message})
+				api.post("/svc/init",{path:path,message:message}).then(function(res){
+					console.log(re)
+				}).catch(function(err){
+					console.log(err)
+				})
 				
 			}else{
 				

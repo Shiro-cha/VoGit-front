@@ -57,6 +57,12 @@ export default function FileList({currentFolder,setCurrentFolder,sep,host,homePa
 		}
 	}
 	
+	function executeAction(actionName,path,type,name){
+		console.log(path)
+		console.log(actionName)
+		console.log(type)
+	}
+	
 	useEffect(()=>{
 		
 		//if(!fromAbutton){
@@ -147,7 +153,7 @@ export default function FileList({currentFolder,setCurrentFolder,sep,host,homePa
 						}
 						
 						return(
-							<IconButton sx={{display:"flex",flexDirection:"column",width:"100px"}}  onClick={()=>{openAction? console.log("action"):openPath(file.type,file.name,file.path,sep,setCurrentFolder,host);setFromAbutton(true)}}>
+							<IconButton sx={{display:"flex",flexDirection:"column",width:"100px"}}  onClick={()=>{openAction? executeAction(actionName,file.path,file.type,file.name):openPath(file.type,file.name,file.path,sep,setCurrentFolder,host);setFromAbutton(true)}}>
 							{fileIcon}
 							<i className="file-name">{file.name}</i>
 							</IconButton>

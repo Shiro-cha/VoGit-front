@@ -20,7 +20,7 @@ export default function FileContainer({homePath ,sep ,host,openAction}){
 			setMyHead(currentFolder.split(sep))
 		}
 	},[currentFolder])  
-	
+	console.log(openAction)
 	
 	return(
 		<Paper sx={{width:"97%",height:"100%",margin:"0 auto"}} elevation={1}>

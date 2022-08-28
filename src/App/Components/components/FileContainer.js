@@ -19,7 +19,7 @@ export default function FileContainer({homePath ,sep ,host,openAction}){
 			console.log(currentFolder)
 			setMyHead(currentFolder.split(sep))
 		}
-	},[currentFolder])  
+	},[currentFolder,openAction])  
 	console.log(openAction)
 	useEffect(()=>{
 		console.log("action changed")

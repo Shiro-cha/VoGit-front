@@ -80,7 +80,7 @@ export default function Explorer({remote,setPageComponent}) {
 	const [messageValid,setMessageValid] = useState(false)
 	
 	//state to set right component
-	const [rightComponent,setRightComponent] = useState(<FileContainer homePath={homePath} sep={sep} headFolder={headFolder} setHeadFolder={setHeadFolder} openAction={openAction}/>)
+	const [rightComponent,setRightComponent] = useState(<FileContainer homePath={homePath} sep={sep} headFolder={headFolder} setHeadFolder={setHeadFolder}/>)
 	
 	//logout handeler confimation
 	
@@ -119,53 +119,8 @@ export default function Explorer({remote,setPageComponent}) {
 	}
 	
 	
-	//actions function list
 	
-	function newDownload(){
-		setOpenAction(true)
-	}
-	function newUpload(){
-		setOpenAction(true)
-	}
-	function newContainer(){
-		setOpenAction(true)
-	}
-	function newHistory(){
-		setOpenAction(true)
-	}
-	
-	//Choose action
-	
-	function handeleAction(action){
-		setOpenAction(true)
-	 
-		if(action){
-			switch(action){
-				case "New Download":
-					setActionName("New Download")
-					break
-				case 'New upload':
-					setActionName("New Upload")
-					break
-				case 'New container':
-					setActionName("New Container")
-					break
-				case 'New history':
-					setActionName("New History")
-					break
-			}
-		}
-	}
-	
-	//handleChangeMessage
-	function handleChangeMessage(e){
-		if(e.target.value){
-			setMessageValid(true)
-		}else{
-			setMessageValid(false)
-		}
-		setMessage(e.target.value)
-	}
+
 	
 	
 	return (
@@ -218,19 +173,7 @@ export default function Explorer({remote,setPageComponent}) {
 		}
 		
 		
-		<SpeedDial
-		ariaLabel="SpeedDial basic "
-		sx={{ position: 'absolute',bottom: 116, right: 46 }}
-		icon={<SpeedDialIcon/>}
-		>
-		{actions.map((action) => (
-			<SpeedDialAction
-			key={action.name}
-			icon={action.icon}
-			tooltipTitle={action.name}
-			onClick={()=>{handeleAction(action.name);setwhichAction(false)}}/>
-		))} 
-		</SpeedDial>
+		
 		</Box>
 		
 		</Grid>
@@ -260,37 +203,6 @@ export default function Explorer({remote,setPageComponent}) {
 		{`Logout error`}
 		</Alert>
 		</Snackbar>
-		<Dialog 
-		open={openAction}
-		keepMounted
-		>
-		<DialogTitle>{`You must say something about your action`}</DialogTitle>
-		<DialogContent>
-		 
-		<Input type="text" id="message" placeholder="Type a message" sx={{width:"100%",marginBottom:"30px"}} name="message" autofocus onChange={handleChangeMessage}/>
-		
-		</DialogContent>
-		<DialogActions>
-		<Button sx={{color:"#D51062"}} onClick={()=>{
-			setOpenAction(false)
-		}}>Cancel</Button>
-		<Button sx={{color:"#D51062"}} onClick={()=>{
-			setwhichAction(true)
-			setOpenAction(false)
-		}} disabled={!messageValid}>Next</Button> 
-		</DialogActions>
-		
-		</Dialog>
-		<Snackbar
-		anchorOrigin={{vertical:"top",horizontal:"center"}}
-		open={whichAction}
-		message={actionName }
-		key={"top" + "center"}
-		severity="success"
-		sx={{opacity:"0.98",background:"#D51062"}}
-		
-		onClick={()=>{setOpenAction(false);console.log("false action")}}
-		/>
 		
 		</div>
 	);

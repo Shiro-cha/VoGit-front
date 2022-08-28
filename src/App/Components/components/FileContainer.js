@@ -38,7 +38,7 @@ export default function FileContainer({homePath ,sep ,host}){
 	//action 
 	const [openAction,setOpenAction] = useState(false)
 	const [actionName,setActionName] = useState("No action")
-	const [whichAction,setwhichAction] = useState(false)
+	const [whichAction,setWhichAction] = useState(false)
 	
 	//message
 	const [message,setMessage] = useState("")

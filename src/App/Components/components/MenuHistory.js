@@ -74,10 +74,10 @@ export default function MenuHistory({nombre,tags,repo,host}) {
 		setAnchorEl(null);
 	};
 	
-	const switchTags = (tags,repo){
-		
+	function switchTags(tags,repo){
+		console.log('h)
 	}
-	const checkoutTags = (tags,repo){
+	function checkoutTags(tags,repo){
 		if(host==="local"){
 		
 			api.post('/svc/checkout',{tags:tags,path:repo}).then(function(res){

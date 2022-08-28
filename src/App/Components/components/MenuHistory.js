@@ -169,8 +169,8 @@ export default function MenuHistory({nombre,tags,repo,host}) {
 		Close
 		</MenuItem>
 		</StyledMenu>
-		<Backdrop open={isLoading}>
-		<CircularProgress/>
+		<Backdrop open={isLoading} sx={{opacity:"0.2"}}>
+		<CircularProgress />
 		</Backdrop>
 		</div>
 	);

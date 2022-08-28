@@ -289,7 +289,7 @@ export default function Explorer({remote,setPageComponent}) {
 		severity="success"
 		sx={{opacity:"0.98",background:"#D51062"}}
 		
-		onClick={setOpenAction(false)}
+		onClick={()=>{setOpenAction(false)}}
 		/>
 		
 		</div>

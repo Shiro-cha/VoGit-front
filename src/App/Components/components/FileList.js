@@ -62,7 +62,7 @@ export default function FileList({currentFolder,setCurrentFolder,sep,host,homePa
 			if(host==="localhost"){
 				
 				api.post("/svc/init",{path:path,message:message}).then(function(res){
-					console.log(re)
+					console.log(res)
 				}).catch(function(err){
 					console.log(err)
 				})

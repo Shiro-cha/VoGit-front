@@ -158,7 +158,7 @@ export default function FileContainer({homePath ,sep ,host}){
 		severity="success"
 		sx={{opacity:"0.98",background:"#D51062"}}
 		
-		onClick={()=>{setOpenAction(false);console.log("false action")}}
+		onClick={()=>{setWhichAction(false);console.log("false action")}}
 		/>
 		
 		</Paper>

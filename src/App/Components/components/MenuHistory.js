@@ -66,7 +66,8 @@ export default function MenuHistory({nombre,tags,repo,host}) {
 	
 	const [anchorEl, setAnchorEl] = useState(null);
 	const open = Boolean(anchorEl);
-	const [isCheckig,setIsChecking] = useState(false)
+	const [isChecking,setIsChecking] = useState(false)
+	const [canSwitch,setCanSwitch]=useState(false)
 	const handleClick = (event) => {
 		setAnchorEl(event.currentTarget);
 	};
@@ -75,7 +76,26 @@ export default function MenuHistory({nombre,tags,repo,host}) {
 	};
 	console.log(host)
 	function switchTags(tags,repo){
-		console.log('h')
+		console.log(host)
+		if(host==="local"){
+			
+			api.post('/svc/switch',{tags:tags,path:repo}).then(function(res){
+				console.log(res.data)
+				setCanSwitch(true)
+			}).catch(function(err){
+				console.log(err)
+			})
+			
+		}else if(host==="distant"){
+			
+			api.post('/svc/switch/distant',{tags:tags,path:repo}).then(function(res){
+				console.log(res.data)
+				setCanSwitch(true)
+			}).catch(function(err){
+				console.log(err)
+			})
+			
+		}
 	}
 	function checkoutTags(tags,repo){
 		console.log(host)
@@ -83,6 +103,7 @@ export default function MenuHistory({nombre,tags,repo,host}) {
 		
 			api.post('/svc/checkout',{tags:tags,path:repo}).then(function(res){
 				console.log(res.data)
+				setCanSwitch(true)
 			}).catch(function(err){
 				console.log(err)
 			})
@@ -91,6 +112,7 @@ export default function MenuHistory({nombre,tags,repo,host}) {
 			
 			api.post('/svc/checkout/distant',{tags:tags,path:repo}).then(function(res){
 				console.log(res.data)
+				setCanSwitch(true)
 			}).catch(function(err){
 				console.log(err)
 			})
@@ -127,7 +149,7 @@ export default function MenuHistory({nombre,tags,repo,host}) {
 		Checkout
 		</MenuItem>
 		<Divider sx={{ my: 0.5 }} />
-		<MenuItem onClick={()=>{switchTags(tags,repo)}} disabled={true} disableRipple>
+		<MenuItem onClick={()=>{switchTags(tags,repo)}} disabled={!canSwitch} disableRipple>
 		<Adjust /> 
 		Switch
 		</MenuItem>

@@ -36,6 +36,7 @@ export default function ListLocal(){
 	const [containersLocal,setContainersLocal] = useState([])
 	const [open,setOpen] =useState(false)
 	
+	
 	//list menu action
 	
 	const [anchorEl, setAnchorEl] = useState(null)
@@ -76,10 +77,7 @@ export default function ListLocal(){
 		if(commits.length !==0){
 			return(
 				commits.map(function(commit,nombre){
-					console.log("---------")
-					console.log(nombre)
-					console.log(commit)
-					console.log("---------")
+				
 					return(
 						<List className="w-100">
 						<ListItem

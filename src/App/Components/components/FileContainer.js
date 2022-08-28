@@ -156,7 +156,7 @@ export default function FileContainer({homePath ,sep ,host}){
 		message={actionName + " : Click on a file"}
 		key={"top" + "center"}
 		severity="success"
-		sx={{opacity:"0.98",background:"#D51062",cursor:"pointer"}}
+		sx={{opacity:"0.98",background:"#D51062",cursor:"pointer !important"}}
 		
 		onClick={()=>{setWhichAction(false);console.log("false action")}}
 		/>

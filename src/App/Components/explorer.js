@@ -51,7 +51,6 @@ const actions = [
 { icon: <Download />, name: 'New Download' },
 { icon: <Upload />, name: 'New upload' },
 { icon: <Cyclone />, name: 'New container' },
-{ icon: <History />, name: 'New history' },
 ];
 
 export default function Explorer({remote,setPageComponent}) {

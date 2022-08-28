@@ -22,7 +22,7 @@ import baseURL from "../../config/baseURL"
 
 
 
-export default function FileList({currentFolder,setCurrentFolder,sep,host,homePath,openAction,actionName}){
+export default function FileList({currentFolder,setCurrentFolder,sep,host,homePath,openAction,actionName,message}){
 	
 	const [isLoading,setIsLoading] = useState(false)
 	const [files,setFiles]=useState([])
@@ -57,13 +57,29 @@ export default function FileList({currentFolder,setCurrentFolder,sep,host,homePa
 		}
 	}
 	
-	function executeAction(actionName,path,type,name,sep,host){
+	function executeAction(actionName,path,type,name,sep,host,message){
 		if(actionName.toLowerCase() === "new container"){
-			console.log(`adding new container on ${path+sep+name}`)
+			if(host==="localhost"){
+				
+				api.post("/svc/init",{path:path,message:message})
+				
+			}else{
+				
+			}
+			
+			
 		}else if(actionName.toLowerCase() === "new download"){
+			
+			
 			console.log(`adding new download on ${path+sep+name}`)
+			
+			
 		}else if(actionName.toLowerCase() === "new upload"){
+			
+			
 			console.log(`adding new upload on ${path+sep+name}`)
+			
+			
 		}
 	
 	}
@@ -158,7 +174,7 @@ export default function FileList({currentFolder,setCurrentFolder,sep,host,homePa
 						}
 						
 						return(
-							<IconButton sx={{display:"flex",flexDirection:"column",width:"100px"}}  onClick={()=>{openAction? executeAction(actionName,file.path,file.type,file.name,sep,host):openPath(file.type,file.name,file.path,sep,setCurrentFolder,host);setFromAbutton(true)}}>
+							<IconButton sx={{display:"flex",flexDirection:"column",width:"100px"}}  onClick={()=>{openAction? executeAction(actionName,file.path,file.type,file.name,sep,host,message):openPath(file.type,file.name,file.path,sep,setCurrentFolder,host);setFromAbutton(true)}}>
 							{fileIcon}
 							<i className="file-name">{file.name}</i>
 							</IconButton>

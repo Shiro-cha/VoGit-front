@@ -152,7 +152,7 @@ export default function FileList({currentFolder,setCurrentFolder,sep,host,homePa
 							<i className="file-name">{file.name}</i>
 							</IconButton>
 						)
-						
+					
 					}
 					
 				})	}	

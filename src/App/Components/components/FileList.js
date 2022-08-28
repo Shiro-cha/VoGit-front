@@ -65,7 +65,7 @@ export default function FileList({currentFolder,setCurrentFolder,sep,host,homePa
 		}else if(actionName.toLowerCase() === "new upload"){
 			console.log(`adding new upload on ${path+sep+name}`)
 		}
-	}
+	
 	}
 	
 	useEffect(()=>{

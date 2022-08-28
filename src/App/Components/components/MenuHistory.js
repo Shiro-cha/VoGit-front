@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import axios from "axios"
 import { styled, alpha } from '@mui/material/styles';
 import Button from '@mui/material/Button';
 import Menu, { MenuProps } from '@mui/material/Menu';
@@ -13,6 +14,10 @@ import MoreVert from '@mui/icons-material/MoreVert'
 import MoveDown from '@mui/icons-material/MoveDown'
 import Adjust from '@mui/icons-material/Adjust'
 import Cancel from '@mui/icons-material/Cancel'
+
+
+//baseURL configuration
+import baseURL from "../../config/baseURL"
 
 const StyledMenu = styled((props: MenuProps) => (
 	<Menu
@@ -55,15 +60,43 @@ const StyledMenu = styled((props: MenuProps) => (
 	},
 }));
 
-export default function MenuHistory({nombre}) {
+export default function MenuHistory({nombre,tags,repo,host}) {
+	
+	let api = axios.create(baseURL)
+	
 	const [anchorEl, setAnchorEl] = useState(null);
 	const open = Boolean(anchorEl);
+	const [isCheckig,setIsChecking] = useState(false)
 	const handleClick = (event) => {
 		setAnchorEl(event.currentTarget);
 	};
 	const handleClose = () => {
 		setAnchorEl(null);
 	};
+	
+	const switchTags = (tags,repo){
+		
+	}
+	const checkoutTags = (tags,repo){
+		if(host==="local"){
+		
+			api.post('/svc/checkout',{tags:tags,path:repo}).then(function(res){
+				console.log(res.data)
+			}).catch(function(err){
+				console.log(err)
+			})
+			
+		}else if(host==="distant"){
+			
+			api.post('/svc/checkout/distant',{tags:tags,path:repo}).then(function(res){
+				console.log(res.data)
+			}).catch(function(err){
+				console.log(err)
+			})
+			
+		}
+		
+	}
 	
 	return (
 		<div>
@@ -88,12 +121,12 @@ export default function MenuHistory({nombre}) {
 		open={open}
 		onClose={handleClose}
 		>
-		<MenuItem onClick={handleClose} disableRipple>
+		<MenuItem onClick={()=>{checkoutTags(tags,repo)}} disableRipple>
 		<MoveDown />
 		Checkout
 		</MenuItem>
 		<Divider sx={{ my: 0.5 }} />
-		<MenuItem onClick={handleClose} disabled={true} disableRipple>
+		<MenuItem onClick={()=>{switchTags(tags,repo)}} disabled={true} disableRipple>
 		<Adjust /> 
 		Switch
 		</MenuItem>

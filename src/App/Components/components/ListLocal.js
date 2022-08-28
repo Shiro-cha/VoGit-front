@@ -72,7 +72,7 @@ export default function ListLocal(){
 
 	},[])
 
-	let ListHistoryLocal = ({commits})=>{
+	let ListHistoryLocal = ({commits,repo})=>{
 		if(commits.length !==0){
 			return(
 				commits.map(function(commit,nombre){
@@ -84,8 +84,8 @@ export default function ListLocal(){
 						<List className="w-100">
 						<ListItem
 						secondaryAction={
-							<MenuHistory nombre={nombre}/>}
-							>
+							<MenuHistory nombre={nombre} tags={commit.hash} repo={repo}/>}
+							host={"local"}>
 							<ListItemAvatar>
 							<Avatar>
 							<Commit />
@@ -143,7 +143,7 @@ export default function ListLocal(){
 				</ListItemButton>
 				
 				<Collapse className="w-100" in={open} timeout="auto" unmountOnExit>
-				<ListHistoryLocal commits={cont.commits}/>
+				<ListHistoryLocal commits={cont.commits} repo={cont.content.path}/>
 				</Collapse>	
 				</>
 				)

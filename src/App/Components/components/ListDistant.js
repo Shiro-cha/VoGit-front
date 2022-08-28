@@ -38,11 +38,10 @@ export default function ListDistant(){
 	const [containersDistant,setContainersDistant] = useState([])
 	const [open,setOpen]= useState(false)
 	
-	let api = axios.create(baseURL) 
-	useEffect(()=>{
-		
 	
-		api.post("/svc/containers").then(function(res){
+	
+	useEffect(()=>{
+	api.post("/svc/containers").then(function(res){
 			if(res.data["distant"] && res.data["local"]){
 				let containerTemp = []
 				for (let i = 0 ; i < res.data["distant"].length ; i++){
@@ -77,7 +76,7 @@ export default function ListDistant(){
 	
 	
 	
-	let ListHistDistant = ({commits})=>{
+	let ListHistDistant = ({commits,repo})=>{
 		if(commits.length !==0){
 			
 			return(
@@ -87,8 +86,8 @@ export default function ListDistant(){
 						<List className="w-100">
 						<ListItem
 						secondaryAction={
-							<MenuHistory nombre={nombre}/>}
-							>
+							<MenuHistory nombre={nombre} tags={commit.hash} repo={repo}/>}
+							host={"distant"} >
 							<ListItemAvatar>
 							<Avatar>
 							<Commit />
@@ -149,7 +148,7 @@ export default function ListDistant(){
 	
 				
 				<Collapse className="w-100" in={open} timeout="auto" unmountOnExit>
-				<ListHistDistant commits={cont.commits}/>
+				<ListHistDistant commits={cont.commits} repo={cont.content.path}/>
 				</Collapse>	
 				</>
 				)

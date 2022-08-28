@@ -21,6 +21,9 @@ export default function FileContainer({homePath ,sep ,host,openAction}){
 		}
 	},[currentFolder])  
 	console.log(openAction)
+	useEffect(()=>{
+		console.log("action changed")
+	},[openAction])
 	
 	return(
 		<Paper sx={{width:"97%",height:"100%",margin:"0 auto"}} elevation={1}>

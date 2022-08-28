@@ -113,7 +113,7 @@ export default function FileContainer({homePath ,sep ,host}){
 		<MyHeadEl myHead={myHead} setCurrentFolder={setCurrentFolder} sep={sep} currentFolder={currentFolder}/>
 		</Container>
 		
-		<FileList currentFolder={currentFolder} setCurrentFolder={setCurrentFolder}  sep={sep} host={host} homePath={homePath} openAction={whichAction}/>
+		<FileList currentFolder={currentFolder} setCurrentFolder={setCurrentFolder}  sep={sep} host={host} homePath={homePath} openAction={whichAction} actionName={actionName}/>
 		
 		<SpeedDial
 		ariaLabel="SpeedDial basic "
@@ -158,7 +158,7 @@ export default function FileContainer({homePath ,sep ,host}){
 		severity="success"
 		sx={{opacity:"0.98",background:"#D51062",cursor:"pointer !important"}} 
 		
-		onClick={()=>{setWhichAction(false);console.log("false action")}}
+		onClick={()=>{setWhichAction(false)}}
 		/>
 		
 		</Paper>

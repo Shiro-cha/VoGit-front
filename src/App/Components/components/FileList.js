@@ -22,7 +22,7 @@ import baseURL from "../../config/baseURL"
 
 
 
-export default function FileList({currentFolder,setCurrentFolder,sep,host,homePath,openAction}){
+export default function FileList({currentFolder,setCurrentFolder,sep,host,homePath,openAction,actionName}){
 	
 	const [isLoading,setIsLoading] = useState(false)
 	const [files,setFiles]=useState([])
@@ -31,7 +31,7 @@ export default function FileList({currentFolder,setCurrentFolder,sep,host,homePa
 	const [fromAbutton,setFromAbutton] =useState(false) 
 	
 	let api = axios.create(baseURL)
-	console.log(openAction)
+	console.log(actionName)
 	function openPath(type,filename,path,sep,setCurrentFolder,host){
 		if(type==="d"){ 
 			setIsLoading(true)

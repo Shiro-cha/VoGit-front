@@ -125,7 +125,7 @@ export default function FileContainer({homePath ,sep ,host}){
 			key={action.name}
 			icon={action.icon}
 			tooltipTitle={action.name}
-			onClick={()=>{handeleAction(action.name);setwhichAction(false)}}/>
+			onClick={()=>{handeleAction(action.name);setWhichAction(false)}}/>
 		))} 
 		</SpeedDial>
 		
@@ -144,7 +144,7 @@ export default function FileContainer({homePath ,sep ,host}){
 			setOpenAction(false)
 		}}>Cancel</Button>
 		<Button sx={{color:"#D51062"}} onClick={()=>{
-			setwhichAction(true)
+			setWhichAction(true)
 			setOpenAction(false)
 		}} disabled={!messageValid}>Next</Button> 
 		</DialogActions>

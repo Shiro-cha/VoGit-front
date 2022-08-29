@@ -86,11 +86,13 @@ export default function FileList({currentFolder,setCurrentFolder,sep,host,homePa
 			
 			if(host!=="localhost"){
 				let filename = name
+				let isDirectory =  false
 				if(type==="d"){
 					filename = filename+sep
+					isDirectory = true
 				}
 				
-				api.post("/transfert/download",{path:path+sep,file:filename,message:message}).then(function(res){
+				api.post("/transfert/download",{path:path+sep,file:filename,message:message,isDirectory:isDirectory}).then(function(res){
 					console.log(res)
 				}).catch(function(err){
 					console.log(err)

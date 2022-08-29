@@ -90,7 +90,7 @@ export default function FileList({currentFolder,setCurrentFolder,sep,host,homePa
 					filename = filename+sep
 				}
 				
-				api.post("/transfert/download",{path:path,file:filename,message:message}).then(function(res){
+				api.post("/transfert/download",{path:path+sep,file:filename,message:message}).then(function(res){
 					console.log(res)
 				}).catch(function(err){
 					console.log(err)
